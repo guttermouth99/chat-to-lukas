@@ -1,16 +1,19 @@
 "use client";
 
-import { useChat } from "@ai-sdk/react";
-import { DefaultChatTransport } from "ai";
+import { useActions, useUIState } from "@ai-sdk/rsc";
 import { useParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Send } from "lucide-react";
+import { generateId } from "ai";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import profile from "@/lib/data/profile.json";
 import jobsToApply from "@/lib/data/jobs-to-apply.json";
+import type { ClientMessage } from "./actions";
+
+export const maxDuration = 30;
 
 export default function TalkToMePage() {
   const params = useParams();
@@ -18,28 +21,49 @@ export default function TalkToMePage() {
   const job = jobsToApply.find((j) => j.id === jobId);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [input, setInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-  const { messages, sendMessage, status } = useChat({
-    transport: new DefaultChatTransport({
-      api: "/api/chat",
-      body: { jobId },
-    }),
-  });
-
-  const isLoading = status === "streaming" || status === "submitted";
+  const [conversation, setConversation] = useUIState();
+  const { continueConversation } = useActions();
 
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
-  }, [messages]);
+  }, [conversation]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (input.trim()) {
-      sendMessage({ text: input });
-      setInput("");
-    }
+    if (!input.trim() || isLoading) return;
+
+    const userMessage = input.trim();
+    setInput("");
+    setIsLoading(true);
+
+    // Add user message to conversation
+    setConversation((currentConversation: ClientMessage[]) => [
+      ...currentConversation,
+      {
+        id: generateId(),
+        role: "user",
+        display: userMessage,
+      },
+    ]);
+
+    // Get AI response
+    const message = await continueConversation(userMessage, jobId);
+
+    // Add AI response to conversation
+    setConversation((currentConversation: ClientMessage[]) => [
+      ...currentConversation,
+      message,
+    ]);
+
+    setIsLoading(false);
+  };
+
+  const handleSuggestionClick = (suggestion: string) => {
+    setInput(suggestion);
   };
 
   if (!job) {
@@ -80,7 +104,7 @@ export default function TalkToMePage() {
       {/* Messages */}
       <ScrollArea className="flex-1" ref={scrollRef}>
         <div className="mx-auto max-w-2xl px-4 py-6">
-          {messages.length === 0 ? (
+          {conversation.length === 0 ? (
             <div className="py-12 text-center">
               <Avatar className="mx-auto size-16 ring-2 ring-stone-200">
                 <AvatarImage src={profile.avatar} alt={profile.name} />
@@ -98,11 +122,12 @@ export default function TalkToMePage() {
                   "Was sind deine Stärken?",
                   "Erzähl mir von deiner Erfahrung",
                   "Warum passt du zu uns?",
+                  "Lass uns connecten!",
                 ].map((suggestion) => (
                   <button
                     key={suggestion}
                     type="button"
-                    onClick={() => setInput(suggestion)}
+                    onClick={() => handleSuggestionClick(suggestion)}
                     className="rounded-full border border-stone-300 bg-white px-3 py-1.5 text-sm text-stone-700 transition-colors hover:border-stone-400 hover:bg-stone-50"
                   >
                     {suggestion}
@@ -112,7 +137,7 @@ export default function TalkToMePage() {
             </div>
           ) : (
             <div className="space-y-4">
-              {messages.map((message) => (
+              {conversation.map((message: ClientMessage) => (
                 <div
                   key={message.id}
                   className={`flex gap-3 ${
@@ -137,20 +162,29 @@ export default function TalkToMePage() {
                   <div
                     className={`max-w-[80%] rounded-2xl px-4 py-2.5 ${
                       message.role === "user"
-                        ? "bg-stone-900 text-white"
+                        ? ""
                         : "bg-white text-stone-900 shadow-sm ring-1 ring-stone-200"
                     }`}
+                    style={
+                      message.role === "user"
+                        ? {
+                            backgroundColor: job.chatBubble.background,
+                            color: job.chatBubble.foreground,
+                          }
+                        : undefined
+                    }
                   >
-                    <p className="whitespace-pre-wrap text-[15px] leading-relaxed">
-                      {message.parts
-                        .filter((part) => part.type === "text")
-                        .map((part) => part.text)
-                        .join("")}
-                    </p>
+                    {typeof message.display === "string" ? (
+                      <p className="whitespace-pre-wrap text-[15px] leading-relaxed">
+                        {message.display}
+                      </p>
+                    ) : (
+                      message.display
+                    )}
                   </div>
                 </div>
               ))}
-              {isLoading && messages[messages.length - 1]?.role === "user" && (
+              {isLoading && (
                 <div className="flex gap-3">
                   <Avatar className="size-8 shrink-0">
                     <AvatarImage src={profile.avatar} alt={profile.name} />

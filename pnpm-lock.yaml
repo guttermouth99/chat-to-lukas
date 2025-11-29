@@ -17,6 +17,9 @@ importers:
       '@ai-sdk/react':
         specifier: ^2.0.104
         version: 2.0.104(react@19.2.0)(zod@4.1.13)
+      '@ai-sdk/rsc':
+        specifier: ^1.0.105
+        version: 1.0.105(react@19.2.0)(zod@4.1.13)
       '@hookform/resolvers':
         specifier: ^5.2.2
         version: 5.2.2(react-hook-form@7.67.0(react@19.2.0))
@@ -224,6 +227,16 @@ packages:
       zod:
         optional: true
 
+  '@ai-sdk/rsc@1.0.105':
+    resolution: {integrity: sha512-JVx6MpDJwDKfc88xFnnwaUpv8UkDiH0kPdtWGMa0FubAlyiSbgKnyjxGoi139A1tRSMCpv/x87ouipL5/4MN9w==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      react: ^18 || ^19 || ^19.0.0-rc
+      zod: ^3.25.76 || ^4.1.8
+    peerDependenciesMeta:
+      zod:
+        optional: true
+
   '@alloc/quick-lru@5.2.0':
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
     engines: {node: '>=10'}
@@ -301,6 +314,9 @@ packages:
 
   '@date-fns/tz@1.4.1':
     resolution: {integrity: sha512-P5LUNhtbj6YfI3iJjw5EL9eUAG6OitD0W3fWQcpQjDRc/QIsL0tRNuO1PcDvPccWL1fSTXXdE1ds+l95DV/OFA==}
+
+  '@dmsnell/diff-match-patch@1.1.0':
+    resolution: {integrity: sha512-yejLPmM5pjsGvxS9gXablUSbInW7H976c/FJ4iQxWIm7/38xBySRemTPDe34lhg1gVLbJntX0+sH0jYfU+PN9A==}
 
   '@emnapi/core@1.7.1':
     resolution: {integrity: sha512-o1uhUASyo921r2XtHYOHy7gdkGLge8ghBEQHMWmyJFoXlpU58kIrhhN3w26lpQb6dspetweapMn2CSNwQ8I4wg==}
@@ -2402,6 +2418,11 @@ packages:
     engines: {node: '>=6'}
     hasBin: true
 
+  jsondiffpatch@0.7.3:
+    resolution: {integrity: sha512-zd4dqFiXSYyant2WgSXAZ9+yYqilNVvragVNkNRn2IFZKgjyULNrKRznqN4Zon0MkLueCg+3QaPVCnDAVP20OQ==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    hasBin: true
+
   jsx-ast-utils@3.3.5:
     resolution: {integrity: sha512-ZZow9HBI5O6EPgSJLUb8n2NKgmVWTwCvHGwFuJlMjvLFqlGG6pjirPhtdsseaLZjSibD8eegzmYpUZwoIlj2cQ==}
     engines: {node: '>=4.0'}
@@ -3139,6 +3160,16 @@ snapshots:
     optionalDependencies:
       zod: 4.1.13
 
+  '@ai-sdk/rsc@1.0.105(react@19.2.0)(zod@4.1.13)':
+    dependencies:
+      '@ai-sdk/provider': 2.0.0
+      '@ai-sdk/provider-utils': 3.0.18(zod@4.1.13)
+      ai: 5.0.104(zod@4.1.13)
+      jsondiffpatch: 0.7.3
+      react: 19.2.0
+    optionalDependencies:
+      zod: 4.1.13
+
   '@alloc/quick-lru@5.2.0': {}
 
   '@babel/code-frame@7.27.1':
@@ -3244,6 +3275,8 @@ snapshots:
       '@babel/helper-validator-identifier': 7.28.5
 
   '@date-fns/tz@1.4.1': {}
+
+  '@dmsnell/diff-match-patch@1.1.0': {}
 
   '@emnapi/core@1.7.1':
     dependencies:
@@ -5434,6 +5467,10 @@ snapshots:
       minimist: 1.2.8
 
   json5@2.2.3: {}
+
+  jsondiffpatch@0.7.3:
+    dependencies:
+      '@dmsnell/diff-match-patch': 1.1.0
 
   jsx-ast-utils@3.3.5:
     dependencies:
