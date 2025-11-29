@@ -2,12 +2,14 @@
 
 import Link from "next/link";
 import { MessageCircle } from "lucide-react";
+import { t, type Language } from "@/lib/translations";
 
 interface StickyChatButtonProps {
   id: string;
   avatar: string;
   fullName: string;
   accentColor: string;
+  lang?: Language;
 }
 
 export function StickyChatButton({
@@ -15,7 +17,9 @@ export function StickyChatButton({
   avatar,
   fullName,
   accentColor,
+  lang = "german",
 }: StickyChatButtonProps) {
+  const translations = t(lang);
   return (
     <Link
       href={`/${id}/talk`}
@@ -39,8 +43,8 @@ export function StickyChatButton({
           </div>
           {/* Text */}
           <div className="flex flex-col">
-            <span className="text-xs font-semibold text-white">Talk to me</span>
-            <span className="text-[10px] text-white/70">AI Chat</span>
+            <span className="text-xs font-semibold text-white">{translations.talkToMe}</span>
+            <span className="text-[10px] text-white/70">{translations.aiChat}</span>
           </div>
           {/* Message icon indicator */}
           <MessageCircle className="w-4 h-4 text-white/80 ml-1" />

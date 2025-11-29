@@ -22,6 +22,7 @@ import {
 import { CVData, CVWorkExperience, CVEducation, CVAward } from "@/lib/types/cv";
 import { CVHeader } from "@/components/cv-header";
 import { PageNavigation } from "@/components/page-navigation";
+import { t, type Language } from "@/lib/translations";
 
 // Icon map to convert string names to Lucide components
 const iconMap: Record<string, LucideIcon> = {
@@ -292,6 +293,8 @@ export default async function CVPage({
   const { data, hasCoverLetter } = result;
   const { theme, personal, labels, profileSummary, workExperience, skills, awards, education, languages } = data;
   const accentColor = theme.accentColor;
+  const lang = (data.lang || "german") as Language;
+  const translations = t(lang);
 
   // Group awards by skillIndex for inline rendering
   const awardsBySkillIndex = awards.reduce(
@@ -310,7 +313,7 @@ export default async function CVPage({
       {/* A4 Paper Container */}
       <div className={`mx-auto w-full md:w-[210mm] print:w-[210mm] md:min-h-[297mm] print:min-h-[297mm] bg-white shadow-none md:shadow-2xl print:shadow-none overflow-hidden ${isPdf ? 'shadow-none w-[210mm] min-h-[297mm]' : ''}`}>
         {/* Header */}
-        <CVHeader personal={personal} accentColor={accentColor} />
+        <CVHeader personal={personal} accentColor={accentColor} lang={lang} />
 
         {/* Profile Summary Section */}
         <section
@@ -462,10 +465,10 @@ export default async function CVPage({
                   style={{ backgroundColor: accentColor }}
                 >
                   <MessageCircle className="w-4 h-4" />
-                  Talk to me
+                  {translations.talkToMe}
                 </a>
                 <span className="text-[10px] text-slate-400 mt-1.5">
-                  opens my own chat
+                  {translations.opensMyChat}
                 </span>
               </div>
             )}
@@ -484,7 +487,7 @@ export default async function CVPage({
               color: accentColor,
             }}
           >
-            Erfahre mehr über meine Motivation
+            {translations.learnMoreAboutMotivation}
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
@@ -499,6 +502,7 @@ export default async function CVPage({
           accentColor={accentColor}
           hasCoverLetter={hasCoverLetter}
           currentPage="cv"
+          lang={lang}
         />
       )}
     </div>

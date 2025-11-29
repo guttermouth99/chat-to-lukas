@@ -76,6 +76,7 @@ export interface CoverLetterData {
 }
 
 export interface CVData {
+  lang?: "english" | "german";
   theme: CVTheme;
   personal: CVPersonal;
   labels: CVLabels;

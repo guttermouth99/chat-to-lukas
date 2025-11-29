@@ -8,14 +8,17 @@ import {
   MessageCircle,
 } from "lucide-react";
 import { CVPersonal } from "@/lib/types/cv";
+import { t, type Language } from "@/lib/translations";
 
 interface CVHeaderProps {
   personal: CVPersonal;
   accentColor: string;
   showTalkToMe?: boolean;
+  lang?: Language;
 }
 
-export function CVHeader({ personal, accentColor, showTalkToMe = true }: CVHeaderProps) {
+export function CVHeader({ personal, accentColor, showTalkToMe = true, lang = "german" }: CVHeaderProps) {
+  const translations = t(lang);
   return (
     <header className="relative bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 text-white px-4 py-6 md:px-8 md:py-8 print:px-8 print:py-8 overflow-hidden">
       {/* Decorative elements */}
@@ -140,10 +143,10 @@ export function CVHeader({ personal, accentColor, showTalkToMe = true }: CVHeade
                 style={{ backgroundColor: accentColor }}
               >
                 <MessageCircle className="w-4 h-4" />
-                Talk to me
+                {translations.talkToMe}
               </a>
               <span className="text-[10px] text-slate-400 mt-1.5">
-                opens my own chat
+                {translations.opensMyChat}
               </span>
             </div>
           )}

@@ -1,6 +1,7 @@
 [
   {
     "id": "citylab",
+    "lang": "german",
     "company": "CityLAB Berlin",
     "position": "AI/Full-Stack Entwickler",
     "hiringManager": "Hiring Manager",
@@ -20,6 +21,7 @@
   },
   {
     "id": "fixmycity",
+    "lang": "german",
     "company": "FixMyCity GmbH",
     "position": "Full-Stack Entwickler:in",
     "hiringManager": "Hiring Manager",

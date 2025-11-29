@@ -4,10 +4,11 @@ import { promises as fs } from "fs";
 import path from "path";
 import Link from "next/link";
 import matter from "gray-matter";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight, MessageCircle } from "lucide-react";
 import { CVData, CoverLetterData } from "@/lib/types/cv";
 import { CVHeader } from "@/components/cv-header";
 import { PageNavigation } from "@/components/page-navigation";
+import { t, type Language } from "@/lib/translations";
 
 // Load cover letter from markdown file
 async function getCoverLetterFromMarkdown(id: string): Promise<CoverLetterData | null> {
@@ -114,6 +115,8 @@ export default async function CoverLetterPage({
 
   const { theme, personal, coverLetter } = data;
   const accentColor = theme.accentColor;
+  const lang = (data.lang || "german") as Language;
+  const translations = t(lang);
 
   return (
     <div className={`min-h-screen bg-slate-100 print:py-0 print:bg-white ${isPdf ? 'py-0 bg-white!' : 'py-4 md:py-8'}`}>
@@ -123,7 +126,8 @@ export default async function CoverLetterPage({
         <CVHeader 
           personal={personal} 
           accentColor={accentColor} 
-          showTalkToMe={true} 
+          showTalkToMe={true}
+          lang={lang}
         />
 
         {/* Letter Content */}
@@ -227,7 +231,7 @@ export default async function CoverLetterPage({
 
       {/* Navigation to CV */}
       {!isPdf && (
-        <div className="mt-6 flex justify-center print:hidden">
+        <div className="mt-6 flex flex-wrap justify-center gap-3 print:hidden">
           <Link
             href={`/${id}/cv`}
             className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:scale-105"
@@ -237,7 +241,18 @@ export default async function CoverLetterPage({
             }}
           >
             <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-            Erfahre mehr über meinen Lebenslauf
+            {translations.learnMoreAboutCV}
+          </Link>
+          <Link
+            href={`/${id}/talk`}
+            className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:scale-105"
+            style={{ 
+              backgroundColor: `${accentColor}15`,
+              color: accentColor,
+            }}
+          >
+            {translations.chatToLearnMore}
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
           </Link>
         </div>
       )}
@@ -251,6 +266,7 @@ export default async function CoverLetterPage({
           accentColor={accentColor}
           hasCoverLetter={true}
           currentPage="cover-letter"
+          lang={lang}
         />
       )}
     </div>

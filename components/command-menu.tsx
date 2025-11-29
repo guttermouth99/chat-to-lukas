@@ -14,21 +14,25 @@ import {
 } from "@/components/ui/command";
 import { Kbd } from "@/components/ui/kbd";
 import { cn } from "@/lib/utils";
+import { t, type Language } from "@/lib/translations";
 
 interface CommandMenuProps {
   hasCoverLetter?: boolean;
   currentPage?: "cv" | "cover-letter" | "talk";
+  lang?: Language;
 }
 
 export function CommandMenu({
   hasCoverLetter = false,
   currentPage,
+  lang = "german",
 }: CommandMenuProps) {
   const [open, setOpen] = React.useState(false);
   const [isMac, setIsMac] = React.useState(true);
   const router = useRouter();
   const params = useParams();
   const jobId = params.id as string;
+  const translations = t(lang);
 
   React.useEffect(() => {
     // Detect platform
@@ -55,8 +59,8 @@ export function CommandMenu({
   const navigationItems = [
     {
       id: "cv",
-      label: "Lebenslauf",
-      description: "CV & Erfahrung ansehen",
+      label: translations.resume,
+      description: translations.resumeDescription,
       icon: FileText,
       href: `/${jobId}/cv`,
       shortcut: "1",
@@ -64,8 +68,8 @@ export function CommandMenu({
     },
     {
       id: "cover-letter",
-      label: "Anschreiben",
-      description: "Motivationsschreiben ansehen",
+      label: translations.coverLetter,
+      description: translations.coverLetterDescription,
       icon: ScrollText,
       href: `/${jobId}/cover-letter`,
       shortcut: "2",
@@ -73,8 +77,8 @@ export function CommandMenu({
     },
     {
       id: "talk",
-      label: "Chat",
-      description: "Mit mir chatten",
+      label: translations.chat,
+      description: translations.chatDescription,
       icon: MessageCircle,
       href: `/${jobId}/talk`,
       shortcut: "3",
@@ -124,20 +128,20 @@ export function CommandMenu({
       <CommandDialog
         open={open}
         onOpenChange={setOpen}
-        title="Navigation"
-        description="Navigieren Sie zu den verschiedenen Seiten"
+        title={translations.navigation}
+        description={translations.navigateToPages}
         showCloseButton={false}
         className="max-w-md overflow-hidden rounded-xl border-stone-200 bg-white/95 shadow-2xl backdrop-blur-xl sm:rounded-2xl"
       >
         <CommandInput
-          placeholder="Wohin möchten Sie navigieren?"
+          placeholder={translations.navigateToPages}
           className="border-none text-base"
         />
         <CommandList className="max-h-[320px] py-2">
           <CommandEmpty className="py-8 text-stone-500">
-            Keine Seiten gefunden.
+            {translations.noPages}
           </CommandEmpty>
-          <CommandGroup heading="Seiten" className="px-2">
+          <CommandGroup heading={translations.pages} className="px-2">
             {navigationItems.map((item) => {
               const Icon = item.icon;
               const isActive = currentPage === item.id;
@@ -197,16 +201,16 @@ export function CommandMenu({
               <span className="flex items-center gap-1">
                 <Kbd className="bg-white shadow-sm">↑</Kbd>
                 <Kbd className="bg-white shadow-sm">↓</Kbd>
-                <span className="ml-1">navigieren</span>
+                <span className="ml-1">{translations.navigate}</span>
               </span>
               <span className="flex items-center gap-1">
                 <Kbd className="bg-white shadow-sm">↵</Kbd>
-                <span className="ml-1">öffnen</span>
+                <span className="ml-1">{translations.open}</span>
               </span>
             </div>
             <span className="flex items-center gap-1">
               <Kbd className="bg-white shadow-sm">esc</Kbd>
-              <span className="ml-1">schließen</span>
+              <span className="ml-1">{translations.close}</span>
             </span>
           </div>
         </div>

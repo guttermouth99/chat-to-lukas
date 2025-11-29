@@ -3,7 +3,7 @@
 import { useActions, useUIState } from "@ai-sdk/rsc";
 import { useParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { Send } from "lucide-react";
+import { ArrowLeft, Send } from "lucide-react";
 import { generateId } from "ai";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -13,6 +13,7 @@ import { CommandMenu } from "@/components/command-menu";
 import profile from "@/lib/data/profile.json";
 import jobsToApply from "@/lib/data/jobs-to-apply.json";
 import type { ClientMessage } from "../actions";
+import { t, type Language } from "@/lib/translations";
 
 export const maxDuration = 30;
 
@@ -20,6 +21,8 @@ export default function TalkToMePage() {
   const params = useParams();
   const jobId = params.id as string;
   const job = jobsToApply.find((j) => j.id === jobId);
+  const lang = (job?.lang as Language) || "german";
+  const translations = t(lang);
   const bottomRef = useRef<HTMLDivElement>(null);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -93,10 +96,10 @@ export default function TalkToMePage() {
       <div className="flex min-h-svh items-center justify-center bg-stone-50">
         <div className="text-center">
           <h1 className="text-2xl font-semibold text-stone-900">
-            Job nicht gefunden
+            {translations.jobNotFound}
           </h1>
           <p className="mt-2 text-stone-600">
-            Diese Bewerbung existiert nicht.
+            {translations.jobNotFoundDescription}
           </p>
         </div>
       </div>
@@ -107,20 +110,29 @@ export default function TalkToMePage() {
     <div className="flex min-h-svh flex-col bg-stone-50">
       {/* Header */}
       <header className="border-b border-stone-200 bg-white px-4 py-3">
-        <div className="mx-auto flex max-w-2xl items-center gap-3">
-          <Avatar className="size-10">
-            <AvatarImage src={job.companyLogo} alt={job.company} />
-            <AvatarFallback>{job.company.charAt(0)}</AvatarFallback>
-          </Avatar>
-          <div className="min-w-0 flex-1">
-            <h1 className="truncate font-semibold text-stone-900">
-              Chat mit {profile.name}
-            </h1>
-            <p className="truncate text-sm text-stone-500">
-              {job.position} @ {job.company}
-            </p>
+        <div className="flex items-center gap-3">
+          <button
+            type="button"
+            onClick={() => window.history.back()}
+            className="flex size-10 items-center justify-center rounded-full text-stone-500 transition-colors hover:bg-stone-100 hover:text-stone-900"
+          >
+            <ArrowLeft className="size-5" />
+          </button>
+          <div className="mx-auto flex max-w-2xl flex-1 items-center gap-3">
+            <Avatar className="size-10">
+              <AvatarImage src={job.companyLogo} alt={job.company} />
+              <AvatarFallback>{job.company.charAt(0)}</AvatarFallback>
+            </Avatar>
+            <div className="min-w-0 flex-1">
+              <h1 className="truncate font-semibold text-stone-900">
+                {translations.chatWith} {profile.name}
+              </h1>
+              <p className="truncate text-sm text-stone-500">
+                {job.position} @ {job.company}
+              </p>
+            </div>
+            <CommandMenu hasCoverLetter={job.hasCoverLetter} currentPage="talk" lang={lang} />
           </div>
-          <CommandMenu hasCoverLetter={job.hasCoverLetter} currentPage="talk" />
         </div>
       </header>
 
@@ -134,19 +146,13 @@ export default function TalkToMePage() {
                 <AvatarFallback>{profile.name.charAt(0)}</AvatarFallback>
               </Avatar>
               <h2 className="mt-4 text-lg font-medium text-stone-900">
-                Hallo! Ich bin {profile.name}.
+                {translations.hello} {profile.name}.
               </h2>
               <p className="mx-auto mt-2 max-w-md text-stone-600">
-                Stellen Sie mir Fragen über meine Erfahrung, Skills und meine
-                Eignung für die Position als {job.position} bei {job.company}.
+                {translations.askMeQuestions} {job.position} {lang === "german" ? "bei" : "at"} {job.company}.
               </p>
               <div className="mt-6 flex flex-wrap justify-center gap-2">
-                {(job.defaultQuestions ?? [
-                  "Was sind deine Stärken?",
-                  "Erzähl mir von deiner Erfahrung",
-                  "Zeig mir deine Projekte",
-                  "Lass uns connecten!",
-                ]).map((suggestion) => (
+                {(job.defaultQuestions ?? translations.defaultQuestions).map((suggestion) => (
                   <button
                     key={suggestion}
                     type="button"
@@ -237,7 +243,7 @@ export default function TalkToMePage() {
           <Input
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Stellen Sie mir eine Frage..."
+            placeholder={translations.askQuestion}
             className="flex-1 rounded-full border-stone-300 bg-stone-50 px-4"
             disabled={isLoading}
           />
