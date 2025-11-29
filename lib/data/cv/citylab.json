@@ -1,80 +1,52 @@
 {
-  "name": "Lukas",
-  "avatar": "/lukas_avatar.jpeg",
-  "linkedin": "https://www.linkedin.com/in/lukas-s-186583a2",
-  "email": "lukas.stockburger@googlemail.com",
-  "phone": "+49 163 160 3074",
-  "title": "AI/Full-Stack Entwickler",
-  "summary": "Erfahrener Full-Stack Entwickler mit über 8 Jahren Erfahrung in der Entwicklung von Web-Anwendungen, digitalen Tools und KI-gestützten Systemen. Spezialisiert auf moderne Webtechnologien wie TypeScript, React, Node.js und die Integration von KI-Technologien (LLMs, NLP, Vektordatenbanken) in Produktionssysteme. Leidenschaftlich für gemeinwohlorientierte digitale Innovation und Open Source.",
-  "skills": {
-    "frontend": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Shadcn/ui", "Vue.js", "React Native"],
-    "backend": ["Node.js", "Express.js", "tRPC", "REST APIs", "GraphQL", "BullMQ", "Supabase"],
-    "databases": ["MongoDB", "PostgreSQL", "Prisma", "Typesense", "Weaviate"],
-    "ai_ml": ["AI SDK", "LLMs", "Prompt Engineering", "Vektordatenbanken", "NLP", "AI Agents", "MCP", "Automatisierte Klassifizierungssysteme"],
-    "devops": ["Docker", "Cloud-Infrastruktur", "CI/CD"],
-    "tools": ["Git", "Linear", "Jira", "Notion", "Cursor", "Claude", "ChatGPT", "Gemini"]
+  "theme": {
+    "accentColor": "#F64C72"
   },
-  "languages": {
-    "german": "Muttersprache",
-    "english": "Fließend"
+  "personal": {
+    "fullName": "Lukas Stockburger",
+    "workingTitle": "Full-Stack Entwickler & KI-Spezialist",
+    "avatar": "/lukas_avatar.jpeg",
+    "companyLogo": "/citylab_logo.jpg",
+    "companyName": "CityLAB Berlin",
+    "address": "Silbersteinstraße 124, 12051 Berlin",
+    "phone": "+49 163 160 3074",
+    "email": "lukas.stockburger@googlemail.com",
+    "birthday": "07.02.1990",
+    "linkedin": "linkedin.com/in/lukas-s-186583a2"
   },
-  "projects": [
-    {
-      "name": "baito",
-      "logo": "/projects/baito.svg",
-      "url": "https://getbaito.com",
-      "description": "Impact-Jobboard für nachhaltige und soziale Jobs. Eine moderne Plattform mit KI-gestützter Job-Klassifizierung, semantischer Suche und über 10.000 monatlich gecrawlten Karriereseiten.",
-      "highlights": [
-        "KI-basierte automatisierte Klassifizierungssysteme",
-        "Semantische Suche mit Vektordatenbanken",
-        "Skalierbare Docker-basierte Cloud-Infrastruktur"
-      ]
-    },
-    {
-      "name": "TalentAlert",
-      "logo": "/projects/talentalert.png",
-      "url": "https://talentalert.io",
-      "description": "Job-Newsletter Automatisierungsplattform. Verarbeitet über 7 Mio. User-Events monatlich und ermöglicht personalisierte Job-Alerts basierend auf individuellen Präferenzen.",
-      "highlights": [
-        "Verarbeitung von 7+ Mio. User-Events monatlich",
-        "Intelligente KI-Workflows und Automatisierung",
-        "Personalisierte Matching-Algorithmen"
-      ]
-    },
-    {
-      "name": "gebrauchtebuecher",
-      "logo": "/projects/gebrauchtebuecher.svg",
-      "url": "https://gebrauchtebuecher.com",
-      "description": "Preisvergleichsportal für gebrauchte Bücher. Aggregiert Angebote von verschiedenen Online-Händlern und hilft Nutzern, die besten Preise für Bücher zu finden."
-    }
-  ],
-  "experience": [
+  "labels": {
+    "profile": "Profil",
+    "workExperience": "Arbeitserfahrung",
+    "skills": "Fähigkeiten",
+    "education": "Ausbildung",
+    "languages": "Sprachen"
+  },
+  "profileSummary": "Erfahrener <strong>Full-Stack Entwickler & KI-Spezialist</strong> mit über 8 Jahren Expertise in der Entwicklung KI-gestützter Web-Anwendungen und digitaler Prototypen. Spezialisiert auf TypeScript, React, Node.js und Docker sowie LLM-basierte Datenverarbeitung, Vektor-Datenbanken und intelligente Automatisierungssysteme. Nachweisliche Erfahrung im Aufbau skalierbarer Datenpipelines und API-Architekturen. Leidenschaftlicher Verfechter von Open Source und gemeinwohlorientierten Technologien. Kombiniert technische Exzellenz mit Kommunikationsstärke und agilen Arbeitsmethoden.",
+  "workExperience": [
     {
       "period": "01/2022 – Heute",
       "title": "Co-Founder & Full-Stack Entwickler",
       "company": "baito UG",
-      "location": "Berlin, Deutschland",
-      "description": "Impact-Jobboard & Job-Newsletter Automatisierungsplattform (getbaito.com & talentalert.io)",
-      "highlights": [
-        "Design der API-Architektur und der gesamten Systemarchitektur für eine skalierbare, modulare Plattform",
-        "Aufbau der baito-Plattform mit Next.js, Tailwind, Shadcn, TypeScript, tRPC, TanStack, Typesense, Prisma & MongoDB",
-        "Architektur einer skalierbaren Docker-basierten Cloud-Infrastruktur, die monatlich ca. 10.000 Karriereseiten crawled und über 7 Mio. User-Events verarbeitet",
-        "Einsatz von KI-Tools (AI SDK, Cursor, Gemini, Claude, ChatGPT) zum Aufbau moderner AI-basierter automatisierter Klassifizierungssysteme und intelligenter Workflows",
-        "Aufbau automatisierter KI-Scraping-Pipelines, Daten Extraktions- und Anreicherungssysteme",
-        "Integration von Vektor-Datenbanken wie Weaviate und Typesense für semantische Suche, Ranking und Matching",
-        "Implementierung von Hintergrund-Jobs, Queues und asynchronen Workflows mit BullMQ"
+      "location": "Berlin",
+      "description": "Impact-Jobboard & Job-Newsletter Automatisierungsplattform – getbaito.com & talentalert.io",
+      "achievements": [
+        "Entwicklung KI-gestützter Klassifizierungssysteme mit LLMs für automatisierte Datenverarbeitung",
+        "Aufbau skalierbarer Datenpipelines: ~10.000 Karriereseiten/Monat crawlen & verarbeiten",
+        "Integration von Vektor-Datenbanken (Weaviate, Typesense) für semantische Suche & NLP",
+        "API-Architektur & Server-Infrastruktur mit TypeScript, Node.js, tRPC & Docker",
+        "Produktentwicklung mit React/Next.js, PostgreSQL (Prisma) & MongoDB",
+        "Prompt Engineering & KI-Agents für intelligente Workflows und Automatisierung"
       ]
     },
     {
       "period": "01/2016 – 2022",
       "title": "Product-Builder & Full-Stack Entwickler",
       "company": "Einzelunternehmer",
-      "location": "Deutschland",
-      "description": "Web-Entwicklung und Produktmanagement",
-      "highlights": [
-        "Eigenständige Entwicklung und Konzeption von rund 25 Webprojekten – von Informationsportalen bis hin zu Vergleichsportalen",
-        "Entwicklung von Frontend Systemen mit Next.js, Tailwind, Shadcn, tRPC und Redux",
-        "Entwicklung von Backend Systemen und Datenbanken mit Node.js, Express.js, REST, MongoDB, Web scraping, GraphQL und Prisma"
+      "location": "Berlin",
+      "achievements": [
+        "Eigenständige Konzeption & Entwicklung von ~25 digitalen Prototypen und Web-Tools",
+        "Full-Stack: React, Next.js, Node.js, REST-APIs, MongoDB, PostgreSQL",
+        "Agile Projektarbeit mit iterativer Entwicklung und schnellem Prototyping"
       ]
     },
     {
@@ -83,54 +55,122 @@
       "company": "Bærnholdt",
       "location": "Kopenhagen, Dänemark",
       "description": "Webagentur",
-      "highlights": [
-        "Erstellen von modernen Webapplikationen mit React Native, Vue.js, HTML5, CSS-in-JS, Webpack, REST und Microservices",
-        "SCRUM und Agile Software Entwicklung in Jira",
-        "Projekt Umsetzungen von Konzept zu Code via Wireframes und Prototypen"
+      "achievements": [
+        "Moderne Webapps mit React Native, Vue.js, HTML5, CSS-in-JS, Webpack",
+        "SCRUM & Agile Development in Jira"
       ]
     },
     {
       "period": "07/2017 – 02/2018",
       "title": "Frontend Entwickler",
       "company": "Airy GmbH",
-      "location": "Berlin, Deutschland",
+      "location": "Berlin",
       "description": "B2C Messenger",
-      "highlights": [
-        "Integration von Real-time Messaging mit Websockets",
-        "Test fokussierte Entwicklung mit Mocha.js"
+      "achievements": [
+        "Real-time Messaging mit Websockets",
+        "Test-fokussierte Entwicklung mit Mocha.js"
       ]
     },
     {
       "period": "11/2015 – 01/2017",
       "title": "Co-Founder",
       "company": "Sweeker UG",
-      "location": "Berlin, Deutschland",
+      "location": "Berlin",
       "description": "Sneaker Mobile Shopping App",
-      "highlights": [
-        "Entwicklung von Konzept und Business Model",
-        "Enge Zusammenarbeit mit Frontend und Backend Entwicklern"
+      "achievements": [
+        "Konzept & Business Model Entwicklung",
+        "Partnership Management mit Partnershops"
       ]
     },
     {
       "period": "04/2015 – 09/2015",
       "title": "Business Development Manager",
       "company": "GoButler GmbH",
-      "location": "Berlin, Deutschland",
-      "description": "Online Concierge-Service",
-      "highlights": [
-        "Strategische Zielsetzung und Planung",
-        "Leitung von 15 Mitarbeiter:innen"
+      "location": "Berlin",
+      "achievements": [
+        "Leitung von 15 Mitarbeiter:innen & Durchführung von Workshops",
+        "Strategische Planung, Prozessoptimierung & Stakeholder-Kommunikation"
       ]
     }
   ],
-  "relevantForPosition": {
-    "keySkills": [
-      "TypeScript, React, Node.js, Supabase, PostgreSQL, Docker",
-      "KI-Frameworks und LLM-Integration (AI SDK, Vektordatenbanken, NLP)",
-      "API-Architekturen und skalierbare Systeme",
-      "Agile Methoden und eigenverantwortliches Arbeiten"
-    ],
-    "whyGoodFit": "Mit über 8 Jahren Erfahrung in Full-Stack Entwicklung und einem starken Fokus auf KI-Integration bringe ich genau die Kombination aus technischer Expertise und praktischer Erfahrung mit, die das CityLAB sucht. Meine Arbeit an baito zeigt, wie ich komplexe KI-Systeme (LLMs, Vektordatenbanken, automatisierte Pipelines) in produktionsreife Anwendungen überführe. Die Vision, gemeinwohlorientierte digitale Innovation für Berlin voranzutreiben, deckt sich perfekt mit meinen Werten."
-  }
+  "skills": [
+    {
+      "name": "KI & Machine Learning",
+      "icon": "Brain",
+      "skills": "LLMs, NLP, Prompt Engineering, KI-Agents, Vektor-Datenbanken, Embeddings, AI-SDK, Datenklassifizierung"
+    },
+    {
+      "name": "AI Tooling & Prototyping",
+      "icon": "Sparkles",
+      "skills": "Cursor, V0, Claude, ChatGPT, Gemini, Figma, Stagehand, MCP"
+    },
+    {
+      "name": "Web Entwicklung",
+      "icon": "Globe",
+      "skills": "TypeScript, React, Next.js, Node.js, PostgreSQL, MongoDB, Prisma, tRPC, REST-APIs, BullMQ"
+    },
+    {
+      "name": "Infrastructure & DevOps",
+      "icon": "Server",
+      "skills": "Docker, Vercel, AWS, Hetzner, Datenpipelines, Scraping, git"
+    },
+    {
+      "name": "Agile & Kommunikation",
+      "icon": "Users",
+      "skills": "SCRUM, Agile Development, Jira, Workshop-Moderation, Stakeholder-Kommunikation"
+    },
+    {
+      "name": "Weitere Kompetenzen",
+      "icon": "Briefcase",
+      "skills": "Open Source, Design Thinking, Prototyping, Team Leadership"
+    }
+  ],
+  "awards": [
+    {
+      "skillIndex": 0,
+      "title": "OpenAI Award 2025",
+      "description": "10 Mrd. verarbeitete Tokens via API"
+    }
+  ],
+  "education": [
+    {
+      "period": "02/2018 – 04/2020",
+      "institution": "Copenhagen Business School",
+      "location": "Kopenhagen, Dänemark",
+      "degree": "Master in E-Business",
+      "thesis": "Masterarbeit: Blockchain-based Identity Management for Public Transportation (Publiziert)"
+    },
+    {
+      "period": "01/2014 – 06/2014",
+      "institution": "Universidad de los Andes",
+      "location": "Bogotá, Kolumbien",
+      "degree": "Auslandssemester Business Administration"
+    },
+    {
+      "period": "09/2011 – 09/2014",
+      "institution": "Maastricht University",
+      "location": "Maastricht, Niederlande",
+      "degree": "B.Sc. International Business"
+    },
+    {
+      "period": "09/2007 – 07/2010",
+      "institution": "Friedrich Fischer Schule",
+      "location": "Schweinfurt",
+      "degree": "Fachhochschulreife"
+    }
+  ],
+  "languages": [
+    {
+      "name": "Deutsch",
+      "level": 5
+    },
+    {
+      "name": "Englisch",
+      "level": 4
+    },
+    {
+      "name": "Spanisch",
+      "level": 2
+    }
+  ]
 }
-
