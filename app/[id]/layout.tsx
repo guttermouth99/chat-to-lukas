@@ -1,6 +1,6 @@
 import { AI } from "./ai";
 
-export default function TalkToMeLayout({
+export default function JobLayout({
   children,
 }: {
   children: React.ReactNode;

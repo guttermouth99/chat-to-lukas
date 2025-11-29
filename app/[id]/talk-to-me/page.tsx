@@ -11,7 +11,7 @@ import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import profile from "@/lib/data/profile.json";
 import jobsToApply from "@/lib/data/jobs-to-apply.json";
-import type { ClientMessage } from "./actions";
+import type { ClientMessage } from "../actions";
 
 export const maxDuration = 30;
 
@@ -253,3 +253,4 @@ export default function TalkToMePage() {
     </div>
   );
 }
+
