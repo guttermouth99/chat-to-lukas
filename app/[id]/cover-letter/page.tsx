@@ -7,6 +7,7 @@ import matter from "gray-matter";
 import { ArrowLeft } from "lucide-react";
 import { CVData, CoverLetterData } from "@/lib/types/cv";
 import { CVHeader } from "@/components/cv-header";
+import { StickyChatButton } from "@/components/sticky-chat-button";
 
 // Load cover letter from markdown file
 async function getCoverLetterFromMarkdown(id: string): Promise<CoverLetterData | null> {
@@ -239,6 +240,16 @@ export default async function CoverLetterPage({
             Erfahre mehr über meinen Lebenslauf
           </Link>
         </div>
+      )}
+
+      {/* Sticky Talk to Chatbot Button */}
+      {!isPdf && (
+        <StickyChatButton
+          id={id}
+          avatar={personal.avatar}
+          fullName={personal.fullName}
+          accentColor={accentColor}
+        />
       )}
     </div>
   );

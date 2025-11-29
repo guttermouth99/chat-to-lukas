@@ -106,7 +106,7 @@
       "skills": "PostgreSQL, PostGIS, MongoDB, Prisma ORM, Typesense"
     },
     {
-      "name": "AI Tools & Automatisierung",
+      "name": "AI Tooling",
       "icon": "Sparkles",
       "skills": "Vercel AI SDK, Copilot, Cursor, Claude, ChatGPT, automatisierte Datenpipelines"
     },
@@ -126,7 +126,13 @@
       "skills": "SCRUM, Agile Development, Git, eigenverantwortliches Arbeiten, offene Kommunikation"
     }
   ],
-  "awards": [],
+  "awards": [
+    {
+      "skillIndex": 0,
+      "title": "OpenAI Award 2025",
+      "description": "10 Mrd. verarbeitete Tokens via API"
+    }
+  ],
   "education": [
     {
       "period": "02/2018 – 04/2020",
@@ -146,12 +152,6 @@
       "institution": "Maastricht University",
       "location": "Maastricht, Niederlande",
       "degree": "B.Sc. International Business"
-    },
-    {
-      "period": "09/2007 – 07/2010",
-      "institution": "Friedrich Fischer Schule",
-      "location": "Schweinfurt",
-      "degree": "Fachhochschulreife"
     }
   ],
   "languages": [
