@@ -32,7 +32,7 @@ const iconMap: Record<string, LucideIcon> = {
 // Dynamic data loader
 async function getCVData(id: string): Promise<CVData | null> {
   try {
-    const data = await import(`@/lib/data/cv/${id}.json`);
+    const data = await import(`@/lib/data/${id}/application-data.json`);
     return data.default as CVData;
   } catch {
     return null;

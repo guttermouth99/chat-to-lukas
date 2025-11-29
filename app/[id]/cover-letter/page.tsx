@@ -1,13 +1,51 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { CVData } from "@/lib/types/cv";
+import { promises as fs } from "fs";
+import path from "path";
+import matter from "gray-matter";
+import { CVData, CoverLetterData } from "@/lib/types/cv";
 import { CVHeader } from "@/components/cv-header";
+
+// Load cover letter from markdown file
+async function getCoverLetterFromMarkdown(id: string): Promise<CoverLetterData | null> {
+  try {
+    const filePath = path.join(process.cwd(), "lib", "data", id, "motivational.md");
+    const fileContent = await fs.readFile(filePath, "utf-8");
+    const { data, content } = matter(fileContent);
+    
+    // Split content into paragraphs (separated by double newlines)
+    const paragraphs = content
+      .trim()
+      .split(/\n\n+/)
+      .filter((p) => p.trim().length > 0);
+    
+    return {
+      recipient: data.recipient,
+      date: data.date,
+      subject: data.subject,
+      greeting: data.greeting,
+      paragraphs,
+      closing: data.closing,
+      signature: data.signature,
+    };
+  } catch {
+    return null;
+  }
+}
 
 // Dynamic data loader
 async function getCVData(id: string): Promise<CVData | null> {
   try {
-    const data = await import(`@/lib/data/cv/${id}.json`);
-    return data.default as CVData;
+    const data = await import(`@/lib/data/${id}/application-data.json`);
+    const cvData = data.default as CVData;
+    
+    // Try to load cover letter from markdown file
+    const markdownCoverLetter = await getCoverLetterFromMarkdown(id);
+    if (markdownCoverLetter) {
+      cvData.coverLetter = markdownCoverLetter;
+    }
+    
+    return cvData;
   } catch {
     return null;
   }
@@ -56,7 +94,7 @@ export default async function CoverLetterPage({
         <CVHeader 
           personal={personal} 
           accentColor={accentColor} 
-          showTalkToMe={false} 
+          showTalkToMe={true} 
         />
 
         {/* Letter Content */}
