@@ -2,7 +2,9 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { promises as fs } from "fs";
 import path from "path";
+import Link from "next/link";
 import matter from "gray-matter";
+import { ArrowLeft } from "lucide-react";
 import { CVData, CoverLetterData } from "@/lib/types/cv";
 import { CVHeader } from "@/components/cv-header";
 
@@ -65,9 +67,31 @@ export async function generateMetadata({
     };
   }
 
+  const title = `${data.personal.fullName} × ${data.personal.companyName} - Anschreiben`;
+  const description = `Motivationsschreiben für die Bewerbung bei ${data.personal.companyName}`;
+
   return {
-    title: `${data.personal.fullName} - Anschreiben`,
-    description: `Anschreiben für ${data.personal.companyName}`,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      images: [
+        {
+          url: `/api/meta-images/cover-letter?id=${id}`,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [`/api/meta-images/cover-letter?id=${id}`],
+    },
   };
 }
 
@@ -194,6 +218,21 @@ export default async function CoverLetterPage({
             background: `linear-gradient(to right, ${accentColor}, ${accentColor}66, transparent)`,
           }}
         />
+      </div>
+
+      {/* Navigation to CV */}
+      <div className="mt-6 flex justify-center print:hidden">
+        <Link
+          href={`/${id}/cv`}
+          className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:scale-105"
+          style={{ 
+            backgroundColor: `${accentColor}15`,
+            color: accentColor,
+          }}
+        >
+          <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+          Erfahre mehr über meinen Lebenslauf
+        </Link>
       </div>
     </div>
   );

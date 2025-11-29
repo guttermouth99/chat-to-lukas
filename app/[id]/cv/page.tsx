@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import {
   Globe,
   Code,
@@ -13,6 +14,7 @@ import {
   UserCircle,
   Sparkles,
   MessageCircle,
+  ArrowRight,
   LucideIcon,
 } from "lucide-react";
 import { CVData, CVWorkExperience, CVEducation, CVAward } from "@/lib/types/cv";
@@ -53,9 +55,31 @@ export async function generateMetadata({
     };
   }
 
+  const title = `${data.personal.fullName} × ${data.personal.companyName} - Lebenslauf`;
+  const description = `${data.personal.workingTitle} - Bewerbung bei ${data.personal.companyName}`;
+
   return {
-    title: `${data.personal.fullName} - CV`,
-    description: data.personal.workingTitle,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "profile",
+      images: [
+        {
+          url: `/api/meta-images/cv?id=${id}`,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [`/api/meta-images/cv?id=${id}`],
+    },
   };
 }
 
@@ -419,6 +443,21 @@ export default async function CVPage({
             )}
           </div>
         </main>
+      </div>
+
+      {/* Navigation to Cover Letter */}
+      <div className="mt-6 flex justify-center print:hidden">
+        <Link
+          href={`/${id}/cover-letter`}
+          className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:scale-105"
+          style={{ 
+            backgroundColor: `${accentColor}15`,
+            color: accentColor,
+          }}
+        >
+          Erfahre mehr über meine Motivation
+          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+        </Link>
       </div>
     </div>
   );
