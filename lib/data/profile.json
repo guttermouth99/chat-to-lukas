@@ -18,6 +18,14 @@
     "german": "Muttersprache",
     "english": "Fließend"
   },
+  "awards": [
+    {
+      "name": "OpenAI Award",
+      "year": "2024",
+      "description": "baito wurde von OpenAI als eines der innovativsten KI-Projekte im Bereich nachhaltiger Jobvermittlung ausgezeichnet.",
+      "video": "/openai-award.mov"
+    }
+  ],
   "projects": [
     {
       "name": "baito",

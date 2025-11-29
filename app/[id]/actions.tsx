@@ -7,6 +7,7 @@ import { ReactNode } from "react";
 import { z } from "zod";
 import { ContactCard } from "@/components/linkedin-connect";
 import { ProjectsCard } from "@/components/projects-card";
+import { VideoCard } from "@/components/video-card";
 import profile from "@/lib/data/profile.json";
 import jobsToApply from "@/lib/data/jobs-to-apply.json";
 
@@ -49,6 +50,11 @@ LinkedIn: ${profile.linkedin}
 ### Sprachen
 - Deutsch: ${profile.languages.german}
 - Englisch: ${profile.languages.english}
+
+### Auszeichnungen
+${profile.awards
+  .map((a) => `- **${a.name}** (${a.year}): ${a.description}`)
+  .join("\n")}
 
 ### Berufserfahrung
 ${profile.experience
@@ -95,7 +101,13 @@ Du hast Zugriff auf folgende Tools:
 **showProjects**: Zeigt eine Übersicht aller Projekte. Verwende es wenn:
 - Der Nutzer nach Projekten, Portfolio oder Arbeitsproben fragt
 - Der Nutzer nach baito, talentalert oder gebrauchtebuecher fragt
-- Der Nutzer wissen möchte, was der Kandidat gebaut hat`;
+- Der Nutzer wissen möchte, was der Kandidat gebaut hat
+
+**showOpenAIAward**: Zeigt ein Video des OpenAI Awards. Verwende es wenn:
+- Der Nutzer nach dem OpenAI Award oder der Auszeichnung fragt
+- Der Nutzer nach Awards, Preisen oder Auszeichnungen fragt
+- Der Nutzer wissen möchte, ob der Kandidat Auszeichnungen erhalten hat
+- Der Nutzer nach Erfolgen oder Achievements fragt`;
 }
 
 export async function continueConversation(
@@ -174,6 +186,33 @@ export async function continueConversation(
                 Hier sind einige meiner wichtigsten Projekte, die ich entwickelt habe:
               </p>
               <ProjectsCard projects={profile.projects} />
+            </div>
+          );
+        },
+      },
+      showOpenAIAward: {
+        description:
+          "Zeigt ein Video des OpenAI Awards an. Verwende dieses Tool wenn der Nutzer nach dem OpenAI Award, Auszeichnungen, Preisen, Awards, Erfolgen oder Achievements fragt.",
+        inputSchema: z.object({}),
+        generate: async () => {
+          history.done((messages: ServerMessage[]) => [
+            ...messages,
+            {
+              role: "assistant",
+              content: `Hier ist mein OpenAI Award:`,
+            },
+          ]);
+
+          return (
+            <div className="space-y-3">
+              <p className="text-[15px] leading-relaxed">
+                Ja, baito wurde von OpenAI ausgezeichnet! Hier ist ein kurzer Clip von der Preisverleihung:
+              </p>
+              <VideoCard
+                src="/openai-award.mov"
+                title="OpenAI Award"
+                description="baito wurde von OpenAI als eines der innovativsten KI-Projekte im Bereich nachhaltiger Jobvermittlung ausgezeichnet."
+              />
             </div>
           );
         },
