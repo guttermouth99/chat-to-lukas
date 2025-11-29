@@ -252,10 +252,14 @@ function LanguageBar({ name, level, accentColor }: LanguageBarProps) {
 
 export default async function CVPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ id: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   const { id } = await params;
+  const { pdf } = await searchParams;
+  const isPdf = pdf === 'true';
   const data = await getCVData(id);
 
   if (!data) {
@@ -278,9 +282,9 @@ export default async function CVPage({
   );
 
   return (
-    <div className="min-h-screen bg-slate-100 py-8 print:py-0 print:bg-white">
+    <div className={`min-h-screen bg-slate-100  print:py-0 print:bg-white ${isPdf ? 'py-0 !bg-white' : 'py-8'}`}>
       {/* A4 Paper Container */}
-      <div className="mx-auto w-[210mm] min-h-[297mm] bg-white shadow-2xl print:shadow-none overflow-hidden">
+      <div className={`mx-auto w-[210mm] min-h-[297mm] bg-white shadow-2xl print:shadow-none overflow-hidden ${isPdf ? 'shadow-none' : ''}`}>
         {/* Header */}
         <CVHeader personal={personal} accentColor={accentColor} />
 
@@ -446,19 +450,21 @@ export default async function CVPage({
       </div>
 
       {/* Navigation to Cover Letter */}
-      <div className="mt-6 flex justify-center print:hidden">
-        <Link
-          href={`/${id}/cover-letter`}
-          className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:scale-105"
-          style={{ 
-            backgroundColor: `${accentColor}15`,
-            color: accentColor,
-          }}
-        >
-          Erfahre mehr über meine Motivation
-          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-        </Link>
-      </div>
+      {!isPdf && (
+        <div className="mt-6 flex justify-center print:hidden">
+          <Link
+            href={`/${id}/cover-letter`}
+            className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:scale-105"
+            style={{ 
+              backgroundColor: `${accentColor}15`,
+              color: accentColor,
+            }}
+          >
+            Erfahre mehr über meine Motivation
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+          </Link>
+        </div>
+      )}
     </div>
   );
 }

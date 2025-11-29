@@ -66,13 +66,14 @@ export default function Home() {
               className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
             >
               <div className="mb-4 flex items-center gap-3">
-                <Image
-                  src={app.logo}
-                  alt={app.name}
-                  width={40}
-                  height={40}
-                  className="rounded-lg"
-                />
+                <div className="relative h-10 w-10 shrink-0">
+                  <Image
+                    src={app.logo}
+                    alt={app.name}
+                    fill
+                    className="rounded-lg object-contain"
+                  />
+                </div>
                 <div>
                   <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
                     {app.name}
