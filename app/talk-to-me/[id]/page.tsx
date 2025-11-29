@@ -141,12 +141,12 @@ export default function TalkToMePage() {
                 Eignung für die Position als {job.position} bei {job.company}.
               </p>
               <div className="mt-6 flex flex-wrap justify-center gap-2">
-                {[
+                {(job.defaultQuestions ?? [
                   "Was sind deine Stärken?",
                   "Erzähl mir von deiner Erfahrung",
                   "Zeig mir deine Projekte",
                   "Lass uns connecten!",
-                ].map((suggestion) => (
+                ]).map((suggestion) => (
                   <button
                     key={suggestion}
                     type="button"
