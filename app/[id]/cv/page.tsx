@@ -89,19 +89,19 @@ function ExperienceItem({ experience, accentColor }: ExperienceItemProps) {
 
       <div className="space-y-2">
         <p
-          className="text-[10px] font-medium tracking-wider uppercase"
+          className="text-[11px] font-medium tracking-wider uppercase"
           style={{ color: accentColor }}
         >
           {experience.period}
         </p>
-        <h3 className="text-sm font-semibold text-slate-900">
+        <h3 className="text-[15px] font-semibold text-slate-900">
           {experience.title}
         </h3>
-        <p className="text-xs text-slate-600">
+        <p className="text-[13px] text-slate-600">
           {experience.company} · {experience.location}
         </p>
         {experience.description && (
-          <p className="text-[10px] text-slate-500 italic">
+          <p className="text-xs text-slate-500 italic">
             {experience.description}
           </p>
         )}
@@ -109,7 +109,7 @@ function ExperienceItem({ experience, accentColor }: ExperienceItemProps) {
           {experience.achievements.map((achievement, index) => (
             <li
               key={index}
-              className="text-[10px] text-slate-600 leading-relaxed flex items-start gap-1.5"
+              className="text-xs text-slate-600 leading-relaxed flex items-start gap-1.5"
             >
               <span className="mt-0.5" style={{ color: accentColor }}>
                 ›
@@ -140,11 +140,11 @@ function SkillCategory({
     <div className="space-y-1">
       <div className="flex items-center gap-1.5">
         <span style={{ color: accentColor }}>{icon}</span>
-        <h4 className="text-[10px] font-semibold text-slate-800 uppercase tracking-wide">
+        <h4 className="text-[11px] font-semibold text-slate-800 uppercase tracking-wide">
           {title}
         </h4>
       </div>
-      <p className="text-[10px] text-slate-600 leading-relaxed">{skills}</p>
+      <p className="text-[11px] text-slate-600 leading-relaxed">{skills}</p>
     </div>
   );
 }
@@ -165,12 +165,12 @@ function AwardBadge({ award, accentColor }: AwardBadgeProps) {
       }}
     >
       <div className="flex items-center gap-1.5">
-        <Award className="w-3 h-3" style={{ color: accentColor }} />
-        <p className="text-[9px] font-semibold" style={{ color: accentColor }}>
+        <Award className="w-3.5 h-3.5" style={{ color: accentColor }} />
+        <p className="text-[11px] font-semibold" style={{ color: accentColor }}>
           {award.title}
         </p>
       </div>
-      <p className="text-[9px] mt-0.5" style={{ color: accentColor }}>
+      <p className="text-[10px] mt-0.5" style={{ color: accentColor }}>
         {award.description}
       </p>
     </div>
@@ -186,18 +186,18 @@ function EducationItem({ education, accentColor }: EducationItemProps) {
   return (
     <div className="space-y-1">
       <p
-        className="text-[10px] font-medium tracking-wider uppercase"
+        className="text-[11px] font-medium tracking-wider uppercase"
         style={{ color: accentColor }}
       >
         {education.period}
       </p>
-      <h4 className="text-xs font-semibold text-slate-900">
+      <h4 className="text-[13px] font-semibold text-slate-900">
         {education.institution}
       </h4>
-      <p className="text-[10px] text-slate-600">{education.location}</p>
-      <p className="text-[10px] text-slate-700">{education.degree}</p>
+      <p className="text-[11px] text-slate-600">{education.location}</p>
+      <p className="text-[11px] text-slate-700">{education.degree}</p>
       {education.thesis && (
-        <p className="text-[10px] text-slate-500 italic mt-1">
+        <p className="text-[11px] text-slate-500 italic mt-1">
           {education.thesis}
         </p>
       )}
@@ -214,12 +214,12 @@ interface LanguageBarProps {
 function LanguageBar({ name, level, accentColor }: LanguageBarProps) {
   return (
     <div className="flex items-center justify-between">
-      <span className="text-[10px] text-slate-700">{name}</span>
+      <span className="text-[11px] text-slate-700">{name}</span>
       <div className="flex gap-0.5">
         {[...Array(5)].map((_, i) => (
           <div
             key={i}
-            className="w-2.5 h-2.5 rounded-full"
+            className="w-3 h-3 rounded-full"
             style={{
               backgroundColor: i < level ? accentColor : "#e2e8f0",
             }}
@@ -395,11 +395,11 @@ export default async function CVPage({
               </div>
             </div>
             <div className="flex-1">
-              <h2 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-2">
+              <h2 className="text-[13px] font-bold text-slate-900 uppercase tracking-wider mb-2">
                 {labels.profile}
               </h2>
               <p
-                className="text-[11px] text-slate-700 leading-relaxed"
+                className="text-xs text-slate-700 leading-relaxed"
                 dangerouslySetInnerHTML={{
                   __html: profileSummary.replace(
                     /<strong>/g,
@@ -417,7 +417,7 @@ export default async function CVPage({
           <div className="px-8 py-6 border-r border-slate-100">
             <div className="flex items-center gap-2 mb-4">
               <Briefcase className="w-4 h-4" style={{ color: accentColor }} />
-              <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider">
+              <h2 className="text-[15px] font-bold text-slate-900 uppercase tracking-wider">
                 {labels.workExperience}
               </h2>
             </div>
@@ -439,7 +439,7 @@ export default async function CVPage({
             <div className="mb-6">
               <div className="flex items-center gap-2 mb-4">
                 <Code className="w-4 h-4" style={{ color: accentColor }} />
-                <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider">
+                <h2 className="text-[13px] font-bold text-slate-900 uppercase tracking-wider">
                   {labels.skills}
                 </h2>
               </div>
@@ -475,7 +475,7 @@ export default async function CVPage({
                   className="w-4 h-4"
                   style={{ color: accentColor }}
                 />
-                <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider">
+                <h2 className="text-[13px] font-bold text-slate-900 uppercase tracking-wider">
                   {labels.education}
                 </h2>
               </div>
@@ -495,7 +495,7 @@ export default async function CVPage({
             <div>
               <div className="flex items-center gap-2 mb-3">
                 <Languages className="w-4 h-4" style={{ color: accentColor }} />
-                <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider">
+                <h2 className="text-[13px] font-bold text-slate-900 uppercase tracking-wider">
                   {labels.languages}
                 </h2>
               </div>
