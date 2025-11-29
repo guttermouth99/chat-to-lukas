@@ -9,6 +9,7 @@
       "background": "#F64C72",
       "foreground": "#FFFFFF"
     },
+    "hasCoverLetter": true,
     "defaultQuestions": [
       "Welche Erfahrung hast du mit KI/LLMs?",
       "Erzähl mir von deinen Full-Stack Projekten",
@@ -27,6 +28,7 @@
       "background": "#1E5C4F",
       "foreground": "#FFFFFF"
     },
+    "hasCoverLetter": true,
     "defaultQuestions": [
       "Welche Erfahrung hast du mit Next.js und TypeScript?",
       "Erzähl mir von deinen Projekten mit Geodaten",

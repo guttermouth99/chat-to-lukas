@@ -2,8 +2,9 @@
 
 import { useActions, useUIState } from "@ai-sdk/rsc";
 import { useParams } from "next/navigation";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { Send } from "lucide-react";
+import { Send, FileText, ScrollText } from "lucide-react";
 import { generateId } from "ai";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -118,6 +119,24 @@ export default function TalkToMePage() {
             <p className="truncate text-sm text-stone-500">
               {job.position} @ {job.company}
             </p>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <Link
+              href={`/${jobId}/cv`}
+              className="inline-flex items-center gap-1.5 rounded-full border border-stone-200 bg-stone-50 px-3 py-1.5 text-xs font-medium text-stone-600 transition-colors hover:border-stone-300 hover:bg-stone-100"
+            >
+              <FileText className="size-3.5" />
+              <span className="hidden sm:inline">Lebenslauf</span>
+            </Link>
+            {job.hasCoverLetter && (
+              <Link
+                href={`/${jobId}/cover-letter`}
+                className="inline-flex items-center gap-1.5 rounded-full border border-stone-200 bg-stone-50 px-3 py-1.5 text-xs font-medium text-stone-600 transition-colors hover:border-stone-300 hover:bg-stone-100"
+              >
+                <ScrollText className="size-3.5" />
+                <span className="hidden sm:inline">Anschreiben</span>
+              </Link>
+            )}
           </div>
         </div>
       </header>
