@@ -1,0 +1,100 @@
+---
+alwaysApply: true
+---
+
+Bitte verwende dies immer als Grundlage für meinen CV. Passe den cv immer auf den jeweiligen Job etwas an.
+
+Arbeitserfahrung
+
+01/2022 – Heute	Co-Founder & Full-Stack Entwickler
+baito UG, Berlin, Deutschland
+	 Impact-Jobboard & Job-Newsletter Automatisierungsplattform
+                                                    getbaito.com & talentalert.io 
+
+
+Management aller Unternehmensabläufe, Produktstrategie und -entwicklung
+Design der API-Architektur und der gesamten Systemarchitektur für eine skalierbare, modulare Plattform
+Aufbau der baito-Plattform mit Next.js, Tailwind, Shadcn, TypeScript, tRPC, TanStack, Typesense, Prisma & MongoDB
+Architektur einer skalierbaren Docker-basierten Cloud-Infrastruktur, die monatlich ca. 10.000 Karriereseiten crawled und über 7 Mio. User-Events verarbeitet.
+Implementierung von Hintergrund-Jobs, Queues und asynchronen Workflows mit BullMQ
+Entwicklung moderner Benutzeroberflächen (UIs) mit React, Tailwind CSS & shadcn/ui
+Einsatz von KI-Tools (AI SDK, Cursor, Gemini, Claude, ChatGPT) zum Aufbau moderner AI-basierter automatisierter Klassifizierungssysteme, intelligenter Workflows und Entwickler Automatisierung
+Aufbau automatisierter KI-Scraping-Pipelines, Daten Extraktions- und Anreicherungssysteme
+Multi-Tenant Authentifizierung mit Clerk und Better Auth
+User Analytics mit Posthog und Plausible
+Management von Partnerschaften, API integrationen und das entwickeln von externen REST-APIs
+Integration von Vektor-Datenbanken wie Weaviate und Typesense für semantische Suche, Ranking und Matching
+Erstellung wiederverwendbarer Design-Systeme, Komponentenbibliotheken und UX-Flows
+Management von Content-Pipelines und Integration von Headless-CMS-Tools
+Sicherstellung von SEO, Performance-Optimierung, Caching, Analytics und Plattform Wachstum
+Überwachung der Produkt-Roadmap, Feature-Entwicklung und strategische Planung
+
+
+01/2016 – 2022	Product-Builder & Full-Stack Entwickler
+	Einzelunternehmer
+Web-Entwicklung und Produktmanagement 
+
+Eigenständige Entwicklung und Konzeption von rund 25 Webprojekten – von Informationsportalen, Wohnkabinen-Berater, Online-Foto-Restaurierung bis hin zu Vergleichsportalen wie z. B. gebrauchtebuecher.com
+Entwicklung von Frontend Systemen mit Next.js, Tailwind, Shadcn, tRPC und Redux
+Entwicklung von Backend Systemen und Datenbanken mit Node.js, Express.js, REST, MongoDB, Web scraping, GraphQL und Prisma
+Konzeption von Prototypen und Design
+Projektmanagement mit Linear, Trello und Notion
+Versionskontrolle mit .Git.
+
+
+
+
+
+
+
+
+02/2018 – 09/2020	 Frontend Entwickler
+Bærnholdt, Kopenhagen, Dänemark
+Webagentur
+
+Erstellen von modernen Webapplikationen mit: React Native, Vue.js, HTML5, CSS-in-JS, Webpack, REST und microservices.
+Projektzusammenarbeit via .git
+SCRUM und Agile Software Entwicklung in Jira
+Projekt Umsetzungen von Konzept zu Code via Wireframes und Prototypen
+Kollaboration mit Backend Team
+Design von Mock-ups und Prototypen
+Dokumentation und Produktspezifikation von Projekten
+
+07/2017 – 02/2018	 Frontend Entwickler
+Airy GmbH, Berlin, Deutschland
+B2C Messenger
+
+Zusammenarbeit über .git
+Integration von real-time messaging mit Hilfe von Websockets
+Enge Zusammenarbeit mit Mobile und Web entwicklung
+Test fokussierte Entwicklung mit Motcha.js
+Entwicklung und Auswertung von Meilensteinen
+Erstellen von Design mock-ups und Prototypen
+Erstellen von User-stories
+
+11/2015 – 01/2017	 Co-Founder
+Sweeker UG, Berlin, Deutschland	
+Sneaker Mobile Shopping App
+			
+Entwicklung von Konzept und Business Model
+Enge Zusammenarbeit mit Frontend und Backend Entwicklern
+Partnership Management mit Partnershops
+
+
+
+
+
+
+04/2015 – 09/2015	 Business Development Manager
+GoButler GmbH, Berlin, Deutschland
+Online Concierge-Service
+
+Betreuung und Konzeption von wöchentlichen “Think Tanks”
+Prozessoptimierungen
+Strategische Zielsetzung und Planung
+Leitung von 15 Mitarbeiter:innen
+
+
+
+09/2014 – 11/2014		Helpling GmbH, Berlin, Deutschland
+				Praktikum Online Marketing
