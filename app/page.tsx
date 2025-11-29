@@ -6,10 +6,10 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "HireLukas - Bewerbungen",
-  description: "Lernt mich jetzt besser kennen - Bewerbungen von Lukas Stockburger",
+  description: "Lernt mich jetzt besser kennen - Full-Stack Entwickler mit Gründungserfahrung",
   openGraph: {
-    title: "HireLukas",
-    description: "Lernt mich jetzt besser kennen",
+    title: "Hire Lukas Stockburger",
+    description: "Lernt mich jetzt besser kennen - Full-Stack Entwickler mit Gründungserfahrung",
     images: [
       {
         url: "/api/meta-images/index",
