@@ -8,7 +8,7 @@ export const env = createEnv({
    * Will throw if you access these variables on the client.
    */
   server: {
-    AI_GATEWAY_API_KEY: z.string().min(1),
+    GOOGLE_GENERATIVE_AI_API_KEY: z.string().min(1),
   },
   /*
    * Environment variables available on the client (and server).
@@ -25,6 +25,6 @@ export const env = createEnv({
    * 💡 You'll get type errors if not all variables from `server` & `client` are included here.
    */
   runtimeEnv: {
-    AI_GATEWAY_API_KEY: process.env.AI_GATEWAY_API_KEY,
+    GOOGLE_GENERATIVE_AI_API_KEY: process.env.GOOGLE_GENERATIVE_AI_API_KEY,
   },
 });

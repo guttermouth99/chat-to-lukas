@@ -1,0 +1,103 @@
+{
+  "name": "Lukas",
+  "avatar": "/lukas_avatar.jpeg",
+  "title": "Co-Founder & Full-Stack Developer",
+  "summary": "Erfahrener Full-Stack Entwickler mit über 8 Jahren Erfahrung in der Entwicklung von Web-Anwendungen, digitalen Tools und KI-gestützten Systemen. Spezialisiert auf moderne Webtechnologien, skalierbare Architekturen und die Integration von KI-Technologien in Produktionssysteme.",
+  "skills": {
+    "frontend": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Shadcn/ui", "Vue.js", "React Native"],
+    "backend": ["Node.js", "Express.js", "tRPC", "REST APIs", "GraphQL", "BullMQ"],
+    "databases": ["MongoDB", "PostgreSQL", "Prisma", "Typesense", "Weaviate"],
+    "ai_ml": ["AI SDK", "LLMs", "Prompt Engineering", "Vektordatenbanken", "NLP", "Automatisierte Klassifizierungssysteme", "AI Agents"],
+    "devops": ["Docker", "Cloud-Infrastruktur", "CI/CD"],
+    "tools": ["Git", "Linear", "Jira", "Notion", "Cursor", "Claude", "ChatGPT", "Gemini"]
+  },
+  "languages": {
+    "german": "Muttersprache",
+    "english": "Fließend"
+  },
+  "experience": [
+    {
+      "period": "01/2022 – Heute",
+      "title": "Co-Founder & Full-Stack Entwickler",
+      "company": "baito UG",
+      "location": "Berlin, Deutschland",
+      "description": "Impact-Jobboard & Job-Newsletter Automatisierungsplattform (getbaito.com & talentalert.io)",
+      "highlights": [
+        "Management aller Unternehmensabläufe, Produktstrategie und -entwicklung",
+        "Design der API-Architektur und der gesamten Systemarchitektur für eine skalierbare, modulare Plattform",
+        "Aufbau der baito-Plattform mit Next.js, Tailwind, Shadcn, TypeScript, tRPC, TanStack, Typesense, Prisma & MongoDB",
+        "Architektur einer skalierbaren Docker-basierten Cloud-Infrastruktur, die monatlich ca. 10.000 Karriereseiten crawled und über 7 Mio. User-Events verarbeitet",
+        "Implementierung von Hintergrund-Jobs, Queues und asynchronen Workflows mit BullMQ",
+        "Einsatz von KI-Tools (AI SDK, Cursor, Gemini, Claude, ChatGPT) zum Aufbau moderner AI-basierter automatisierter Klassifizierungssysteme und intelligenter Workflows",
+        "Aufbau automatisierter KI-Scraping-Pipelines, Daten Extraktions- und Anreicherungssysteme",
+        "Integration von Vektor-Datenbanken wie Weaviate und Typesense für semantische Suche, Ranking und Matching",
+        "Sicherstellung von SEO, Performance-Optimierung, Caching, Analytics und Plattform Wachstum"
+      ]
+    },
+    {
+      "period": "01/2016 – 2022",
+      "title": "Product-Builder & Full-Stack Entwickler",
+      "company": "Einzelunternehmer",
+      "location": "Deutschland",
+      "description": "Web-Entwicklung und Produktmanagement",
+      "highlights": [
+        "Eigenständige Entwicklung und Konzeption von rund 25 Webprojekten – von Informationsportalen bis hin zu Vergleichsportalen",
+        "Entwicklung von Frontend Systemen mit Next.js, Tailwind, Shadcn, tRPC und Redux",
+        "Entwicklung von Backend Systemen und Datenbanken mit Node.js, Express.js, REST, MongoDB, Web scraping, GraphQL und Prisma",
+        "Konzeption von Prototypen und Design"
+      ]
+    },
+    {
+      "period": "02/2018 – 09/2020",
+      "title": "Frontend Entwickler",
+      "company": "Bærnholdt",
+      "location": "Kopenhagen, Dänemark",
+      "description": "Webagentur",
+      "highlights": [
+        "Erstellen von modernen Webapplikationen mit React Native, Vue.js, HTML5, CSS-in-JS, Webpack, REST und Microservices",
+        "SCRUM und Agile Software Entwicklung in Jira",
+        "Projekt Umsetzungen von Konzept zu Code via Wireframes und Prototypen",
+        "Design von Mock-ups und Prototypen"
+      ]
+    },
+    {
+      "period": "07/2017 – 02/2018",
+      "title": "Frontend Entwickler",
+      "company": "Airy GmbH",
+      "location": "Berlin, Deutschland",
+      "description": "B2C Messenger",
+      "highlights": [
+        "Integration von Real-time Messaging mit Websockets",
+        "Test fokussierte Entwicklung mit Mocha.js",
+        "Erstellen von Design Mock-ups und Prototypen",
+        "Erstellen von User-stories"
+      ]
+    },
+    {
+      "period": "11/2015 – 01/2017",
+      "title": "Co-Founder",
+      "company": "Sweeker UG",
+      "location": "Berlin, Deutschland",
+      "description": "Sneaker Mobile Shopping App",
+      "highlights": [
+        "Entwicklung von Konzept und Business Model",
+        "Enge Zusammenarbeit mit Frontend und Backend Entwicklern",
+        "Partnership Management mit Partnershops"
+      ]
+    },
+    {
+      "period": "04/2015 – 09/2015",
+      "title": "Business Development Manager",
+      "company": "GoButler GmbH",
+      "location": "Berlin, Deutschland",
+      "description": "Online Concierge-Service",
+      "highlights": [
+        "Betreuung und Konzeption von wöchentlichen Think Tanks",
+        "Prozessoptimierungen",
+        "Strategische Zielsetzung und Planung",
+        "Leitung von 15 Mitarbeiter:innen"
+      ]
+    }
+  ]
+}
+
