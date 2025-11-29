@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { promises as fs } from "fs";
+import path from "path";
 import {
   Globe,
   Code,
@@ -32,11 +34,30 @@ const iconMap: Record<string, LucideIcon> = {
   Code,
 };
 
+// Check if cover letter exists (either in JSON or as markdown file)
+async function hasCoverLetterContent(id: string, cvData: CVData): Promise<boolean> {
+  // Check if coverLetter exists in JSON
+  if (cvData.coverLetter) {
+    return true;
+  }
+  
+  // Check if motivational.md exists
+  try {
+    const filePath = path.join(process.cwd(), "lib", "data", id, "motivational.md");
+    await fs.access(filePath);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 // Dynamic data loader
-async function getCVData(id: string): Promise<CVData | null> {
+async function getCVData(id: string): Promise<{ data: CVData; hasCoverLetter: boolean } | null> {
   try {
     const data = await import(`@/lib/data/${id}/application-data.json`);
-    return data.default as CVData;
+    const cvData = data.default as CVData;
+    const hasCoverLetter = await hasCoverLetterContent(id, cvData);
+    return { data: cvData, hasCoverLetter };
   } catch {
     return null;
   }
@@ -48,14 +69,15 @@ export async function generateMetadata({
   params: Promise<{ id: string }>;
 }): Promise<Metadata> {
   const { id } = await params;
-  const data = await getCVData(id);
+  const result = await getCVData(id);
 
-  if (!data) {
+  if (!result) {
     return {
       title: "CV Not Found",
     };
   }
 
+  const { data } = result;
   const title = `${data.personal.fullName} × ${data.personal.companyName} - Lebenslauf`;
   const description = `${data.personal.workingTitle} - Bewerbung bei ${data.personal.companyName}`;
 
@@ -261,12 +283,13 @@ export default async function CVPage({
   const { id } = await params;
   const { pdf } = await searchParams;
   const isPdf = pdf === 'true';
-  const data = await getCVData(id);
+  const result = await getCVData(id);
 
-  if (!data) {
+  if (!result) {
     notFound();
   }
 
+  const { data, hasCoverLetter } = result;
   const { theme, personal, labels, profileSummary, workExperience, skills, awards, education, languages } = data;
   const accentColor = theme.accentColor;
 
@@ -451,7 +474,7 @@ export default async function CVPage({
       </div>
 
       {/* Navigation to Cover Letter */}
-      {!isPdf && (
+      {!isPdf && hasCoverLetter && (
         <div className="mt-6 flex justify-center print:hidden">
           <Link
             href={`/${id}/cover-letter`}
@@ -474,7 +497,7 @@ export default async function CVPage({
           avatar={personal.avatar}
           fullName={personal.fullName}
           accentColor={accentColor}
-          hasCoverLetter={!!data.coverLetter}
+          hasCoverLetter={hasCoverLetter}
           currentPage="cv"
         />
       )}
