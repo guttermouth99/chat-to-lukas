@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import { CVData, CVWorkExperience, CVEducation, CVAward } from "@/lib/types/cv";
 import { CVHeader } from "@/components/cv-header";
-import { StickyChatButton } from "@/components/sticky-chat-button";
+import { PageNavigation } from "@/components/page-navigation";
 
 // Icon map to convert string names to Lucide components
 const iconMap: Record<string, LucideIcon> = {
@@ -467,13 +467,15 @@ export default async function CVPage({
         </div>
       )}
 
-      {/* Sticky Talk to Chatbot Button */}
+      {/* Navigation - Command Menu + Sticky Talk Button */}
       {!isPdf && (
-        <StickyChatButton
+        <PageNavigation
           id={id}
           avatar={personal.avatar}
           fullName={personal.fullName}
           accentColor={accentColor}
+          hasCoverLetter={!!data.coverLetter}
+          currentPage="cv"
         />
       )}
     </div>

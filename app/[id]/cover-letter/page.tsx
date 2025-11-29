@@ -7,7 +7,7 @@ import matter from "gray-matter";
 import { ArrowLeft } from "lucide-react";
 import { CVData, CoverLetterData } from "@/lib/types/cv";
 import { CVHeader } from "@/components/cv-header";
-import { StickyChatButton } from "@/components/sticky-chat-button";
+import { PageNavigation } from "@/components/page-navigation";
 
 // Load cover letter from markdown file
 async function getCoverLetterFromMarkdown(id: string): Promise<CoverLetterData | null> {
@@ -242,13 +242,15 @@ export default async function CoverLetterPage({
         </div>
       )}
 
-      {/* Sticky Talk to Chatbot Button */}
+      {/* Navigation - Command Menu + Sticky Talk Button */}
       {!isPdf && (
-        <StickyChatButton
+        <PageNavigation
           id={id}
           avatar={personal.avatar}
           fullName={personal.fullName}
           accentColor={accentColor}
+          hasCoverLetter={true}
+          currentPage="cover-letter"
         />
       )}
     </div>
