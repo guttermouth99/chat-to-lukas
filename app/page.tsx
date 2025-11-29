@@ -2,6 +2,30 @@ import Image from "next/image";
 import Link from "next/link";
 import { FileText, Mail, MessageSquare } from "lucide-react";
 import jobsData from "@/lib/data/jobs-to-apply.json";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "HireLukas - Bewerbungen",
+  description: "Lernt mich jetzt besser kennen - Bewerbungen von Lukas Stockburger",
+  openGraph: {
+    title: "HireLukas",
+    description: "Lernt mich jetzt besser kennen",
+    images: [
+      {
+        url: "/api/meta-images/index",
+        width: 1200,
+        height: 630,
+        alt: "HireLukas - Lernt mich jetzt besser kennen",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "HireLukas",
+    description: "Lernt mich jetzt besser kennen",
+    images: ["/api/meta-images/index"],
+  },
+};
 
 const applications = jobsData.map((job) => ({
   id: job.id,
