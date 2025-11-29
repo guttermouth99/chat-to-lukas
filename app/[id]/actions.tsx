@@ -206,12 +206,12 @@ export async function continueConversation(
           return (
             <div className="space-y-3">
               <p className="text-[15px] leading-relaxed">
-                Ja, baito wurde von OpenAI ausgezeichnet! Hier ist ein kurzer Clip von der Preisverleihung:
+                Ja, ich habe von OpenAI einen Award für meine Arbeit mit baito bekommen.
               </p>
               <VideoCard
                 src="/openai-award.mov"
                 title="OpenAI Award"
-                description="baito wurde von OpenAI als eines der innovativsten KI-Projekte im Bereich nachhaltiger Jobvermittlung ausgezeichnet."
+                description="baito wurde von OpenAI mit einem Award ausgezeichnet, nachdem wir erfolgreich über 10 Milliarden Tokens mittels moderner KI-Systeme und skalierbarer Datenpipelines klassifiziert haben."
               />
             </div>
           );
