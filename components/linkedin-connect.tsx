@@ -22,8 +22,8 @@ export function ContactCard({
 }: ContactCardProps) {
   return (
     <Card className="w-full border-stone-200 bg-gradient-to-br from-stone-50 to-white shadow-lg overflow-hidden">
-      <CardContent className="p-6">
-        <h4 className="text-sm font-medium text-stone-500 mb-4">Let&apos;s connect</h4>
+      <CardContent className="pt-0 pb-6">
+        <h4 className="text-lg font-medium text-stone-500 mb-4">Let&apos;s connect</h4>
         <div className="flex items-start gap-5">
           <Avatar className="size-16 ring-2 ring-[#0A66C2]/20 shrink-0">
             <AvatarImage src={avatar} alt={name} />

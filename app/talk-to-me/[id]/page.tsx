@@ -62,8 +62,31 @@ export default function TalkToMePage() {
     setIsLoading(false);
   };
 
-  const handleSuggestionClick = (suggestion: string) => {
-    setInput(suggestion);
+  const handleSuggestionClick = async (suggestion: string) => {
+    if (isLoading) return;
+
+    setIsLoading(true);
+
+    // Add user message to conversation
+    setConversation((currentConversation: ClientMessage[]) => [
+      ...currentConversation,
+      {
+        id: generateId(),
+        role: "user",
+        display: suggestion,
+      },
+    ]);
+
+    // Get AI response
+    const message = await continueConversation(suggestion, jobId);
+
+    // Add AI response to conversation
+    setConversation((currentConversation: ClientMessage[]) => [
+      ...currentConversation,
+      message,
+    ]);
+
+    setIsLoading(false);
   };
 
   if (!job) {
