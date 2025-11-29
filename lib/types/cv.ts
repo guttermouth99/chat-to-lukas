@@ -13,6 +13,7 @@ export interface CVPersonal {
   email: string;
   birthday: string;
   linkedin: string;
+  talkToMe?: string;
 }
 
 export interface CVLabels {
@@ -57,6 +58,23 @@ export interface CVLanguage {
   level: number;
 }
 
+export interface CoverLetterRecipient {
+  name?: string;
+  title?: string;
+  company: string;
+  address?: string;
+}
+
+export interface CoverLetterData {
+  recipient: CoverLetterRecipient;
+  date: string;
+  subject: string;
+  greeting: string;
+  paragraphs: string[];
+  closing: string;
+  signature: string;
+}
+
 export interface CVData {
   theme: CVTheme;
   personal: CVPersonal;
@@ -67,5 +85,6 @@ export interface CVData {
   awards: CVAward[];
   education: CVEducation[];
   languages: CVLanguage[];
+  coverLetter?: CoverLetterData;
 }
 

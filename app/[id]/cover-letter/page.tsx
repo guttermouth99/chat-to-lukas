@@ -1,0 +1,163 @@
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { CVData } from "@/lib/types/cv";
+import { CVHeader } from "@/components/cv-header";
+
+// Dynamic data loader
+async function getCVData(id: string): Promise<CVData | null> {
+  try {
+    const data = await import(`@/lib/data/cv/${id}.json`);
+    return data.default as CVData;
+  } catch {
+    return null;
+  }
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const data = await getCVData(id);
+
+  if (!data) {
+    return {
+      title: "Cover Letter Not Found",
+    };
+  }
+
+  return {
+    title: `${data.personal.fullName} - Anschreiben`,
+    description: `Anschreiben für ${data.personal.companyName}`,
+  };
+}
+
+export default async function CoverLetterPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const data = await getCVData(id);
+
+  if (!data || !data.coverLetter) {
+    notFound();
+  }
+
+  const { theme, personal, coverLetter } = data;
+  const accentColor = theme.accentColor;
+
+  return (
+    <div className="min-h-screen bg-slate-100 py-8 print:py-0 print:bg-white">
+      {/* A4 Paper Container */}
+      <div className="mx-auto w-[210mm] min-h-[297mm] bg-white shadow-2xl print:shadow-none overflow-hidden flex flex-col">
+        {/* Reusable Header */}
+        <CVHeader 
+          personal={personal} 
+          accentColor={accentColor} 
+          showTalkToMe={false} 
+        />
+
+        {/* Letter Content */}
+        <main className="flex-1 px-12 py-10">
+          {/* Recipient & Date */}
+          <div className="flex justify-between items-start mb-10">
+            <div className="space-y-0.5">
+              <p className="text-sm font-semibold text-slate-900">
+                {coverLetter.recipient.company}
+              </p>
+              {coverLetter.recipient.name && (
+                <p className="text-sm text-slate-600">
+                  {coverLetter.recipient.name}
+                </p>
+              )}
+              {coverLetter.recipient.title && (
+                <p className="text-sm text-slate-600">
+                  {coverLetter.recipient.title}
+                </p>
+              )}
+              {coverLetter.recipient.address && (
+                <p className="text-sm text-slate-600">
+                  {coverLetter.recipient.address}
+                </p>
+              )}
+            </div>
+            <div className="text-right">
+              <p className="text-sm text-slate-600">{personal.address}</p>
+              <p
+                className="text-sm font-medium mt-2"
+                style={{ color: accentColor }}
+              >
+                {coverLetter.date}
+              </p>
+            </div>
+          </div>
+
+          {/* Subject Line */}
+          <div className="mb-8">
+            <h2 className="text-lg font-bold text-slate-900">
+              {coverLetter.subject}
+            </h2>
+            <div
+              className="w-16 h-1 mt-2 rounded-full"
+              style={{ backgroundColor: accentColor }}
+            />
+          </div>
+
+          {/* Greeting */}
+          <p className="text-sm text-slate-700 mb-6">{coverLetter.greeting}</p>
+
+          {/* Letter Body */}
+          <div className="space-y-4">
+            {coverLetter.paragraphs.map((paragraph, index) => (
+              <p
+                key={index}
+                className="text-sm text-slate-700 leading-relaxed"
+                dangerouslySetInnerHTML={{
+                  __html: paragraph.replace(
+                    /<strong>/g,
+                    `<span class="font-semibold" style="color: ${accentColor}">`
+                  ).replace(/<\/strong>/g, '</span>'),
+                }}
+              />
+            ))}
+          </div>
+
+          {/* Closing & Signature */}
+          <div className="mt-10 space-y-6">
+            <p className="text-sm text-slate-700">{coverLetter.closing}</p>
+            <div className="flex items-center gap-4">
+              {/* Signature with avatar */}
+              <div
+                className="w-12 h-12 rounded-full overflow-hidden ring-2"
+                style={{ boxShadow: `0 0 0 2px ${accentColor}4d` }}
+              >
+                <img
+                  src={personal.avatar}
+                  alt={personal.fullName}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <p
+                className="text-lg font-semibold"
+                style={{ color: accentColor }}
+              >
+                {coverLetter.signature}
+              </p>
+            </div>
+          </div>
+        </main>
+
+        {/* Footer accent line */}
+        <div
+          className="h-1 w-full"
+          style={{
+            background: `linear-gradient(to right, ${accentColor}, ${accentColor}66, transparent)`,
+          }}
+        />
+      </div>
+    </div>
+  );
+}
+
