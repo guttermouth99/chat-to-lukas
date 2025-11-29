@@ -19,7 +19,7 @@ export default function TalkToMePage() {
   const params = useParams();
   const jobId = params.id as string;
   const job = jobsToApply.find((j) => j.id === jobId);
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const bottomRef = useRef<HTMLDivElement>(null);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -27,10 +27,8 @@ export default function TalkToMePage() {
   const { continueConversation } = useActions();
 
   useEffect(() => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
-    }
-  }, [conversation]);
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [conversation, isLoading]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -125,7 +123,7 @@ export default function TalkToMePage() {
       </header>
 
       {/* Messages */}
-      <ScrollArea className="flex-1" ref={scrollRef}>
+      <ScrollArea className="flex-1">
         <div className="mx-auto max-w-2xl px-4 py-6">
           {conversation.length === 0 ? (
             <div className="py-12 text-center">
@@ -224,6 +222,7 @@ export default function TalkToMePage() {
               )}
             </div>
           )}
+          <div ref={bottomRef} />
         </div>
       </ScrollArea>
 
