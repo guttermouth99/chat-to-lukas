@@ -13,7 +13,7 @@ interface VideoCardProps {
 export function VideoCard({
   src,
   title = "OpenAI Award",
-  description = "baito wurde von OpenAI als eines der innovativsten AI-Projekte ausgezeichnet.",
+  description = "baito wurde von OpenAI mit einem Award ausgezeichnet, nachdem wir erfolgreich über 10 Milliarden Tokens mittels moderner KI-Systeme und skalierbarer Datenpipelines klassifiziert haben.",
 }: VideoCardProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
