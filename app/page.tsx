@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FileText, Mail, MessageSquare } from "lucide-react";
+import jobsData from "@/lib/data/jobs-to-apply.json";
 
-const applications = [
-  {
-    id: "citylab",
-    name: "CityLAB Berlin",
-    logo: "/citylab_logo.jpg",
-  },
-];
+const applications = jobsData.map((job) => ({
+  id: job.id,
+  name: job.company,
+  logo: job.companyLogo,
+  position: job.position,
+}));
 
 export default function Home() {
   return (
@@ -49,9 +49,14 @@ export default function Home() {
                   height={40}
                   className="rounded-lg"
                 />
-                <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
-                  {app.name}
-                </h2>
+                <div>
+                  <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
+                    {app.name}
+                  </h2>
+                  <p className="text-sm text-zinc-500 dark:text-zinc-400">
+                    {app.position}
+                  </p>
+                </div>
               </div>
 
               <div className="grid grid-cols-3 gap-3">

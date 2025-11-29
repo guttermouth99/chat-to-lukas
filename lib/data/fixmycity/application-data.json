@@ -1,0 +1,189 @@
+{
+  "theme": {
+    "accentColor": "#FABE28"
+  },
+  "personal": {
+    "fullName": "Lukas Stockburger",
+    "workingTitle": "Full-Stack Entwickler & GovTech Enthusiast",
+    "avatar": "/lukas_avatar.jpeg",
+    "companyLogo": "/fixmycity_logo.png",
+    "companyName": "FixMyCity GmbH",
+    "address": "Silbersteinstraße 124, 12051 Berlin",
+    "phone": "+49 163 160 3074",
+    "email": "lukas.stockburger@googlemail.com",
+    "birthday": "07.02.1990",
+    "linkedin": "linkedin.com/in/lukas-s-186583a2",
+    "talkToMe": "talk"
+  },
+  "labels": {
+    "profile": "Profil",
+    "workExperience": "Arbeitserfahrung",
+    "skills": "Fähigkeiten",
+    "education": "Ausbildung",
+    "languages": "Sprachen"
+  },
+  "profileSummary": "Erfahrener <strong>Full-Stack Entwickler</strong> mit über 8 Jahren Expertise in TypeScript, React und Next.js. Spezialisiert auf skalierbare Webanwendungen, API-Architekturen und Docker-Infrastrukturen. Leidenschaftlich für <strong>Open Source</strong>, gemeinwohlorientierte Technologien und nachhaltige Mobilität. Nachweisliche Erfahrung mit modernen AI-Tools wie Copilot, Cursor und Vercel AI SDK im täglichen Entwicklungsalltag. Eigenverantwortlich arbeitend mit Freude an hochwertigem Code und agilen Arbeitsprozessen.",
+  "workExperience": [
+    {
+      "period": "01/2022 – Heute",
+      "title": "Co-Founder & Full-Stack Entwickler",
+      "company": "baito UG",
+      "location": "Berlin",
+      "description": "Impact-Jobboard & Job-Newsletter Automatisierungsplattform – getbaito.com & talentalert.io",
+      "achievements": [
+        "Full-Stack Entwicklung mit TypeScript, React, Next.js (Server Components) und Tailwind CSS",
+        "Architektur einer skalierbaren Docker-basierten Infrastruktur mit ~10.000 gecrawlten Seiten/Monat",
+        "Integration von Prisma ORM mit PostgreSQL und MongoDB für komplexe Datenmodelle",
+        "Aufbau automatisierter Datenpipelines und Scraping-Systeme für strukturierte Datenextraktion",
+        "Integration des Vercel AI SDK für intelligente Klassifizierungssysteme und Workflows",
+        "Eigenverantwortliche Nutzung von AI-Tools (Copilot, Cursor, Claude) im Entwicklungsalltag"
+      ]
+    },
+    {
+      "period": "01/2016 – 2022",
+      "title": "Product-Builder & Full-Stack Entwickler",
+      "company": "Einzelunternehmer",
+      "location": "Berlin",
+      "achievements": [
+        "Eigenständige Konzeption & Entwicklung von ~25 Webprojekten inkl. Vergleichsportalen",
+        "Full-Stack: Next.js, React, Node.js, REST-APIs, MongoDB, PostgreSQL",
+        "Agile Projektarbeit mit iterativer Entwicklung und schnellem Prototyping"
+      ]
+    },
+    {
+      "period": "02/2018 – 09/2020",
+      "title": "Frontend Entwickler",
+      "company": "Bærnholdt",
+      "location": "Kopenhagen, Dänemark",
+      "description": "Webagentur",
+      "achievements": [
+        "Moderne Webapplikationen mit React Native, Vue.js, CSS-in-JS und Webpack",
+        "SCRUM & Agile Development in interdisziplinären Teams"
+      ]
+    },
+    {
+      "period": "07/2017 – 02/2018",
+      "title": "Frontend Entwickler",
+      "company": "Airy GmbH",
+      "location": "Berlin",
+      "description": "B2C Messenger",
+      "achievements": [
+        "Real-time Messaging mit Websockets",
+        "Test-fokussierte Entwicklung mit Mocha.js"
+      ]
+    },
+    {
+      "period": "11/2015 – 01/2017",
+      "title": "Co-Founder",
+      "company": "Sweeker UG",
+      "location": "Berlin",
+      "description": "Sneaker Mobile Shopping App",
+      "achievements": [
+        "Konzept & Business Model Entwicklung",
+        "Partnership Management mit Partnershops"
+      ]
+    },
+    {
+      "period": "04/2015 – 09/2015",
+      "title": "Business Development Manager",
+      "company": "GoButler GmbH",
+      "location": "Berlin",
+      "achievements": [
+        "Leitung von 15 Mitarbeiter:innen & Durchführung von Workshops",
+        "Strategische Planung und Stakeholder-Kommunikation"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Full-Stack Entwicklung",
+      "icon": "Globe",
+      "skills": "TypeScript, React, Next.js (Server Components), Node.js, Astro, REST-APIs, tRPC"
+    },
+    {
+      "name": "Datenbanken & ORM",
+      "icon": "Database",
+      "skills": "PostgreSQL, PostGIS, MongoDB, Prisma ORM, Typesense"
+    },
+    {
+      "name": "AI Tools & Automatisierung",
+      "icon": "Sparkles",
+      "skills": "Vercel AI SDK, Copilot, Cursor, Claude, ChatGPT, automatisierte Datenpipelines"
+    },
+    {
+      "name": "Frontend & UI",
+      "icon": "Layout",
+      "skills": "Tailwind CSS, Shadcn/ui, MapLibre, React Map GL, Responsive Design"
+    },
+    {
+      "name": "Infrastructure & DevOps",
+      "icon": "Server",
+      "skills": "Docker, Vercel, GitHub Actions, IONOS, Server-Terminal, CI/CD"
+    },
+    {
+      "name": "Agile & Teamarbeit",
+      "icon": "Users",
+      "skills": "SCRUM, Agile Development, Git, eigenverantwortliches Arbeiten, offene Kommunikation"
+    }
+  ],
+  "awards": [],
+  "education": [
+    {
+      "period": "02/2018 – 04/2020",
+      "institution": "Copenhagen Business School",
+      "location": "Kopenhagen, Dänemark",
+      "degree": "Master in E-Business",
+      "thesis": "Masterarbeit: Blockchain-based Identity Management for Public Transportation (Publiziert)"
+    },
+    {
+      "period": "01/2014 – 06/2014",
+      "institution": "Universidad de los Andes",
+      "location": "Bogotá, Kolumbien",
+      "degree": "Auslandssemester Business Administration"
+    },
+    {
+      "period": "09/2011 – 09/2014",
+      "institution": "Maastricht University",
+      "location": "Maastricht, Niederlande",
+      "degree": "B.Sc. International Business"
+    },
+    {
+      "period": "09/2007 – 07/2010",
+      "institution": "Friedrich Fischer Schule",
+      "location": "Schweinfurt",
+      "degree": "Fachhochschulreife"
+    }
+  ],
+  "languages": [
+    {
+      "name": "Deutsch",
+      "level": 5
+    },
+    {
+      "name": "Englisch",
+      "level": 4
+    },
+    {
+      "name": "Spanisch",
+      "level": 2
+    }
+  ],
+  "coverLetter": {
+    "recipient": {
+      "company": "FixMyCity GmbH",
+      "address": "Oberlandstr. 26-35, 12099 Berlin"
+    },
+    "date": "29. November 2025",
+    "subject": "Bewerbung als Full-Stack Entwickler:in (32h/Woche)",
+    "greeting": "Liebes FixMyCity Team,",
+    "paragraphs": [
+      "mit großer Begeisterung bewerbe ich mich als Full-Stack Entwickler:in bei FixMyCity. Die Kombination aus Open-Source-Entwicklung, gesellschaftlichem Impact und nachhaltiger Mobilitätsplanung entspricht genau meinen Werten und beruflichen Zielen. Die Möglichkeit, mit TILDA und Trassenscout konkret zur Verkehrswende beizutragen, motiviert mich besonders.",
+      "Als Co-Founder von baito habe ich in den letzten drei Jahren eine skalierbare Plattform mit exakt dem Tech-Stack aufgebaut, den FixMyCity einsetzt: TypeScript, React, Next.js mit Server Components, Prisma und PostgreSQL. Ich arbeite täglich mit Docker, entwickle eigenverantwortlich und habe AI-Tools wie Copilot und Cursor fest in meinen Workflow integriert. Die Verarbeitung großer Datenmengen – bei baito crawle ich monatlich ca. 10.000 Karriereseiten – hat mir wertvolle Erfahrung mit Datenpipelines und strukturierter Datenextraktion gegeben.",
+      "Was mich an FixMyCity besonders anspricht, ist der Fokus auf Nutzer:innen-Perspektive und die Arbeit mit Geodaten und OpenStreetMap. Durch meine Masterarbeit an der Copenhagen Business School über Blockchain-basiertes Identity Management für den öffentlichen Nahverkehr bringe ich bereits Erfahrung mit Mobilitätsthemen mit. Die agile, selbstverantwortliche Arbeitsweise in einem kleinen Team entspricht genau der Umgebung, in der ich am produktivsten bin.",
+      "Ich freue mich darauf, meine Erfahrung in Full-Stack-Entwicklung und meine Begeisterung für Open Source und nachhaltige Mobilität bei FixMyCity einzubringen."
+    ],
+    "closing": "Mit freundlichen Grüßen",
+    "signature": "Lukas Stockburger"
+  }
+}
+
