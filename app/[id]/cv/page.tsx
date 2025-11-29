@@ -283,15 +283,15 @@ export default async function CVPage({
   );
 
   return (
-    <div className={`min-h-screen bg-slate-100  print:py-0 print:bg-white ${isPdf ? 'py-0 !bg-white' : 'py-8'}`}>
+    <div className={`min-h-screen bg-slate-100 print:py-0 print:bg-white ${isPdf ? 'py-0 bg-white!' : 'py-4 md:py-8'}`}>
       {/* A4 Paper Container */}
-      <div className={`mx-auto w-[210mm] min-h-[297mm] bg-white shadow-2xl print:shadow-none overflow-hidden ${isPdf ? 'shadow-none' : ''}`}>
+      <div className={`mx-auto w-full md:w-[210mm] print:w-[210mm] md:min-h-[297mm] print:min-h-[297mm] bg-white shadow-none md:shadow-2xl print:shadow-none overflow-hidden ${isPdf ? 'shadow-none w-[210mm] min-h-[297mm]' : ''}`}>
         {/* Header */}
         <CVHeader personal={personal} accentColor={accentColor} />
 
         {/* Profile Summary Section */}
         <section
-          className="px-8 py-6 border-b border-slate-200"
+          className="px-4 md:px-8 print:px-8 py-4 md:py-6 print:py-6 border-b border-slate-200"
           style={{
             background: `linear-gradient(to right, ${accentColor}1a, rgba(248, 250, 252, 0.3), ${accentColor}1a)`,
           }}
@@ -326,9 +326,9 @@ export default async function CVPage({
         </section>
 
         {/* Main Content */}
-        <main className="grid grid-cols-[1fr_240px] gap-0">
+        <main className="grid grid-cols-1 md:grid-cols-[1fr_240px] print:grid-cols-[1fr_240px] gap-0">
           {/* Left Column - Experience */}
-          <div className="px-8 py-6 border-r border-slate-100">
+          <div className="px-4 md:px-8 print:px-8 py-4 md:py-6 print:py-6 md:border-r print:border-r border-slate-100">
             <div className="flex items-center gap-2 mb-4">
               <Briefcase className="w-4 h-4" style={{ color: accentColor }} />
               <h2 className="text-[15px] font-bold text-slate-900 uppercase tracking-wider">
@@ -348,7 +348,7 @@ export default async function CVPage({
           </div>
 
           {/* Right Column - Skills, Education, Languages */}
-          <div className="bg-slate-50/50 px-5 py-6 flex flex-col">
+          <div className="bg-slate-50/50 px-4 md:px-5 print:px-5 py-4 md:py-6 print:py-6 flex flex-col">
             <div className="flex-1">
             {/* Skills Section */}
             <div className="mb-6">

@@ -116,9 +116,9 @@ export default async function CoverLetterPage({
   const accentColor = theme.accentColor;
 
   return (
-    <div className={`min-h-screen bg-slate-100 print:py-0 print:bg-white ${isPdf ? 'py-0 !bg-white' : ' py-8'}`}>
+    <div className={`min-h-screen bg-slate-100 print:py-0 print:bg-white ${isPdf ? 'py-0 bg-white!' : 'py-4 md:py-8'}`}>
       {/* A4 Paper Container */}
-      <div className={`mx-auto w-[210mm] min-h-[297mm] bg-white shadow-2xl print:shadow-none overflow-hidden flex flex-col ${isPdf ? 'shadow-none' : ''}`}>
+      <div className={`mx-auto w-full md:w-[210mm] print:w-[210mm] md:min-h-[297mm] print:min-h-[297mm] bg-white shadow-none md:shadow-2xl print:shadow-none overflow-hidden flex flex-col ${isPdf ? 'shadow-none w-[210mm] min-h-[297mm]' : ''}`}>
         {/* Reusable Header */}
         <CVHeader 
           personal={personal} 
@@ -127,9 +127,9 @@ export default async function CoverLetterPage({
         />
 
         {/* Letter Content */}
-        <main className="flex-1 px-12 py-10">
+        <main className="flex-1 px-4 md:px-12 print:px-12 py-6 md:py-10 print:py-10">
           {/* Recipient & Date */}
-          <div className="flex justify-between items-start mb-10">
+          <div className="flex flex-col md:flex-row print:flex-row md:justify-between print:justify-between items-start gap-4 md:gap-0 print:gap-0 mb-6 md:mb-10 print:mb-10">
             <div className="space-y-0.5">
               <p className="text-sm font-semibold text-slate-900">
                 {coverLetter.recipient.company}
@@ -150,7 +150,7 @@ export default async function CoverLetterPage({
                 </p>
               )}
             </div>
-            <div className="text-right">
+            <div className="md:text-right print:text-right">
               <p className="text-sm text-slate-600">{personal.address}</p>
               <p
                 className="text-sm font-medium mt-2"
@@ -162,8 +162,8 @@ export default async function CoverLetterPage({
           </div>
 
           {/* Subject Line */}
-          <div className="mb-8">
-            <h2 className="text-lg font-bold text-slate-900">
+          <div className="mb-6 md:mb-8 print:mb-8">
+            <h2 className="text-base md:text-lg print:text-lg font-bold text-slate-900">
               {coverLetter.subject}
             </h2>
             <div
@@ -173,10 +173,10 @@ export default async function CoverLetterPage({
           </div>
 
           {/* Greeting */}
-          <p className="text-sm text-slate-700 mb-6">{coverLetter.greeting}</p>
+          <p className="text-sm text-slate-700 mb-4 md:mb-6 print:mb-6">{coverLetter.greeting}</p>
 
           {/* Letter Body */}
-          <div className="space-y-4">
+          <div className="space-y-3 md:space-y-4 print:space-y-4">
             {coverLetter.paragraphs.map((paragraph, index) => (
               <p
                 key={index}
@@ -192,12 +192,12 @@ export default async function CoverLetterPage({
           </div>
 
           {/* Closing & Signature */}
-          <div className="mt-10 space-y-6">
+          <div className="mt-8 md:mt-10 print:mt-10 space-y-4 md:space-y-6 print:space-y-6">
             <p className="text-sm text-slate-700">{coverLetter.closing}</p>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3 md:gap-4 print:gap-4">
               {/* Signature with avatar */}
               <div
-                className="w-12 h-12 rounded-full overflow-hidden ring-2"
+                className="w-10 h-10 md:w-12 md:h-12 print:w-12 print:h-12 rounded-full overflow-hidden ring-2"
                 style={{ boxShadow: `0 0 0 2px ${accentColor}4d` }}
               >
                 <img
@@ -207,7 +207,7 @@ export default async function CoverLetterPage({
                 />
               </div>
               <p
-                className="text-lg font-semibold"
+                className="text-base md:text-lg print:text-lg font-semibold"
                 style={{ color: accentColor }}
               >
                 {coverLetter.signature}

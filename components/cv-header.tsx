@@ -17,7 +17,7 @@ interface CVHeaderProps {
 
 export function CVHeader({ personal, accentColor, showTalkToMe = true }: CVHeaderProps) {
   return (
-    <header className="relative bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 text-white px-8 py-8 overflow-hidden">
+    <header className="relative bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 text-white px-4 py-6 md:px-8 md:py-8 print:px-8 print:py-8 overflow-hidden">
       {/* Decorative elements */}
       <div
         className="absolute top-0 right-0 w-64 h-64 rounded-full blur-3xl"
@@ -38,52 +38,52 @@ export function CVHeader({ personal, accentColor, showTalkToMe = true }: CVHeade
         />
       </div>
 
-      <div className="relative z-10 flex items-start justify-between gap-6">
+      <div className="relative z-10 flex flex-col-reverse md:flex-row items-center md:items-start md:justify-between gap-4 md:gap-6 print:flex-row print:items-start print:justify-between print:gap-6">
         {/* Left side - Name & Contact */}
-        <div className="flex-1">
-          <h1 className="text-4xl font-bold tracking-tight mb-1">
+        <div className="flex-1 text-center md:text-left print:text-left">
+          <h1 className="text-2xl md:text-4xl print:text-4xl font-bold tracking-tight mb-1">
             {personal.fullName}
           </h1>
           <p
-            className="text-lg font-medium tracking-wide"
+            className="text-base md:text-lg print:text-lg font-medium tracking-wide"
             style={{ color: accentColor }}
           >
             {personal.workingTitle}
           </p>
 
           {/* Contact Grid */}
-          <div className="mt-6 grid grid-cols-2 gap-x-8 gap-y-2 text-sm">
-            <div className="flex items-center gap-2 text-slate-300">
+          <div className="mt-4 md:mt-6 print:mt-6 grid grid-cols-1 md:grid-cols-2 print:grid-cols-2 gap-x-8 gap-y-2 text-sm">
+            <div className="flex items-center justify-center md:justify-start print:justify-start gap-2 text-slate-300">
               <MapPin
-                className="w-3.5 h-3.5"
+                className="w-3.5 h-3.5 shrink-0"
                 style={{ color: accentColor }}
               />
               <span className="text-xs">{personal.address}</span>
             </div>
-            <div className="flex items-center gap-2 text-slate-300">
+            <div className="flex items-center justify-center md:justify-start print:justify-start gap-2 text-slate-300">
               <Phone
-                className="w-3.5 h-3.5"
+                className="w-3.5 h-3.5 shrink-0"
                 style={{ color: accentColor }}
               />
               <span className="text-xs">{personal.phone}</span>
             </div>
-            <div className="flex items-center gap-2 text-slate-300">
+            <div className="flex items-center justify-center md:justify-start print:justify-start gap-2 text-slate-300">
               <Mail
-                className="w-3.5 h-3.5"
+                className="w-3.5 h-3.5 shrink-0"
                 style={{ color: accentColor }}
               />
               <span className="text-xs">{personal.email}</span>
             </div>
-            <div className="flex items-center gap-2 text-slate-300">
+            <div className="flex items-center justify-center md:justify-start print:justify-start gap-2 text-slate-300">
               <Calendar
-                className="w-3.5 h-3.5"
+                className="w-3.5 h-3.5 shrink-0"
                 style={{ color: accentColor }}
               />
               <span className="text-xs">{personal.birthday}</span>
             </div>
-            <div className="flex items-center gap-2 text-slate-300 col-span-2">
+            <div className="flex items-center justify-center md:justify-start print:justify-start gap-2 text-slate-300 md:col-span-2 print:col-span-2">
               <Linkedin
-                className="w-3.5 h-3.5"
+                className="w-3.5 h-3.5 shrink-0"
                 style={{ color: accentColor }}
               />
               <span className="text-xs">{personal.linkedin}</span>
@@ -96,7 +96,7 @@ export function CVHeader({ personal, accentColor, showTalkToMe = true }: CVHeade
           <div className="relative">
             {/* Main Profile Photo */}
             <div
-              className="w-28 h-28 rounded-full overflow-hidden ring-4 ring-offset-2 ring-offset-slate-900"
+              className="w-20 h-20 md:w-28 md:h-28 print:w-28 print:h-28 rounded-full overflow-hidden ring-4 ring-offset-2 ring-offset-slate-900"
               style={{ boxShadow: `0 0 0 4px ${accentColor}4d` }}
             >
               <img
@@ -112,7 +112,7 @@ export function CVHeader({ personal, accentColor, showTalkToMe = true }: CVHeade
             />
 
             {/* Company Logo - Overlapping */}
-            <div className="absolute -bottom-1 -right-1 w-12 h-12 rounded-full overflow-hidden ring-2 ring-slate-900 bg-white shadow-lg">
+            <div className="absolute -bottom-1 -right-1 w-10 h-10 md:w-12 md:h-12 print:w-12 print:h-12 rounded-full overflow-hidden ring-2 ring-slate-900 bg-white shadow-lg">
               <img
                 src={personal.companyLogo}
                 alt={personal.companyName}
@@ -122,7 +122,7 @@ export function CVHeader({ personal, accentColor, showTalkToMe = true }: CVHeade
 
             {/* Heart badge */}
             <div
-              className="absolute -bottom-0.5 right-8 w-5 h-5 rounded-full flex items-center justify-center shadow-md ring-2 ring-slate-900"
+              className="absolute -bottom-0.5 right-6 md:right-8 print:right-8 w-5 h-5 rounded-full flex items-center justify-center shadow-md ring-2 ring-slate-900"
               style={{ backgroundColor: accentColor }}
             >
               <Heart className="w-2.5 h-2.5 text-white fill-white" />
@@ -131,7 +131,7 @@ export function CVHeader({ personal, accentColor, showTalkToMe = true }: CVHeade
 
           {/* Talk to me button */}
           {showTalkToMe && personal.talkToMe && (
-            <div className="mt-4 flex flex-col items-center print:hidden">
+            <div className="mt-3 md:mt-4 print:mt-4 flex flex-col items-center print:hidden">
               <a
                 href={personal.talkToMe}
                 target="_blank"
