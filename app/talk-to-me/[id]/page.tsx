@@ -144,7 +144,7 @@ export default function TalkToMePage() {
                 {[
                   "Was sind deine Stärken?",
                   "Erzähl mir von deiner Erfahrung",
-                  "Warum passt du zu uns?",
+                  "Zeig mir deine Projekte",
                   "Lass uns connecten!",
                 ].map((suggestion) => (
                   <button

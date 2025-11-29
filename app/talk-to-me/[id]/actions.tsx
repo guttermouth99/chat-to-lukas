@@ -6,6 +6,7 @@ import { generateId } from "ai";
 import { ReactNode } from "react";
 import { z } from "zod";
 import { ContactCard } from "@/components/linkedin-connect";
+import { ProjectsCard } from "@/components/projects-card";
 import profile from "@/lib/data/profile.json";
 import jobsToApply from "@/lib/data/jobs-to-apply.json";
 
@@ -77,13 +78,24 @@ Beantworte Fragen des Hiring Managers über ${profile.name}:
 - Antworte auf Deutsch, es sei denn, der Hiring Manager schreibt auf Englisch
 - Halte die Antworten prägnant aber informativ
 
+### Projekte
+${profile.projects
+  .map((p) => `- **${p.name}**: ${p.description}`)
+  .join("\n")}
+
 ## Verfügbare Tools
 
-Du hast Zugriff auf das Tool "showContactCard", das eine Kontaktkarte mit E-Mail, Telefon und LinkedIn anzeigt. Verwende dieses Tool, wenn:
+Du hast Zugriff auf folgende Tools:
+
+**showContactCard**: Zeigt eine Kontaktkarte mit E-Mail, Telefon und LinkedIn. Verwende es wenn:
 - Der Nutzer nach Kontaktmöglichkeiten fragt
 - Der Nutzer "connecten" oder "verbinden" erwähnt
 - Der Nutzer nach dem LinkedIn-Profil, E-Mail oder Telefonnummer fragt
-- Der Nutzer Interesse an einer Vernetzung oder Kontaktaufnahme zeigt`;
+
+**showProjects**: Zeigt eine Übersicht aller Projekte. Verwende es wenn:
+- Der Nutzer nach Projekten, Portfolio oder Arbeitsproben fragt
+- Der Nutzer nach baito, talentalert oder gebrauchtebuecher fragt
+- Der Nutzer wissen möchte, was der Kandidat gebaut hat`;
 }
 
 export async function continueConversation(
@@ -139,6 +151,29 @@ export async function continueConversation(
                 email={profile.email}
                 phone={profile.phone}
               />
+            </div>
+          );
+        },
+      },
+      showProjects: {
+        description:
+          "Zeigt eine Übersicht aller Projekte des Kandidaten an. Verwende dieses Tool wenn der Nutzer nach Projekten, Portfolio, Arbeitsproben, baito, talentalert oder gebrauchtebuecher fragt.",
+        inputSchema: z.object({}),
+        generate: async () => {
+          history.done((messages: ServerMessage[]) => [
+            ...messages,
+            {
+              role: "assistant",
+              content: `Hier sind meine Projekte:`,
+            },
+          ]);
+
+          return (
+            <div className="space-y-3">
+              <p className="text-[15px] leading-relaxed">
+                Hier sind einige meiner wichtigsten Projekte, die ich entwickelt habe:
+              </p>
+              <ProjectsCard projects={profile.projects} />
             </div>
           );
         },

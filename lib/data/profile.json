@@ -2,8 +2,8 @@
   "name": "Lukas",
   "avatar": "/lukas_avatar.jpeg",
   "linkedin": "https://www.linkedin.com/in/lukas-s-186583a2",
-  "email": "lukas@example.com",
-  "phone": "+49 123 456789",
+  "email": "lukas.stockburger@googlemail.com",
+  "phone": "+49 163 160 3074",
   "title": "Co-Founder & Full-Stack Developer",
   "summary": "Erfahrener Full-Stack Entwickler mit über 8 Jahren Erfahrung in der Entwicklung von Web-Anwendungen, digitalen Tools und KI-gestützten Systemen. Spezialisiert auf moderne Webtechnologien, skalierbare Architekturen und die Integration von KI-Technologien in Produktionssysteme.",
   "skills": {
@@ -18,6 +18,26 @@
     "german": "Muttersprache",
     "english": "Fließend"
   },
+  "projects": [
+    {
+      "name": "baito",
+      "logo": "/projects/baito.svg",
+      "url": "https://getbaito.com",
+      "description": "Impact-Jobboard für nachhaltige und soziale Jobs. Eine moderne Plattform mit KI-gestützter Job-Klassifizierung, semantischer Suche und über 10.000 monatlich gecrawlten Karriereseiten."
+    },
+    {
+      "name": "TalentAlert",
+      "logo": "/projects/talentalert.png",
+      "url": "https://talentalert.io",
+      "description": "Job-Newsletter Automatisierungsplattform. Verarbeitet über 7 Mio. User-Events monatlich und ermöglicht personalisierte Job-Alerts basierend auf individuellen Präferenzen."
+    },
+    {
+      "name": "gebrauchtebuecher",
+      "logo": "/projects/gebrauchtebuecher.svg",
+      "url": "https://gebrauchtebuecher.com",
+      "description": "Preisvergleichsportal für gebrauchte Bücher. Aggregiert Angebote von verschiedenen Online-Händlern und hilft Nutzern, die besten Preise für Bücher zu finden."
+    }
+  ],
   "experience": [
     {
       "period": "01/2022 – Heute",

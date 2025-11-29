@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="29px" height="32px" viewBox="0 0 29 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+        <g id="Group" transform="translate(1.000000, 1.000000)" stroke="#45864B">
+            <path d="M26.7946,18.4022 L4.19881,18.4022 C1.99009,18.4022 0.19957,20.1927 0.19957,22.4015 L0.19957,26.0008 C0.19957,28.2095 1.99009,30 4.19882,30 L26.7946,30" id="Shape" strokeWidth="1.99962" strokeLinecap="round" strokeLinejoin="round"></path>
+            <path d="M6.79832,22.8014 L24.395,22.8014" id="Shape" strokeWidth="1.5997" strokeLinecap="round"></path>
+            <path d="M6.79832,25.6008 L24.395,25.6008" id="Shape" strokeWidth="1.5997" strokeLinecap="round"></path>
+            <path d="M13.5971,7.9975 C13.5971,5.9292 12.7754,3.94562 11.3129,2.48311 C9.8504,1.0206 7.86683,0.19897 5.79853,0.19897 L1.89926,0.19897 L1.89926,2.79849 C1.89926,4.86679 2.72089,6.8504 4.1834,8.3129 C5.64591,9.7754 7.6295,10.597 9.6978,10.597 L13.5971,10.597" id="Shape" strokeWidth="1.94963" strokeLinecap="round" strokeLinejoin="round"></path>
+            <path d="M13.5971,13.1966 C13.5971,11.1283 14.4187,9.1447 15.8812,7.6822 C17.3437,6.2197 19.3273,5.3981 21.3956,5.3981 L25.2949,5.3981 L25.2949,6.6978 C25.2949,8.7661 24.4732,10.7497 23.0107,12.2122 C21.5482,13.6747 19.5646,14.4964 17.4963,14.4964 L13.5971,14.4964" id="Shape" strokeWidth="1.94963" strokeLinecap="round" strokeLinejoin="round"></path>
+            <path d="M13,18 L13.5971,7.9976" id="Shape" strokeWidth="1.94963" strokeLinejoin="round"></path>
+        </g>
+    </g>
+</svg>
