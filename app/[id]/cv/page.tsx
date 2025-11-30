@@ -53,12 +53,12 @@ async function hasCoverLetterContent(id: string, cvData: CVData): Promise<boolea
 }
 
 // Dynamic data loader
-async function getCVData(id: string): Promise<{ data: CVData; hasCoverLetter: boolean } | null> {
+async function getCVData(id: string): Promise<{ data: CVData; hasCoverLetter: boolean; lang: Language } | null> {
   try {
     const data = await import(`@/lib/data/${id}/application-data.json`);
     const cvData = data.default as CVData;
     const hasCoverLetter = await hasCoverLetterContent(id, cvData);
-    return { data: cvData, hasCoverLetter };
+    return { data: cvData, hasCoverLetter, lang: cvData.lang ? cvData.lang as Language : "german" };
   } catch {
     return null;
   }
@@ -78,9 +78,9 @@ export async function generateMetadata({
     };
   }
 
-  const { data } = result;
-  const title = `${data.personal.fullName} × ${data.personal.companyName} - Lebenslauf`;
-  const description = `${data.personal.workingTitle} - Bewerbung bei ${data.personal.companyName}`;
+  const { data, lang } = result;
+  const title = `${data.personal.fullName} × ${data.personal.companyName} - ${t(lang).metaTitles.cv}`;
+  const description = `${data.personal.workingTitle} - ${t(lang).metaDescriptions.cv} ${data.personal.companyName}`;
 
   return {
     title,

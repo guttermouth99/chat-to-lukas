@@ -1,3 +1,4 @@
+import { t } from '@/lib/translations';
 import { ImageResponse } from "next/og";
 import { NextRequest } from "next/server";
 
@@ -26,7 +27,7 @@ export async function GET(request: NextRequest) {
     return new Response("Application data not found", { status: 404 });
   }
 
-  const { personal, theme } = data;
+  const { personal, theme, lang } = data;
   const accentColor = theme.accentColor;
   const fullName = personal.fullName.split(" ")[0]; // Just first name "Lukas"
   const companyName = personal.companyName;
@@ -163,7 +164,7 @@ export async function GET(request: NextRequest) {
               letterSpacing: "0.05em",
             }}
           >
-            💬 Frag mich alles!
+            {t(lang).metaTitles.talk}
           </div>
         </div>
 

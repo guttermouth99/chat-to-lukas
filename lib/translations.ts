@@ -39,6 +39,18 @@ interface Translations {
   hereAreMyContacts: string;
   hereAreMyProjects: string;
   openAIAwardResponse: string;
+
+  // Meta titles and descriptions
+  metaTitles: {
+    cv: string;
+    coverLetter: string;
+    talk: string;
+  };
+  metaDescriptions: {
+    cv: string;
+    coverLetter: string;
+    talk: string;
+  };
 }
 
 const german: Translations = {
@@ -85,6 +97,16 @@ const german: Translations = {
   hereAreMyContacts: "Sehr gerne! Hier sind meine Kontaktdaten – Sie können mich jederzeit erreichen:",
   hereAreMyProjects: "Hier sind einige meiner wichtigsten Projekte, die ich entwickelt habe:",
   openAIAwardResponse: "Ja, ich habe von OpenAI einen Award für meine Arbeit mit baito bekommen.",
+  metaTitles: {
+    cv: "Lebenslauf",
+    coverLetter: "Anschreiben",
+    talk: "Chat",
+  },
+  metaDescriptions: {
+    cv: "Lebenslauf für die Bewerbung bei",
+    coverLetter: "Anschreiben für die Bewerbung bei",
+    talk: "Chat mit",
+  },
 };
 
 const english: Translations = {
@@ -126,6 +148,16 @@ const english: Translations = {
     "Show me your projects",
     "Let's connect!",
   ],
+  metaTitles: {
+    cv: "Resume",
+    coverLetter: "Cover Letter",
+    talk: "💬 Frag mich alles!",
+  },
+  metaDescriptions: {
+    cv: "Resume for the application at",
+    coverLetter: "Cover Letter for the application at",
+    talk: "Ask me anything",
+  },
 
   // AI responses
   hereAreMyContacts: "Of course! Here are my contact details – feel free to reach out anytime:",
