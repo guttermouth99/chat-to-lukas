@@ -330,8 +330,8 @@ export default async function JobPage({ params }: JobPageProps) {
         </div>
         <p className="mt-4 text-center text-xs text-stone-400">
           {lang === "german" 
-            ? "Diese interaktive Bewerbung wurde mit Next.js, Tailwind CSS, ShadCN und meinem Brain."
-            : "This interactive application was built with Next.js, Tailwind CSS, ShadCN and my Brain."}
+            ? "Diese interaktive Bewerbung wurde mit meinem Brain Next.js, Tailwind CSS, und ShadCN erstellt."
+            : "This interactive application was built with my Brain, Next.js, Tailwind CSS, and ShadCN."}
         </p>
       </div>
     </div>
