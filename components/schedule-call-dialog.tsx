@@ -10,6 +10,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import Cal from "@calcom/embed-react";
 
 interface ScheduleCallDialogProps {
   accentColor: string;
@@ -34,16 +35,14 @@ export function ScheduleCallDialog({ accentColor, buttonLabel }: ScheduleCallDia
       </Button>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="sm:max-w-md max-h-[90vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle>Hello World</DialogTitle>
+            <DialogTitle>Kennenlernen vereinbaren</DialogTitle>
             <DialogDescription>
-              This is a placeholder modal for scheduling a call.
-            </DialogDescription>
+Du magst mich besser kennen lernen? Dann vereinbare einen Termin mit mir.            </DialogDescription>
           </DialogHeader>
-          <div className="flex items-center justify-center py-8">
-            <p className="text-2xl font-bold text-stone-700">Hello World 👋</p>
-          </div>
+             <Cal calLink="lukas-stockburger" config={{ theme: "light" }}></Cal>
+
         </DialogContent>
       </Dialog>
     </>
