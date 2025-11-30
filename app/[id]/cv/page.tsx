@@ -309,7 +309,7 @@ export default async function CVPage({
   );
 
   return (
-    <div className={`min-h-screen bg-slate-100 print:py-0 print:bg-white ${isPdf ? 'py-0 bg-white!' : 'py-0 md:py-8'}`}>
+    <div className={`min-h-screen bg-slate-100 print:py-0 print:bg-white ${isPdf ? 'py-0 bg-white!' : 'py-0 md:py-8 pb-20 md:pb-0'}`}>
       {/* A4 Paper Container */}
       <div className={`mx-auto w-full md:w-[210mm] print:w-[210mm] md:min-h-[297mm] print:min-h-[297mm] bg-white shadow-none md:shadow-2xl print:shadow-none overflow-hidden ${isPdf ? 'shadow-none w-[210mm] min-h-[297mm]' : ''}`}>
         {/* Header */}
