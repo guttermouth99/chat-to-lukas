@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { FileText, ScrollText, MessageCircle, ArrowRight, Sparkles } from "lucide-react";
@@ -9,6 +10,61 @@ import { ScheduleCallDialog } from "@/components/schedule-call-dialog";
 
 interface JobPageProps {
   params: Promise<{ id: string }>;
+}
+
+// Dynamic data loader
+async function getApplicationData(id: string) {
+  try {
+    const data = await import(`@/lib/data/${id}/application-data.json`);
+    return data.default;
+  } catch {
+    return null;
+  }
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const job = jobsToApply.find((j) => j.id === id);
+  const data = await getApplicationData(id);
+
+  if (!job || !data) {
+    return {
+      title: "Application Not Found",
+    };
+  }
+
+  const lang = (job.lang as Language) || "german";
+  const translations = t(lang);
+  const title = `${profile.name} × ${job.company} - ${translations.metaTitles.index}`;
+  const description = `${translations.metaDescriptions.index} ${job.position} ${lang === "german" ? "bei" : "at"} ${job.company}`;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      images: [
+        {
+          url: `/api/meta-images/index?id=${id}`,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [`/api/meta-images/index?id=${id}`],
+    },
+  };
 }
 
 export default async function JobPage({ params }: JobPageProps) {
@@ -24,7 +80,7 @@ export default async function JobPage({ params }: JobPageProps) {
   const accentColor = job.chatBubble.background;
 
   return (
-    <div className="min-h-svh bg-stone-100 p-4 md:p-8">
+    <div className="min-h-svh flex items-center justify-center bg-stone-100 p-4 md:p-8">
       <div className="mx-auto max-w-4xl">
         {/* Bento Grid */}
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:grid-rows-[1fr_auto]">

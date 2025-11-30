@@ -42,11 +42,13 @@ interface Translations {
 
   // Meta titles and descriptions
   metaTitles: {
+    index: string;
     cv: string;
     coverLetter: string;
     talk: string;
   };
   metaDescriptions: {
+    index: string;
     cv: string;
     coverLetter: string;
     talk: string;
@@ -98,11 +100,13 @@ const german: Translations = {
   hereAreMyProjects: "Hier sind einige meiner wichtigsten Projekte, die ich entwickelt habe:",
   openAIAwardResponse: "Ja, ich habe von OpenAI einen Award für meine Arbeit mit baito bekommen.",
   metaTitles: {
+    index: "Bewerbung",
     cv: "Lebenslauf",
     coverLetter: "Anschreiben",
     talk: "Chat",
   },
   metaDescriptions: {
+    index: "Interaktive Bewerbung für die Position als",
     cv: "Lebenslauf für die Bewerbung bei",
     coverLetter: "Anschreiben für die Bewerbung bei",
     talk: "Chat mit",
@@ -149,11 +153,13 @@ const english: Translations = {
     "Let's connect!",
   ],
   metaTitles: {
+    index: "Application",
     cv: "Resume",
     coverLetter: "Cover Letter",
     talk: "💬 Frag mich alles!",
   },
   metaDescriptions: {
+    index: "Interactive application for the position as",
     cv: "Resume for the application at",
     coverLetter: "Cover Letter for the application at",
     talk: "Ask me anything",

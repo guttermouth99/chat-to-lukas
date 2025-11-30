@@ -1,12 +1,43 @@
+import { t } from "@/lib/translations";
 import { ImageResponse } from "next/og";
 import { NextRequest } from "next/server";
 
 export const runtime = "edge";
 
+async function loadApplicationData(id: string) {
+  try {
+    const data = await import(`@/lib/data/${id}/application-data.json`);
+    return data.default;
+  } catch {
+    return null;
+  }
+}
+
 export async function GET(request: NextRequest) {
+  const { searchParams } = new URL(request.url);
+  const id = searchParams.get("id");
+
+  if (!id) {
+    return new Response("Missing id parameter", { status: 400 });
+  }
+
+  const data = await loadApplicationData(id);
+
+  if (!data) {
+    return new Response("Application data not found", { status: 404 });
+  }
+
+  const { personal, theme, lang } = data;
+  const accentColor = theme.accentColor;
+  const fullName = personal.fullName;
+  const firstName = personal.fullName.split(" ")[0];
+  const companyName = personal.companyName;
+  const position = personal.workingTitle;
+
+  // Build absolute URLs for images
   const baseUrl = request.nextUrl.origin;
-  const avatarUrl = `${baseUrl}/lukas_avatar.jpeg`;
-  const accentColor = "#3b82f6"; // A nice blue
+  const avatarUrl = `${baseUrl}${personal.avatar}`;
+  const companyLogoUrl = `${baseUrl}${personal.companyLogo}`;
 
   return new ImageResponse(
     (
@@ -38,9 +69,9 @@ export async function GET(request: NextRequest) {
         <div
           style={{
             display: "flex",
-            flexDirection: "column",
             alignItems: "center",
-            gap: "40px",
+            justifyContent: "center",
+            gap: "48px",
           }}
         >
           {/* Avatar */}
@@ -49,55 +80,114 @@ export async function GET(request: NextRequest) {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              width: "200px",
-              height: "200px",
-              borderRadius: "50%",
-              overflow: "hidden",
-              boxShadow: `0 0 0 6px ${accentColor}40, 0 25px 50px -12px rgba(0, 0, 0, 0.2)`,
+              position: "relative",
             }}
           >
-            <img
-              src={avatarUrl}
-              alt="Lukas"
-              width={200}
-              height={200}
+            {/* Animated ring effect */}
+            <div
               style={{
-                objectFit: "cover",
+                position: "absolute",
+                width: "220px",
+                height: "220px",
+                borderRadius: "50%",
+                background: `linear-gradient(135deg, ${accentColor}40, ${accentColor}10)`,
               }}
             />
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "180px",
+                height: "180px",
+                borderRadius: "50%",
+                overflow: "hidden",
+                boxShadow: `0 0 0 6px white, 0 25px 50px -12px rgba(0, 0, 0, 0.2)`,
+              }}
+            >
+              <img
+                src={avatarUrl}
+                alt={fullName}
+                width={180}
+                height={180}
+                style={{
+                  objectFit: "cover",
+                }}
+              />
+            </div>
+            {/* Company logo badge */}
+            <div
+              style={{
+                position: "absolute",
+                bottom: "-10px",
+                right: "-10px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "80px",
+                height: "80px",
+                borderRadius: "50%",
+                overflow: "hidden",
+                backgroundColor: "white",
+                boxShadow: `0 0 0 4px white, 0 10px 30px -8px rgba(0, 0, 0, 0.2)`,
+              }}
+            >
+              <img
+                src={companyLogoUrl}
+                alt={companyName}
+                width={70}
+                height={70}
+                style={{
+                  objectFit: "cover",
+                }}
+              />
+            </div>
           </div>
+        </div>
 
-          {/* Title */}
+        {/* Title */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            marginTop: "56px",
+          }}
+        >
           <div
             style={{
               display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: "16px",
+              fontSize: "56px",
+              fontWeight: "800",
+              color: "#1c1917",
+              letterSpacing: "-0.03em",
             }}
           >
-            <div
-              style={{
-                display: "flex",
-                fontSize: "72px",
-                fontWeight: "800",
-                color: "#1c1917",
-                letterSpacing: "-0.03em",
-              }}
-            >
-              HireLukas
-            </div>
-            <div
-              style={{
-                display: "flex",
-                fontSize: "32px",
-                fontWeight: "500",
-                color: "#52525b",
-                letterSpacing: "0.01em",
-              }}
-            >
-              Lernt mich jetzt besser kennen
-            </div>
+            {firstName} × {companyName}
+          </div>
+          <div
+            style={{
+              display: "flex",
+              fontSize: "28px",
+              fontWeight: "500",
+              color: accentColor,
+              marginTop: "12px",
+              letterSpacing: "0.01em",
+            }}
+          >
+            {position}
+          </div>
+          <div
+            style={{
+              display: "flex",
+              fontSize: "20px",
+              fontWeight: "400",
+              color: "#78716c",
+              marginTop: "8px",
+              letterSpacing: "0.02em",
+            }}
+          >
+            {t(lang).metaTitles.index}
           </div>
         </div>
 
@@ -156,4 +246,3 @@ export async function GET(request: NextRequest) {
     }
   );
 }
-
