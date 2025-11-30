@@ -65,7 +65,7 @@ export function CommandMenu({
       description: translations.overviewDescription,
       icon: LayoutGrid,
       href: `/${jobId}`,
-      shortcut: "0",
+      shortcut: "1",
       show: true,
     },
     {
@@ -74,7 +74,7 @@ export function CommandMenu({
       description: translations.resumeDescription,
       icon: FileText,
       href: `/${jobId}/cv`,
-      shortcut: "1",
+      shortcut: "2",
       show: true,
     },
     {
@@ -83,7 +83,7 @@ export function CommandMenu({
       description: translations.coverLetterDescription,
       icon: ScrollText,
       href: `/${jobId}/cover-letter`,
-      shortcut: "2",
+      shortcut: "3",
       show: hasCoverLetter,
     },
     {
@@ -92,7 +92,7 @@ export function CommandMenu({
       description: translations.chatDescription,
       icon: MessageCircle,
       href: `/${jobId}/talk`,
-      shortcut: "3",
+      shortcut: "4",
       show: true,
     },
   ].filter((item) => item.show);
