@@ -3,6 +3,8 @@
 import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import { getMutableAIState, streamUI } from "@ai-sdk/rsc";
 import { generateId } from "ai";
+import { readFileSync } from "fs";
+import { join } from "path";
 import { ReactNode } from "react";
 import { z } from "zod";
 import { ContactCard } from "@/components/linkedin-connect";
@@ -12,6 +14,7 @@ import profile from "@/lib/data/profile.json";
 import jobsToApply from "@/lib/data/jobs-to-apply.json";
 import { t, type Language } from "@/lib/translations";
 
+const bio = readFileSync(join(process.cwd(), "lib/data/bio.md"), "utf-8");
 const google = createGoogleGenerativeAI({
   apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY,
 });
@@ -40,6 +43,9 @@ Name: ${profile.name}
 Title: ${profile.title}
 Summary: ${profile.summary}
 LinkedIn: ${profile.linkedin}
+
+### Personal Background & Journey
+${bio}
 
 ### Skills
 - Frontend: ${profile.skills.frontend.join(", ")}
@@ -120,6 +126,9 @@ Name: ${profile.name}
 Titel: ${profile.title}
 Zusammenfassung: ${profile.summary}
 LinkedIn: ${profile.linkedin}
+
+### Persönlicher Hintergrund & Werdegang
+${bio}
 
 ### Skills
 - Frontend: ${profile.skills.frontend.join(", ")}
