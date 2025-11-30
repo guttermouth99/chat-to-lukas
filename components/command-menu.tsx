@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { useRouter, useParams } from "next/navigation";
-import { FileText, ScrollText, MessageCircle, Command, Menu } from "lucide-react";
+import { FileText, ScrollText, MessageCircle, Command, Menu, LayoutGrid } from "lucide-react";
 import {
   CommandDialog,
   CommandEmpty,
@@ -18,7 +18,7 @@ import { t, type Language } from "@/lib/translations";
 
 interface CommandMenuProps {
   hasCoverLetter?: boolean;
-  currentPage?: "cv" | "cover-letter" | "talk";
+  currentPage?: "overview" | "cv" | "cover-letter" | "talk";
   lang?: Language;
 }
 
@@ -57,6 +57,15 @@ export function CommandMenu({
   };
 
   const navigationItems = [
+    {
+      id: "overview",
+      label: translations.overview,
+      description: translations.overviewDescription,
+      icon: LayoutGrid,
+      href: `/${jobId}`,
+      shortcut: "0",
+      show: true,
+    },
     {
       id: "cv",
       label: translations.resume,

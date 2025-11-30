@@ -27,8 +27,8 @@
     "hiringManager": "Hiring Manager",
     "companyLogo": "/fixmycity-logo.png",
     "chatBubble": {
-      "background": "#1E5C4F",
-      "foreground": "#FFFFFF"
+      "background": "#fabe28",
+      "foreground": "#000000"
     },
     "hasCoverLetter": true,
     "defaultQuestions": [

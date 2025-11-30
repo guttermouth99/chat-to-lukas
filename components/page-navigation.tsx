@@ -11,7 +11,7 @@ interface PageNavigationProps {
   fullName: string;
   accentColor: string;
   hasCoverLetter: boolean;
-  currentPage: "cv" | "cover-letter" | "talk";
+  currentPage: "overview" | "cv" | "cover-letter" | "talk";
   lang?: Language;
 }
 

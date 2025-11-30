@@ -6,6 +6,8 @@ interface Translations {
   navigateToPages: string;
   noPages: string;
   pages: string;
+  overview: string;
+  overviewDescription: string;
   resume: string;
   resumeDescription: string;
   coverLetter: string;
@@ -61,6 +63,8 @@ const german: Translations = {
   navigateToPages: "Navigieren Sie zu den verschiedenen Seiten",
   noPages: "Keine Seiten gefunden.",
   pages: "Seiten",
+  overview: "Übersicht",
+  overviewDescription: "Zurück zur Übersicht",
   resume: "Lebenslauf",
   resumeDescription: "CV & Erfahrung ansehen",
   coverLetter: "Anschreiben",
@@ -119,6 +123,8 @@ const english: Translations = {
   navigateToPages: "Navigate to different pages",
   noPages: "No pages found.",
   pages: "Pages",
+  overview: "Overview",
+  overviewDescription: "Back to overview",
   resume: "Resume",
   resumeDescription: "View CV & experience",
   coverLetter: "Cover Letter",
