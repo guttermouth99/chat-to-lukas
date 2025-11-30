@@ -7,6 +7,7 @@ import profile from "@/lib/data/profile.json";
 import { t, type Language } from "@/lib/translations";
 import { cn } from "@/lib/utils";
 import { ScheduleCallDialog } from "@/components/schedule-call-dialog";
+import { CommandMenu } from '@/components/command-menu';
 
 interface JobPageProps {
   params: Promise<{ id: string }>;
@@ -324,7 +325,10 @@ export default async function JobPage({ params }: JobPageProps) {
         </div>
 
         {/* Footer */}
-        <p className="mt-8 text-center text-xs text-stone-400">
+        <div className="flex mt-4 opacity-100 justify-center">
+          <CommandMenu className="shadow-none" hasCoverLetter={job.hasCoverLetter} currentPage="overview" lang={lang} />
+        </div>
+        <p className="mt-4 text-center text-xs text-stone-400">
           {lang === "german" 
             ? "Diese interaktive Bewerbung wurde mit Next.js, Tailwind CSS und AI erstellt."
             : "This interactive application was built with Next.js, Tailwind CSS, and AI."}

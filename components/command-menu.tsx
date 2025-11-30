@@ -20,12 +20,14 @@ interface CommandMenuProps {
   hasCoverLetter?: boolean;
   currentPage?: "overview" | "cv" | "cover-letter" | "talk";
   lang?: Language;
+  className?: string;
 }
 
 export function CommandMenu({
   hasCoverLetter = false,
   currentPage,
   lang = "german",
+  className,
 }: CommandMenuProps) {
   const [open, setOpen] = React.useState(false);
   const [isMac, setIsMac] = React.useState(true);
@@ -119,7 +121,8 @@ export function CommandMenu({
         className={cn(
           "group inline-flex items-center gap-2 rounded-full border border-stone-200/80 bg-white/90 text-sm text-stone-600 shadow-lg backdrop-blur-sm transition-all hover:border-stone-300 hover:bg-white hover:text-stone-800 hover:shadow-xl",
           "focus:outline-none focus:ring-2 focus:ring-stone-400 focus:ring-offset-2",
-          "p-2.5 sm:px-3 sm:py-2"
+          "p-2.5 sm:px-3 sm:py-2",
+          className
         )}
       >
         {/* Burger menu icon on mobile */}
