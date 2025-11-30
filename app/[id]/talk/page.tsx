@@ -2,6 +2,7 @@
 
 import { useActions, useUIState } from "@ai-sdk/rsc";
 import { useParams, useRouter } from "next/navigation";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, Send } from "lucide-react";
 import { generateId } from "ai";
@@ -140,10 +141,12 @@ export default function TalkToMePage() {
           >
             <ArrowLeft className="size-5" />
           </button>
-          <Avatar className="size-10 shrink-0">
-            <AvatarImage src={job.companyLogo} alt={job.company} />
-            <AvatarFallback>{job.company.charAt(0)}</AvatarFallback>
-          </Avatar>
+          <Link href={`/${jobId}`} className="shrink-0">
+            <Avatar className="size-10 transition-transform hover:scale-105">
+              <AvatarImage src={job.companyLogo} alt={job.company} />
+              <AvatarFallback>{job.company.charAt(0)}</AvatarFallback>
+            </Avatar>
+          </Link>
           <div className="min-w-0 flex-1">
             <h1 className="truncate font-semibold text-stone-900">
               {translations.chatWith} {profile.name}
