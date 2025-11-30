@@ -457,16 +457,14 @@ export default async function CVPage({
             {/* Talk to me button */}
             {personal.talkToMe && (
               <div className="mt-auto pt-4 flex flex-col items-center print:hidden">
-                <a
+                <Link
                   href={personal.talkToMe}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold text-white transition-all hover:scale-105 hover:shadow-lg"
                   style={{ backgroundColor: accentColor }}
                 >
                   <MessageCircle className="w-4 h-4" />
                   {translations.talkToMe}
-                </a>
+                </Link>
                 <span className="text-[10px] text-slate-400 mt-1.5">
                   {translations.opensMyChat}
                 </span>

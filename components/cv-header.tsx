@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { CVPersonal } from "@/lib/types/cv";
 import { t, type Language } from "@/lib/translations";
+import Link from 'next/link';
 
 interface CVHeaderProps {
   personal: CVPersonal;
@@ -135,16 +136,15 @@ export function CVHeader({ personal, accentColor, showTalkToMe = true, lang = "g
           {/* Talk to me button */}
           {showTalkToMe && personal.talkToMe && (
             <div className="mt-3 md:mt-4 print:mt-4 flex flex-col items-center print:hidden">
-              <a
+              <Link
                 href={personal.talkToMe}
-                target="_blank"
-                rel="noopener noreferrer"
+               
                 className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold text-white transition-all hover:scale-105 hover:shadow-lg"
                 style={{ backgroundColor: accentColor }}
               >
                 <MessageCircle className="w-4 h-4" />
                 {translations.talkToMe}
-              </a>
+              </Link>
               <span className="text-[10px] text-slate-400 mt-1.5">
                 {translations.opensMyChat}
               </span>

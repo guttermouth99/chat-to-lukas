@@ -110,9 +110,23 @@ export default function TalkToMePage() {
   return (
     <div className="flex min-h-svh flex-col bg-stone-50">
       {/* Header */}
-      <header className="border-b border-stone-200 bg-white px-4 py-3">
+      <header className="relative border-b border-stone-200 bg-white px-4 py-3">
+        {/* Back button - outer left on desktop */}
+        <button
+          type="button"
+          onClick={() => {
+            if (window.history.length > 1) {
+              router.back();
+            } else {
+              router.push(`/${jobId}/cv`);
+            }
+          }}
+          className="absolute left-4 top-1/2 hidden size-10 -translate-y-1/2 items-center justify-center rounded-full text-stone-500 transition-colors hover:bg-stone-100 hover:text-stone-900 sm:flex"
+        >
+          <ArrowLeft className="size-5" />
+        </button>
         <div className="mx-auto flex max-w-2xl items-center gap-3">
-          {/* Back button - hidden on mobile */}
+          {/* Back button - inline on mobile */}
           <button
             type="button"
             onClick={() => {
@@ -122,7 +136,7 @@ export default function TalkToMePage() {
                 router.push(`/${jobId}/cv`);
               }
             }}
-            className="hidden size-10 items-center justify-center rounded-full text-stone-500 transition-colors hover:bg-stone-100 hover:text-stone-900 sm:flex"
+            className="flex size-10 items-center justify-center rounded-full text-stone-500 transition-colors hover:bg-stone-100 hover:text-stone-900 sm:hidden"
           >
             <ArrowLeft className="size-5" />
           </button>
