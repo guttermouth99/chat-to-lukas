@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { useRouter, useParams } from "next/navigation";
-import { FileText, ScrollText, MessageCircle, Command } from "lucide-react";
+import { FileText, ScrollText, MessageCircle, Command, Menu } from "lucide-react";
 import {
   CommandDialog,
   CommandEmpty,
@@ -108,12 +108,16 @@ export function CommandMenu({
         type="button"
         onClick={() => setOpen(true)}
         className={cn(
-          "group inline-flex items-center gap-2 rounded-full border border-stone-200/80 bg-white/90 px-3 py-2 text-sm text-stone-600 shadow-lg backdrop-blur-sm transition-all hover:border-stone-300 hover:bg-white hover:text-stone-800 hover:shadow-xl",
-          "focus:outline-none focus:ring-2 focus:ring-stone-400 focus:ring-offset-2"
+          "group inline-flex items-center gap-2 rounded-full border border-stone-200/80 bg-white/90 text-sm text-stone-600 shadow-lg backdrop-blur-sm transition-all hover:border-stone-300 hover:bg-white hover:text-stone-800 hover:shadow-xl",
+          "focus:outline-none focus:ring-2 focus:ring-stone-400 focus:ring-offset-2",
+          "p-2.5 sm:px-3 sm:py-2"
         )}
       >
+        {/* Burger menu icon on mobile */}
+        <Menu className="size-5 sm:hidden" />
+        {/* Keyboard shortcut on desktop */}
         <span className="hidden text-stone-500 sm:inline">Navigation</span>
-        <span className="flex items-center gap-0.5">
+        <span className="hidden items-center gap-0.5 sm:flex">
           <Kbd className="bg-stone-100 shadow-sm">
             {isMac ? (
               <Command className="size-3" />

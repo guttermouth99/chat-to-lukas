@@ -1,5 +1,4 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 
@@ -16,53 +15,41 @@ interface ProjectsCardProps {
 
 export function ProjectsCard({ projects }: ProjectsCardProps) {
   return (
-    <Card className="w-full border-stone-200 bg-gradient-to-br from-stone-50 to-white shadow-lg overflow-hidden">
-      <CardContent className="pt-0 pb-6">
-        <h4 className="text-lg font-medium text-stone-500 mb-4">
+    <Card className="w-full max-w-full border-stone-200 bg-gradient-to-br from-stone-50 to-white shadow-lg overflow-hidden">
+      <CardContent className="pt-0 pb-4 px-3 sm:px-6">
+        <h4 className="text-base sm:text-lg font-medium text-stone-500 mb-3">
           Meine Projekte
         </h4>
-        <div className="space-y-4">
+        <div className="space-y-3">
           {projects.map((project) => (
-            <div
+            <a
               key={project.name}
-              className="flex items-start gap-4 p-4 rounded-xl bg-white ring-1 ring-stone-100 hover:ring-stone-200 transition-all"
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-3 p-3 rounded-xl bg-white ring-1 ring-stone-100 hover:ring-stone-200 transition-all group"
             >
-              <div className="size-12 rounded-lg bg-stone-100 flex items-center justify-center shrink-0 overflow-hidden">
+              <div className="size-10 sm:size-12 rounded-lg bg-stone-100 flex items-center justify-center shrink-0 overflow-hidden">
                 <Image
                   src={project.logo}
                   alt={`${project.name} logo`}
                   width={48}
                   height={48}
-                  className="object-contain"
+                  className="object-contain w-full h-full"
                 />
               </div>
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center justify-between gap-2 mb-1">
-                  <h5 className="font-semibold text-stone-900">
+              <div className="flex-1 min-w-0 overflow-hidden">
+                <div className="flex items-center gap-1.5 mb-0.5">
+                  <h5 className="font-semibold text-stone-900 text-sm sm:text-base truncate">
                     {project.name}
                   </h5>
-                  <Button
-                    asChild
-                    variant="ghost"
-                    size="sm"
-                    className="text-stone-500 hover:text-stone-900 shrink-0 h-8 px-2"
-                  >
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1.5"
-                    >
-                      <ExternalLink className="size-3.5" />
-                      <span className="text-xs">Besuchen</span>
-                    </a>
-                  </Button>
+                  <ExternalLink className="size-3 text-stone-400 group-hover:text-stone-600 shrink-0 transition-colors" />
                 </div>
-                <p className="text-sm text-stone-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-stone-600 leading-relaxed line-clamp-2">
                   {project.description}
                 </p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </CardContent>

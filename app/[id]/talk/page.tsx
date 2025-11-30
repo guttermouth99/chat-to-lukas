@@ -1,7 +1,7 @@
 "use client";
 
 import { useActions, useUIState } from "@ai-sdk/rsc";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, Send } from "lucide-react";
 import { generateId } from "ai";
@@ -19,6 +19,7 @@ export const maxDuration = 30;
 
 export default function TalkToMePage() {
   const params = useParams();
+  const router = useRouter();
   const jobId = params.id as string;
   const job = jobsToApply.find((j) => j.id === jobId);
   const lang = (job?.lang as Language) || "german";
@@ -110,29 +111,34 @@ export default function TalkToMePage() {
     <div className="flex min-h-svh flex-col bg-stone-50">
       {/* Header */}
       <header className="border-b border-stone-200 bg-white px-4 py-3">
-        <div className="flex items-center gap-3">
+        <div className="mx-auto flex max-w-2xl items-center gap-3">
+          {/* Back button - hidden on mobile */}
           <button
             type="button"
-            onClick={() => window.history.back()}
-            className="flex size-10 items-center justify-center rounded-full text-stone-500 transition-colors hover:bg-stone-100 hover:text-stone-900"
+            onClick={() => {
+              if (window.history.length > 1) {
+                router.back();
+              } else {
+                router.push(`/${jobId}/cv`);
+              }
+            }}
+            className="hidden size-10 items-center justify-center rounded-full text-stone-500 transition-colors hover:bg-stone-100 hover:text-stone-900 sm:flex"
           >
             <ArrowLeft className="size-5" />
           </button>
-          <div className="mx-auto flex max-w-2xl flex-1 items-center gap-3">
-            <Avatar className="size-10">
-              <AvatarImage src={job.companyLogo} alt={job.company} />
-              <AvatarFallback>{job.company.charAt(0)}</AvatarFallback>
-            </Avatar>
-            <div className="min-w-0 flex-1">
-              <h1 className="truncate font-semibold text-stone-900">
-                {translations.chatWith} {profile.name}
-              </h1>
-              <p className="truncate text-sm text-stone-500">
-                {job.position} @ {job.company}
-              </p>
-            </div>
-            <CommandMenu hasCoverLetter={job.hasCoverLetter} currentPage="talk" lang={lang} />
+          <Avatar className="size-10 shrink-0">
+            <AvatarImage src={job.companyLogo} alt={job.company} />
+            <AvatarFallback>{job.company.charAt(0)}</AvatarFallback>
+          </Avatar>
+          <div className="min-w-0 flex-1">
+            <h1 className="truncate font-semibold text-stone-900">
+              {translations.chatWith} {profile.name}
+            </h1>
+            <p className="truncate text-sm text-stone-500">
+              {job.position} @ {job.company}
+            </p>
           </div>
+          <CommandMenu hasCoverLetter={job.hasCoverLetter} currentPage="talk" lang={lang} />
         </div>
       </header>
 
