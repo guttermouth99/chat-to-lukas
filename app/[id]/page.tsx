@@ -5,6 +5,7 @@ import jobsToApply from "@/lib/data/jobs-to-apply.json";
 import profile from "@/lib/data/profile.json";
 import { t, type Language } from "@/lib/translations";
 import { cn } from "@/lib/utils";
+import { ScheduleCallDialog } from "@/components/schedule-call-dialog";
 
 interface JobPageProps {
   params: Promise<{ id: string }>;
@@ -34,6 +35,14 @@ export default async function JobPage({ params }: JobPageProps) {
               background: `linear-gradient(135deg, ${accentColor}15 0%, ${accentColor}05 50%, transparent 100%)`,
             }}
           >
+            {/* Schedule Call Button - Top Right */}
+            <div className="absolute right-4 top-4 z-20 md:right-6 md:top-6">
+              <ScheduleCallDialog 
+                accentColor={accentColor} 
+                buttonLabel={lang === "german" ? "Termin vereinbaren" : "Schedule Call"}
+              />
+            </div>
+
             {/* Decorative elements */}
             <div
               className="absolute -right-20 -top-20 size-64 rounded-full blur-3xl opacity-20"
