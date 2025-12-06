@@ -108,11 +108,11 @@ function TalkToMeContent() {
   };
 
   useEffect(() => {
-    if (initialQuestion && conversation.length === 0 && !hasStartedRef.current && !isLoading) {
+    if (initialQuestion && conversation.length === 0 && !hasStartedRef.current && !isLoading && !isDisclaimerOpen) {
       hasStartedRef.current = true;
       handleSuggestionClick(initialQuestion);
     }
-  }, [initialQuestion, conversation.length, isLoading]);
+  }, [initialQuestion, conversation.length, isLoading, isDisclaimerOpen]);
 
   if (!job) {
     return (
