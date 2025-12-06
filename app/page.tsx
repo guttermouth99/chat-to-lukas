@@ -1,124 +1,141 @@
-import Image from "next/image";
-import Link from "next/link";
-import { FileText, Mail, MessageSquare } from "lucide-react";
-import jobsData from "@/lib/data/jobs-to-apply.json";
 import type { Metadata } from "next";
+import { Sparkles } from "lucide-react";
+import profile from "@/lib/data/profile.json";
+import { ScheduleCallDialog } from "@/components/schedule-call-dialog";
 
 export const metadata: Metadata = {
-  title: "HireLukas - Bewerbungen",
-  description: "Lernt mich jetzt besser kennen - Full-Stack Entwickler mit Gründungserfahrung",
+  title: "Lukas Stockburger - Full-Stack Developer",
+  description: profile.summary,
   openGraph: {
-    title: "Hire Lukas Stockburger",
-    description: "Lernt mich jetzt besser kennen - Full-Stack Entwickler mit Gründungserfahrung",
+    title: "Lukas Stockburger - Full-Stack Developer",
+    description: profile.summary,
     images: [
       {
-        url: "/api/meta-images/index",
+        url: "/api/meta-images/index", // Generic meta image
         width: 1200,
         height: 630,
-        alt: "HireLukas - Lernt mich jetzt besser kennen",
+        alt: "Lukas Stockburger",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "HireLukas",
-    description: "Lernt mich jetzt besser kennen",
+    title: "Lukas Stockburger",
+    description: profile.summary,
     images: ["/api/meta-images/index"],
   },
 };
 
-const applications = jobsData.map((job) => ({
-  id: job.id,
-  name: job.company,
-  logo: job.companyLogo,
-  position: job.position,
-}));
-
 export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-zinc-950">
-      <main className="flex min-h-screen w-full max-w-2xl flex-col items-center gap-12 py-24 px-8">
-        {/* Avatar & Greeting */}
-        <div className="flex flex-col items-center gap-6">
-          <Image
-            src="/lukas_avatar.jpeg"
-            alt="Lukas"
-            width={120}
-            height={120}
-            className="rounded-full border-4 border-white shadow-lg dark:border-zinc-800"
-            priority
-          />
-          <div className="text-center">
-            <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
-              Hi, I&apos;m Lukas 👋
-            </h1>
-            <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-              Here are my job applications
-            </p>
-          </div>
-        </div>
+  // Using a nice blue accent color for the generic profile
+  const accentColor = "#3b82f6";
 
-        {/* Applications */}
-        <div className="w-full space-y-6">
-          {applications.map((app) => (
+  return (
+    <div className="min-h-svh flex items-center justify-center bg-stone-100 p-4 md:p-8">
+      <div className="mx-auto max-w-2xl w-full">
+        <div
+          className="relative overflow-hidden rounded-3xl p-6 md:p-10 shadow-xl bg-white"
+          style={{
+            background: `linear-gradient(135deg, ${accentColor}15 0%, ${accentColor}05 50%, white 100%)`,
+          }}
+        >
+          {/* Schedule Call Button - Top Right */}
+          <div className="absolute right-4 top-4 z-20 md:right-6 md:top-6">
+            <ScheduleCallDialog
+              accentColor={accentColor}
+              buttonLabel="Schedule Call"
+            />
+          </div>
+
+          {/* Decorative elements */}
+          <div
+            className="absolute -right-20 -top-20 size-64 rounded-full blur-3xl opacity-20"
+            style={{ backgroundColor: accentColor }}
+          />
+          <div
+            className="absolute -bottom-10 -left-10 size-48 rounded-full blur-2xl opacity-10"
+            style={{ backgroundColor: accentColor }}
+          />
+
+          {/* Geometric pattern overlay */}
+          <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
             <div
-              key={app.id}
-              className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
-            >
-              <div className="mb-4 flex items-center gap-3">
-                <div className="relative h-10 w-10 shrink-0">
-                  <Image
-                    src={app.logo}
-                    alt={app.name}
-                    fill
-                    className="rounded-lg object-contain"
+              className="absolute inset-0"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+              }}
+            />
+          </div>
+
+          <div className="relative z-10 flex h-full flex-col">
+            {/* Avatar section */}
+            <div className="flex flex-col items-center md:items-start">
+              <div className="relative mb-6">
+                {/* Animated ring */}
+                <div
+                  className="absolute inset-0 animate-pulse rounded-full"
+                  style={{
+                    background: `linear-gradient(135deg, ${accentColor}40, ${accentColor}10)`,
+                    transform: "scale(1.15)",
+                  }}
+                />
+                {/* Avatar */}
+                <div className="relative size-28 overflow-hidden rounded-full ring-4 ring-white shadow-2xl md:size-36">
+                  <img
+                    src={profile.avatar}
+                    alt={profile.name}
+                    className="size-full object-cover"
                   />
                 </div>
-                <div>
-                  <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
-                    {app.name}
-                  </h2>
-                  <p className="text-sm text-zinc-500 dark:text-zinc-400">
-                    {app.position}
-                  </p>
-                </div>
               </div>
 
-              <div className="grid grid-cols-3 gap-3">
-                <Link
-                  href={`/${app.id}/cv`}
-                  className="flex flex-col items-center gap-2 rounded-xl bg-zinc-100 p-4 transition-colors hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700"
+              {/* Name and title */}
+              <div className="text-center md:text-left">
+                <h1 className="text-3xl font-bold tracking-tight text-stone-900 md:text-4xl">
+                  {profile.name}
+                </h1>
+                <p
+                  className="mt-1 text-lg font-medium md:text-xl"
+                  style={{ color: accentColor }}
                 >
-                  <FileText className="h-5 w-5 text-zinc-700 dark:text-zinc-300" />
-                  <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-                    CV
-                  </span>
-                </Link>
-
-                <Link
-                  href={`/${app.id}/cover-letter`}
-                  className="flex flex-col items-center gap-2 rounded-xl bg-zinc-100 p-4 transition-colors hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700"
-                >
-                  <Mail className="h-5 w-5 text-zinc-700 dark:text-zinc-300" />
-                  <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-                    Cover Letter
-                  </span>
-                </Link>
-
-                <Link
-                  href={`/${app.id}/talk`}
-                  className="flex flex-col items-center gap-2 rounded-xl bg-zinc-100 p-4 transition-colors hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700"
-                >
-                  <MessageSquare className="h-5 w-5 text-zinc-700 dark:text-zinc-300" />
-                  <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-                    Talk
-                  </span>
-                </Link>
+                  {profile.title}
+                </p>
+                <p className="mt-4 text-stone-500 text-base leading-relaxed">
+                  {profile.summary}
+                </p>
               </div>
             </div>
-          ))}
+
+            {/* Spacer */}
+            <div className="flex-1 min-h-8" />
+
+            {/* Quick info badges */}
+            <div className="mt-6 flex flex-wrap justify-center gap-2 md:justify-start">
+              {[
+                {
+                  text: `8+ Years Experience`,
+                  icon: "Sparkles",
+                },
+                { text: "Full-Stack Developer" },
+                { text: "AI Specialist" },
+              ].map((keyword, i) => (
+                <span
+                  key={i}
+                  className="inline-flex items-center gap-1.5 rounded-full bg-white/80 px-3 py-1.5 text-xs font-medium text-stone-600 shadow-sm backdrop-blur-sm"
+                >
+                  {keyword.icon === "Sparkles" && (
+                    <Sparkles
+                      className="size-3"
+                      style={{ color: accentColor }}
+                    />
+                  )}
+                  {keyword.text}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
-      </main>
+      </div>
     </div>
   );
 }

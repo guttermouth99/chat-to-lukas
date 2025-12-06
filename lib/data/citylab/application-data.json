@@ -12,7 +12,7 @@
     "companyName": "CityLAB Berlin",
     "address": "Silbersteinstraße 124, 12051 Berlin",
     "phone": "+49 163 160 3074",
-    "email": "lukas.stockburger@googlemail.com",
+    "email": "lukas.stockburger@gmail.com",
     "birthday": "07.02.1990",
     "linkedin": "linkedin.com/in/lukas-s-186583a2",
     "talkToMe": "talk"
@@ -190,9 +190,9 @@
     }
   ],
   "printSpacing": {
-    "workExperience": "0px",
-    "skills": "0px",
+    "workExperience": null,
+    "skills": null,
     "education": "100px",
-    "languages": "0px"
+    "languages": null
   }
 }

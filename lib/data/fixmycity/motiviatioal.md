@@ -65,7 +65,7 @@ Mit freundlichen Grüßen,
 
 **Lukas Stockburger**
 
-📧 lukas.stockburger@googlemail.com  
+📧 lukas.stockburger@gmail.com  
 📱 +49 163 160 3074  
 🔗 [LinkedIn](https://www.linkedin.com/in/lukas-s-186583a2)  
 🌐 [getbaito.com](https://getbaito.com) | [talentalert.io](https://talentalert.io)

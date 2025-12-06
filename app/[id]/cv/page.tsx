@@ -115,7 +115,7 @@ interface ExperienceItemProps {
 function ExperienceItem({ experience, accentColor }: ExperienceItemProps) {
   return (
     <div
-      className="relative pl-6 pb-8 last:pb-0 group print-padding-top"
+      className={`relative pl-6 pb-8 last:pb-0 group ${experience.printPaddingTop ? "print-padding-top" : ""}`}
       style={{
         '--print-padding-top': experience.printPaddingTop
       } as React.CSSProperties}
@@ -234,7 +234,7 @@ interface EducationItemProps {
 function EducationItem({ education, accentColor }: EducationItemProps) {
   return (
     <div
-      className="space-y-1 print-padding-top"
+      className={`space-y-1 ${education.printPaddingTop ? "print-padding-top" : ""}`}
       style={{
         '--print-padding-top': education.printPaddingTop
       } as React.CSSProperties}
@@ -279,7 +279,7 @@ function LanguageBar({ name, level, accentColor, printPaddingTop }: LanguageBarP
 
   return (
     <div
-      className="space-y-1.5 print-padding-top"
+      className={`space-y-1.5 ${printPaddingTop ? "print-padding-top" : ""}`}
       style={{
         '--print-padding-top': printPaddingTop
       } as React.CSSProperties}
@@ -382,7 +382,7 @@ export default async function CVPage({
         <main className="grid grid-cols-1 md:grid-cols-[1fr_240px] print:grid-cols-[1fr_240px] gap-0">
           {/* Left Column - Experience */}
           <div
-            className="px-4 md:px-8 print:px-8 py-4 md:py-6 print:py-6 md:border-r print:border-r border-slate-100 print-padding-top"
+            className={`px-4 md:px-8 print:px-8 py-4 md:py-6 print:py-6 md:border-r print:border-r border-slate-100 ${printSpacing?.workExperience ? "print-padding-top" : ""}`}
             style={{
               '--print-padding-top': printSpacing?.workExperience
             } as React.CSSProperties}
@@ -406,11 +406,11 @@ export default async function CVPage({
           </div>
 
           {/* Right Column - Skills, Education, Languages */}
-          <div className="bg-slate-50/50 px-4 md:px-5 print:px-5 py-4 md:py-6 print:py-6 flex flex-col">
-            <div className="flex-1">
+          <div className="bg-slate-50/50 px-4 md:px-5 print:px-5 py-4 md:py-6 print:py-6 flex flex-col justify-start align-start">
+            <div className=" flex flex-col justify-start align-start">
               {/* Skills Section */}
               <div
-                className="mb-6 print-padding-top"
+                className={`mb-6 ${printSpacing?.skills ? "print-padding-top" : ""}`}
                 style={{
                   '--print-padding-top': printSpacing?.skills
                 } as React.CSSProperties}
@@ -430,7 +430,7 @@ export default async function CVPage({
                     return (
                       <div
                         key={index}
-                        className="print-padding-top"
+                        className={skill.printPaddingTop ? "print-padding-top" : ""}
                         style={{
                           '--print-padding-top': skill.printPaddingTop
                         } as React.CSSProperties}
@@ -454,7 +454,7 @@ export default async function CVPage({
 
               {/* Education Section */}
               <div
-                className="mb-6 print-padding-top"
+                className={`mb-6 ${printSpacing?.education ? "print-padding-top" : ""}`}
                 style={{
                   '--print-padding-top': printSpacing?.education
                 } as React.CSSProperties}
@@ -482,7 +482,7 @@ export default async function CVPage({
 
               {/* Languages Section */}
               <div
-                className="print-padding-top"
+                className={`${printSpacing?.languages ? "print-padding-top" : ""}`}
                 style={{
                   '--print-padding-top': printSpacing?.languages
                 } as React.CSSProperties}
