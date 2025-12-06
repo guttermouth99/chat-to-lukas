@@ -202,9 +202,8 @@ function TalkToMeContent() {
               {conversation.map((message: ClientMessage) => (
                 <div
                   key={message.id}
-                  className={`flex gap-3 ${
-                    message.role === "user" ? "flex-row-reverse" : ""
-                  }`}
+                  className={`flex gap-3 ${message.role === "user" ? "flex-row-reverse" : ""
+                    }`}
                 >
                   <Avatar className="size-8 shrink-0">
                     {message.role === "user" ? (
@@ -222,17 +221,16 @@ function TalkToMeContent() {
                     )}
                   </Avatar>
                   <div
-                    className={`max-w-[80%] rounded-2xl px-4 py-2.5 ${
-                      message.role === "user"
+                    className={`max-w-[80%] rounded-2xl px-4 py-2.5 ${message.role === "user"
                         ? ""
                         : "bg-white text-stone-900 shadow-sm ring-1 ring-stone-200"
-                    }`}
+                      }`}
                     style={
                       message.role === "user"
                         ? {
-                            backgroundColor: job.chatBubble.background,
-                            color: job.chatBubble.foreground,
-                          }
+                          backgroundColor: job.chatBubble.background,
+                          color: job.chatBubble.foreground,
+                        }
                         : undefined
                     }
                   >

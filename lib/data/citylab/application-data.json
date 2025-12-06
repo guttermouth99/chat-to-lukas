@@ -121,7 +121,7 @@
     {
       "name": "AI Tooling & Prototyping",
       "icon": "Sparkles",
-      "skills": "Cursor, V0, Claude, ChatGPT, Jina AI, Gemini, AI SDK, Agent Orchestration, Agentic Programming"
+      "skills": "Cursor, V0, Claude, ChatGPT, Jina AI, Gemini, AI SDK, Agent Orchestration (Dify, N8n, etc.), Agentic Programming"
     },
     {
       "name": "Web Entwicklung",
