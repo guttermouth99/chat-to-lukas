@@ -8,6 +8,7 @@ import { t, type Language } from "@/lib/translations";
 import { cn } from "@/lib/utils";
 import { ScheduleCallDialog } from "@/components/schedule-call-dialog";
 import { CommandMenu } from '@/components/command-menu';
+import { FrontPageKeyword } from "@/lib/types/cv";
 
 interface JobPageProps {
   params: Promise<{ id: string }>;
@@ -41,7 +42,7 @@ export async function generateMetadata({
   const lang = (job.lang as Language) || "german";
   const translations = t(lang);
   const title = `${profile.name} × ${job.company} - ${translations.metaTitles.index}`;
-  const description = `${translations.metaDescriptions.index} ${job.position} ${lang === "german" ? "bei" : "at"} ${job.company}`;
+  const description = `${translations.metaDescriptions.index} ${data.frontpage?.subtitle ?? job.position} ${lang === "german" ? "bei" : "at"} ${job.company}`;
 
   return {
     title,
@@ -76,6 +77,7 @@ export default async function JobPage({ params }: JobPageProps) {
     notFound();
   }
 
+  const data = await getApplicationData(id);
   const lang = (job.lang as Language) || "german";
   const translations = t(lang);
   const accentColor = job.chatBubble.background;
@@ -155,13 +157,13 @@ export default async function JobPage({ params }: JobPageProps) {
                 {/* Name and title */}
                 <div className="text-center md:text-left">
                   <h1 className="text-3xl font-bold tracking-tight text-stone-900 md:text-4xl">
-                    {profile.name}
+                    {data?.frontpage?.title ?? profile.name}
                   </h1>
                   <p
                     className="mt-1 text-lg font-medium md:text-xl"
                     style={{ color: accentColor }}
                   >
-                    {job.position}
+                    {data?.frontpage?.subtitle ?? job.position}
                   </p>
                   <p className="mt-1 text-stone-500">
                     @ {job.company}
@@ -174,16 +176,24 @@ export default async function JobPage({ params }: JobPageProps) {
 
               {/* Quick info badges */}
               <div className="mt-6 flex flex-wrap justify-center gap-2 md:justify-start">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/80 px-3 py-1.5 text-xs font-medium text-stone-600 shadow-sm backdrop-blur-sm">
-                  <Sparkles className="size-3" style={{ color: accentColor }} />
-                  8+ {lang === "german" ? "Jahre Erfahrung" : "Years Experience"}
-                </span>
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/80 px-3 py-1.5 text-xs font-medium text-stone-600 shadow-sm backdrop-blur-sm">
-                  Full-Stack Developer
-                </span>
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/80 px-3 py-1.5 text-xs font-medium text-stone-600 shadow-sm backdrop-blur-sm">
-                  {lang === "german" ? "KI-Spezialist" : "AI Specialist"}
-                </span>
+                {(data?.frontpage?.keywords ?? [
+                  {
+                    text: `8+ ${lang === "german" ? "Jahre Erfahrung" : "Years Experience"}`,
+                    icon: "Sparkles",
+                  },
+                  { text: "Full-Stack Developer" },
+                  { text: lang === "german" ? "KI-Spezialist" : "AI Specialist" },
+                ]).map((keyword: FrontPageKeyword, i: number) => (
+                  <span
+                    key={i}
+                    className="inline-flex items-center gap-1.5 rounded-full bg-white/80 px-3 py-1.5 text-xs font-medium text-stone-600 shadow-sm backdrop-blur-sm"
+                  >
+                    {keyword.icon === "Sparkles" && (
+                      <Sparkles className="size-3" style={{ color: accentColor }} />
+                    )}
+                    {keyword.text}
+                  </span>
+                ))}
               </div>
             </div>
           </div>

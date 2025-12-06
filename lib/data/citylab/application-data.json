@@ -16,6 +16,22 @@
     "linkedin": "linkedin.com/in/lukas-s-186583a2",
     "talkToMe": "talk"
   },
+  "frontpage": {
+    "title": "Lukas Stockburger",
+    "subtitle": "Full-Stack Product Engineer & KI-Entwickler",
+    "keywords": [
+      {
+        "text": "8+ Jahre Erfahrung",
+        "icon": "Sparkles"
+      },
+      { 
+        "text": "Full-Stack Developer"
+      },
+      {
+        "text": "KI-Spezialist"
+      }
+    ]
+  },
   "labels": {
     "profile": "Profil",
     "workExperience": "Arbeitserfahrung",

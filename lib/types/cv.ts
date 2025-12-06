@@ -58,6 +58,17 @@ export interface CVLanguage {
   level: number;
 }
 
+export interface FrontPageKeyword {
+  text: string;
+  icon?: string;
+}
+
+export interface CVFrontPage {
+  title?: string;
+  subtitle?: string;
+  keywords?: FrontPageKeyword[];
+}
+
 export interface CoverLetterRecipient {
   name?: string;
   title?: string;
@@ -86,6 +97,7 @@ export interface CVData {
   awards: CVAward[];
   education: CVEducation[];
   languages: CVLanguage[];
+  frontpage?: CVFrontPage;
   coverLetter?: CoverLetterData;
 }
 
