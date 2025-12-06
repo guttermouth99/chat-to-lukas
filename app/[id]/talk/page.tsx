@@ -1,9 +1,9 @@
 "use client";
 
 import { useActions, useUIState } from "@ai-sdk/rsc";
-import { useParams, useRouter } from "next/navigation";
+import { useParams, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, Suspense } from "react";
 import { ArrowLeft, Send } from "lucide-react";
 import { generateId } from "ai";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -18,9 +18,12 @@ import { t, type Language } from "@/lib/translations";
 
 export const maxDuration = 30;
 
-export default function TalkToMePage() {
+function TalkToMeContent() {
   const params = useParams();
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const initialQuestion = searchParams.get("q");
+  const hasStartedRef = useRef(false);
   const jobId = params.id as string;
   const job = jobsToApply.find((j) => j.id === jobId);
   const lang = (job?.lang as Language) || "german";
@@ -92,6 +95,13 @@ export default function TalkToMePage() {
 
     setIsLoading(false);
   };
+
+  useEffect(() => {
+    if (initialQuestion && conversation.length === 0 && !hasStartedRef.current && !isLoading) {
+      hasStartedRef.current = true;
+      handleSuggestionClick(initialQuestion);
+    }
+  }, [initialQuestion, conversation.length, isLoading]);
 
   if (!job) {
     return (
@@ -284,3 +294,10 @@ export default function TalkToMePage() {
   );
 }
 
+export default function TalkToMePage() {
+  return (
+    <Suspense>
+      <TalkToMeContent />
+    </Suspense>
+  );
+}

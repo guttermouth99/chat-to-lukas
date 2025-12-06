@@ -277,13 +277,14 @@ export default async function JobPage({ params }: JobPageProps) {
           )}
 
           {/* Chat Card - Full width */}
-          <Link
-            href={`/${id}/talk`}
+          <div
             className="group relative col-span-1 overflow-hidden rounded-3xl p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl md:col-span-3"
             style={{ backgroundColor: accentColor }}
           >
+            <Link href={`/${id}/talk`} className="absolute inset-0 z-0" aria-label={translations.talkToMe} />
+
             {/* Animated background pattern */}
-            <div className="absolute inset-0 opacity-10">
+            <div className="absolute inset-0 opacity-10 pointer-events-none">
               <div
                 className="absolute inset-0"
                 style={{
@@ -293,7 +294,7 @@ export default async function JobPage({ params }: JobPageProps) {
             </div>
 
             <div className="relative z-10 flex flex-col items-center justify-between gap-4 md:flex-row">
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 pointer-events-none">
                 <div className="relative">
                   <div className="size-14 overflow-hidden rounded-full ring-4 ring-white/30">
                     <img
@@ -318,20 +319,21 @@ export default async function JobPage({ params }: JobPageProps) {
               <div className="flex items-center gap-3">
                 <div className="hidden flex-wrap justify-end gap-2 md:flex">
                   {(job.defaultQuestions ?? translations.defaultQuestions).slice(0, 2).map((q) => (
-                    <span
+                    <Link
                       key={q}
-                      className="rounded-full bg-white/20 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm"
+                      href={`/${id}/talk?q=${encodeURIComponent(q)}`}
+                      className="relative z-10 rounded-full bg-white/20 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/30"
                     >
                       {q}
-                    </span>
+                    </Link>
                   ))}
                 </div>
-                <div className="flex size-12 items-center justify-center rounded-full bg-white/20 transition-transform duration-300 group-hover:scale-110 group-hover:bg-white/30">
+                <div className="flex size-12 items-center justify-center rounded-full bg-white/20 transition-transform duration-300 group-hover:scale-110 group-hover:bg-white/30 pointer-events-none">
                   <MessageCircle className="size-6 text-white" />
                 </div>
               </div>
             </div>
-          </Link>
+          </div>
         </div>
 
         {/* Footer */}
