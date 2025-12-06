@@ -61,19 +61,19 @@ ${bio}
 
 ### Awards
 ${profile.awards
-  .map((a) => `- **${a.name}** (${a.year}): ${a.description}`)
-  .join("\n")}
+        .map((a) => `- **${a.name}** (${a.year}): ${a.description}`)
+        .join("\n")}
 
 ### Work Experience
 ${profile.experience
-  .map(
-    (exp) => `
+        .map(
+          (exp) => `
 **${exp.title}** at ${exp.company} (${exp.period})
 ${exp.location} - ${exp.description}
 ${exp.highlights.map((h) => `- ${h}`).join("\n")}
 `
-  )
-  .join("\n")}
+        )
+        .join("\n")}
 
 ## About the Position
 
@@ -94,8 +94,8 @@ Answer questions from the Hiring Manager about ${profile.name}:
 
 ### Projects
 ${profile.projects
-  .map((p) => `- **${p.name}**: ${p.description}`)
-  .join("\n")}
+        .map((p) => `- **${p.name}**: ${p.description}`)
+        .join("\n")}
 
 ## Available Tools
 
@@ -144,19 +144,19 @@ ${bio}
 
 ### Auszeichnungen
 ${profile.awards
-  .map((a) => `- **${a.name}** (${a.year}): ${a.description}`)
-  .join("\n")}
+      .map((a) => `- **${a.name}** (${a.year}): ${a.description}`)
+      .join("\n")}
 
 ### Berufserfahrung
 ${profile.experience
-  .map(
-    (exp) => `
+      .map(
+        (exp) => `
 **${exp.title}** bei ${exp.company} (${exp.period})
 ${exp.location} - ${exp.description}
 ${exp.highlights.map((h) => `- ${h}`).join("\n")}
 `
-  )
-  .join("\n")}
+      )
+      .join("\n")}
 
 ## Über die Stelle
 
@@ -173,12 +173,13 @@ Beantworte Fragen des Hiring Managers über ${profile.name}:
 - Sei ehrlich über Fähigkeiten und Erfahrungen
 - Beziehe dich konkret auf die Anforderungen der Stelle
 - Antworte immer auf Deutsch
+- Sprich den Nutzer immer mit "Du" an
 - Halte die Antworten prägnant aber informativ
 
 ### Projekte
 ${profile.projects
-  .map((p) => `- **${p.name}**: ${p.description}`)
-  .join("\n")}
+      .map((p) => `- **${p.name}**: ${p.description}`)
+      .join("\n")}
 
 ## Verfügbare Tools
 

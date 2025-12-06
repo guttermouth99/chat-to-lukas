@@ -68,7 +68,7 @@ interface Translations {
 const german: Translations = {
   // Command menu
   navigation: "Navigation",
-  navigateToPages: "Navigieren Sie zu den verschiedenen Seiten",
+  navigateToPages: "Navigiere zu den verschiedenen Seiten",
   noPages: "Keine Seiten gefunden.",
   pages: "Seiten",
   overview: "Übersicht",
@@ -92,9 +92,9 @@ const german: Translations = {
   jobNotFound: "Job nicht gefunden",
   jobNotFoundDescription: "Diese Bewerbung existiert nicht.",
   chatWith: "Chat mit",
-  askQuestion: "Stellen Sie mir eine Frage...",
+  askQuestion: "Stelle mir jetzt eine Frage...",
   hello: "Hallo! Ich bin",
-  askMeQuestions: "Stellen Sie mir Fragen über meine Erfahrung, Skills und meine Eignung für die Position als",
+  askMeQuestions: "Stelle mir Fragen über meine Erfahrung, Skills und meine Eignung für die Position als",
   learnMoreAboutCV: "Erfahre mehr über meinen Lebenslauf",
   learnMoreAboutMotivation: "Erfahre mehr über meine Motivation",
   chatToLearnMore: "Chatte mit mir um mehr zu erfahren",
@@ -102,7 +102,7 @@ const german: Translations = {
   // Disclaimer Dialog
   disclaimerTitle: "KI-Assistent für diese Bewerbung",
   disclaimerText1: "Dieser Prototyp verwendet meine Bewerbungsunterlagen und ein Large Language Model (Gemini), um Fragen zu meinem Werdegang und meinen Fähigkeiten zu beantworten.",
-  disclaimerText2: "Bitte beachten Sie, dass die generierten Antworten zwar auf meinen Daten basieren, KI-Modelle jedoch gelegentlich Informationen ungenau wiedergeben können. Die Antworten sind informativ und rechtlich nicht bindend.",
+  disclaimerText2: "Bitte beachte, dass die generierten Antworten zwar auf meinen Daten basieren, KI-Modelle jedoch gelegentlich Informationen ungenau wiedergeben können. Die Antworten sind informativ und rechtlich nicht bindend.",
   disclaimerPrivacy: "Datenschutz-Hinweis: Es werden keine Chat-Daten in einer Datenbank gespeichert. Der Gesprächsverlauf wird lediglich im temporären Anwendungszustand gehalten und zur Verarbeitung an die Google Gemini API gesendet.",
   disclaimerConfirm: "Chat starten",
   disclaimerCancel: "Zurück zur Bewerbung",
@@ -116,7 +116,7 @@ const german: Translations = {
   ],
 
   // AI responses
-  hereAreMyContacts: "Sehr gerne! Hier sind meine Kontaktdaten – Sie können mich jederzeit erreichen:",
+  hereAreMyContacts: "Sehr gerne! Hier sind meine Kontaktdaten – Du kannst mich jederzeit erreichen:",
   hereAreMyProjects: "Hier sind einige meiner wichtigsten Projekte, die ich entwickelt habe:",
   openAIAwardResponse: "Ja, ich habe von OpenAI einen Award für meine Arbeit mit baito bekommen.",
   metaTitles: {

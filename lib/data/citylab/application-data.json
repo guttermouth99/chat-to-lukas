@@ -127,8 +127,8 @@
     {
       "name": "Web Entwicklung",
       "icon": "Globe",
-      "skills": "TypeScript, React, Next.js, Node.js, MongoDB, Prisma, tRPC, REST-APIs"
-    },
+      "skills": "TypeScript, React, Next.js, Node.js, MongoDB, Prisma, tRPC, Better-Auth, REST-APIs"
+    },  
     {
       "name": "Infrastructure & DevOps",
       "icon": "Server",
