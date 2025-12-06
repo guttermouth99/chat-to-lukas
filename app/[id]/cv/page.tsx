@@ -255,20 +255,31 @@ interface LanguageBarProps {
   accentColor: string;
 }
 
+function getLevelLabel(level: number): string {
+  if (level >= 5) return "Muttersprache";
+  if (level >= 4) return "Verhandlungssicher";
+  if (level >= 3) return "Fließend";
+  if (level >= 2) return "Gute Kenntnisse";
+  return "Grundlagen";
+}
+
 function LanguageBar({ name, level, accentColor }: LanguageBarProps) {
+  const percentage = Math.min(100, Math.max(0, (level / 5) * 100));
+
   return (
-    <div className="flex items-center justify-between">
-      <span className="text-[11px] text-slate-700">{name}</span>
-      <div className="flex gap-0.5">
-        {[...Array(5)].map((_, i) => (
-          <div
-            key={i}
-            className="w-3 h-3 rounded-full"
-            style={{
-              backgroundColor: i < level ? accentColor : "#e2e8f0",
-            }}
-          />
-        ))}
+    <div className="space-y-1.5">
+      <div className="flex items-center justify-between text-[11px]">
+        <span className="font-medium text-slate-800">{name}</span>
+        <span className="text-slate-500 text-[10px] uppercase tracking-wide opacity-80">{getLevelLabel(level)}</span>
+      </div>
+      <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
+        <div
+          className="h-full rounded-full transition-all duration-500"
+          style={{
+            width: `${percentage}%`,
+            background: `linear-gradient(90deg, ${accentColor}66, ${accentColor})`,
+          }}
+        />
       </div>
     </div>
   );

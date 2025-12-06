@@ -26,7 +26,7 @@
   "profileSummary": "Erfahrener <strong>Full-Stack Entwickler & KI-Spezialist</strong> mit über 8 Jahren Expertise in der Entwicklung KI-gestützter Web-Anwendungen und digitaler Prototypen. Spezialisiert auf TypeScript, React, Node.js und Docker sowie LLM-basierte Datenverarbeitung, Vektor-Datenbanken und intelligente Automatisierungssysteme. Nachweisliche Erfahrung im Aufbau skalierbarer Datenpipelines und API-Architekturen. Leidenschaftlicher Verfechter von Open Source und gemeinwohlorientierten Technologien. Kombiniert technische Exzellenz mit Kommunikationsstärke und agilen Arbeitsmethoden.",
   "workExperience": [
     {
-      "period": "01/2022 – Heute",
+      "period": "01/2022 – 10/2025",
       "title": "Co-Founder & Full-Stack Entwickler",
       "company": "baito UG",
       "location": "Berlin",
@@ -100,22 +100,22 @@
     {
       "name": "KI & Machine Learning",
       "icon": "Brain",
-      "skills": "LLMs, NLP, Prompt Engineering, KI-Agents, Vektor-Datenbanken, Embeddings, AI-SDK, Datenklassifizierung"
+      "skills": "LLMs, MCP, NLP, RAG, Prompt Engineering, KI-Agents, Vektor-Datenbanken, Embeddings, AI-SDK, Datenklassifizierung, Fine-Tuning"
     },
     {
       "name": "AI Tooling & Prototyping",
       "icon": "Sparkles",
-      "skills": "Cursor, V0, Claude, ChatGPT, Gemini, AI SDK, Stagehand, MCP"
+      "skills": "Cursor, V0, Claude, ChatGPT, Jina AI, Gemini, AI SDK, Agent Orchestration, Agentic Programming"
     },
     {
       "name": "Web Entwicklung",
       "icon": "Globe",
-      "skills": "TypeScript, React, Next.js, Node.js, MongoDB, Prisma, tRPC, REST-APIs, BullMQ"
+      "skills": "TypeScript, React, Next.js, Node.js, MongoDB, Prisma, tRPC, REST-APIs"
     },
     {
       "name": "Infrastructure & DevOps",
       "icon": "Server",
-      "skills": "Docker, Vercel, AWS, Hetzner, Datenpipelines, Scraping, git"
+      "skills": "Docker, Vercel, AWS, Vercel WDK, BullMQ, Hetzner, Datenpipelines, Scraping"
     },
     {
       "name": "Agile & Kommunikation",
