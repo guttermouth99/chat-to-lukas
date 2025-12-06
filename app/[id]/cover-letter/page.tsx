@@ -16,13 +16,13 @@ async function getCoverLetterFromMarkdown(id: string): Promise<CoverLetterData |
     const filePath = path.join(process.cwd(), "lib", "data", id, "motivational.md");
     const fileContent = await fs.readFile(filePath, "utf-8");
     const { data, content } = matter(fileContent);
-    
+
     // Split content into paragraphs (separated by double newlines)
     const paragraphs = content
       .trim()
       .split(/\n\n+/)
       .filter((p) => p.trim().length > 0);
-    
+
     return {
       recipient: data.recipient,
       date: data.date,
@@ -42,13 +42,13 @@ async function getCVData(id: string): Promise<CVData | null> {
   try {
     const data = await import(`@/lib/data/${id}/application-data.json`);
     const cvData = data.default as CVData;
-    
+
     // Try to load cover letter from markdown file
     const markdownCoverLetter = await getCoverLetterFromMarkdown(id);
     if (markdownCoverLetter) {
       cvData.coverLetter = markdownCoverLetter;
     }
-    
+
     return cvData;
   } catch {
     return null;
@@ -123,17 +123,18 @@ export default async function CoverLetterPage({
       {/* A4 Paper Container */}
       <div className={`mx-auto w-full md:w-[210mm] print:w-[210mm] md:min-h-[297mm] print:min-h-[297mm] bg-white shadow-none md:shadow-2xl print:shadow-none overflow-hidden flex flex-col ${isPdf ? 'shadow-none w-[210mm] min-h-[297mm]' : ''}`}>
         {/* Reusable Header */}
-        <CVHeader 
-          personal={personal} 
-          accentColor={accentColor} 
+        <CVHeader
+          personal={personal}
+          accentColor={accentColor}
           showTalkToMe={true}
           lang={lang}
+          isPrint={isPdf}
         />
 
         {/* Letter Content */}
         <main className="flex-1 px-4 md:px-12 print:px-12 py-6 md:py-10 print:py-10">
           {/* Recipient & Date */}
-          <div className="flex flex-col md:flex-row print:flex-row md:justify-between print:justify-between items-start gap-4 md:gap-0 print:gap-0 mb-6 md:mb-10 print:mb-10">
+          {/* <div className="flex flex-col md:flex-row print:flex-row md:justify-between print:justify-between items-start gap-4 md:gap-0 print:gap-0 mb-6 md:mb-10 print:mb-10">
             <div className="space-y-0.5">
               <p className="text-sm font-semibold text-slate-900">
                 {coverLetter.recipient.company}
@@ -163,7 +164,7 @@ export default async function CoverLetterPage({
                 {coverLetter.date}
               </p>
             </div>
-          </div>
+          </div> */}
 
           {/* Subject Line */}
           <div className="mb-6 md:mb-8 print:mb-8">
@@ -181,18 +182,30 @@ export default async function CoverLetterPage({
 
           {/* Letter Body */}
           <div className="space-y-3 md:space-y-4 print:space-y-4">
-            {coverLetter.paragraphs.map((paragraph, index) => (
-              <p
-                key={index}
-                className="text-sm text-slate-700 leading-relaxed"
-                dangerouslySetInnerHTML={{
-                  __html: paragraph.replace(
-                    /<strong>/g,
-                    `<span class="font-semibold" style="color: ${accentColor}">`
-                  ).replace(/<\/strong>/g, '</span>'),
-                }}
-              />
-            ))}
+            {coverLetter.paragraphs.map((paragraph, index) => {
+              const isPromoParagraph = paragraph.includes('hirelukas.dev');
+              // Hide promo paragraph on screen, show only in print/PDF
+              // If isPdf is true (PDF generation mode), we want it visible (so no hidden class)
+              // If isPdf is false (browser mode), we want it hidden on screen but visible in native print
+              const visibilityClass = isPromoParagraph && !isPdf ? 'hidden print:block' : '';
+
+              return (
+                <p
+                  key={index}
+                  className={`text-sm text-slate-700 leading-relaxed ${visibilityClass}`}
+                  dangerouslySetInnerHTML={{
+                    __html: paragraph
+                      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                      .replace(/\[(.*?)\]\((.*?)\)/g, `<a href="$2" class="underline hover:opacity-80 text-[${accentColor}]" style="color: ${accentColor}">$1</a>`)
+                      .replace(
+                        /<strong>/g,
+                        `<span class="font-semibold" style="color: ${accentColor}">`
+                      )
+                      .replace(/<\/strong>/g, 'span'),
+                  }}
+                />
+              );
+            })}
           </div>
 
           {/* Closing & Signature */}
@@ -235,7 +248,7 @@ export default async function CoverLetterPage({
           <Link
             href={`/${id}/cv`}
             className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:scale-105"
-            style={{ 
+            style={{
               backgroundColor: `${accentColor}15`,
               color: accentColor,
             }}
@@ -246,7 +259,7 @@ export default async function CoverLetterPage({
           <Link
             href={`/${id}/talk`}
             className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:scale-105"
-            style={{ 
+            style={{
               backgroundColor: `${accentColor}15`,
               color: accentColor,
             }}

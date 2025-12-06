@@ -94,8 +94,8 @@ export default async function JobPage({ params }: JobPageProps) {
           >
             {/* Schedule Call Button - Top Right */}
             <div className="absolute right-4 top-4 z-20 md:right-6 md:top-6">
-              <ScheduleCallDialog 
-                accentColor={accentColor} 
+              <ScheduleCallDialog
+                accentColor={accentColor}
                 buttonLabel={lang === "german" ? "Termin vereinbaren" : "Schedule Call"}
               />
             </div>
@@ -109,7 +109,7 @@ export default async function JobPage({ params }: JobPageProps) {
               className="absolute -bottom-10 -left-10 size-48 rounded-full blur-2xl opacity-10"
               style={{ backgroundColor: accentColor }}
             />
-            
+
             {/* Geometric pattern overlay */}
             <div className="absolute inset-0 opacity-[0.02]">
               <div
@@ -281,7 +281,7 @@ export default async function JobPage({ params }: JobPageProps) {
                 }}
               />
             </div>
-            
+
             <div className="relative z-10 flex flex-col items-center justify-between gap-4 md:flex-row">
               <div className="flex items-center gap-4">
                 <div className="relative">
@@ -304,7 +304,7 @@ export default async function JobPage({ params }: JobPageProps) {
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex items-center gap-3">
                 <div className="hidden flex-wrap justify-end gap-2 md:flex">
                   {(job.defaultQuestions ?? translations.defaultQuestions).slice(0, 2).map((q) => (
@@ -329,7 +329,7 @@ export default async function JobPage({ params }: JobPageProps) {
           <CommandMenu className="shadow-none" hasCoverLetter={job.hasCoverLetter} currentPage="overview" lang={lang} />
         </div>
         <p className="mt-4 text-center text-xs text-stone-400">
-          {lang === "german" 
+          {lang === "german"
             ? "Diese interaktive Bewerbung wurde mit meinem Brain, Next.js, Tailwind CSS, und ShadCN erstellt."
             : "This interactive application was built with my Brain, Next.js, Tailwind CSS, and ShadCN."}
         </p>

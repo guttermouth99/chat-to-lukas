@@ -5,7 +5,7 @@
   },
   "personal": {
     "fullName": "Lukas Stockburger",
-    "workingTitle": "Full-Stack Entwickler & KI-Spezialist",
+    "workingTitle": "Full-Stack Product Engineer & KI-Entwickler",
     "avatar": "/lukas_avatar.jpeg",
     "companyLogo": "/citylab_logo.jpg",
     "companyName": "CityLAB Berlin",
@@ -125,7 +125,7 @@
     {
       "name": "Weitere Kompetenzen",
       "icon": "Briefcase",
-      "skills": "Design Thinking, Prototyping, Team Leadership, Entrepreneurship"
+      "skills": "Design Thinking, Prototyping, Team Leadership, Entrepreneurship, GDPR, KI-Gesetz"
     }
   ],
   "awards": [
