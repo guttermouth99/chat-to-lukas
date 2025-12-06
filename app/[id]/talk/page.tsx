@@ -58,8 +58,11 @@ function TalkToMeContent() {
     async function loadData() {
       const data = await getApplicationData(jobId);
       if (data?.showChatDisclaimer) {
-        setIsDisclaimerOpen(true);
-        setShowDisclaimer(true);
+        const disclaimerConfirmed = localStorage.getItem(`disclaimer_confirmed_${jobId}`);
+        if (!disclaimerConfirmed) {
+          setIsDisclaimerOpen(true);
+          setShowDisclaimer(true);
+        }
       }
     }
     loadData();
@@ -179,7 +182,12 @@ function TalkToMeContent() {
             >
               {translations.disclaimerCancel}
             </AlertDialogCancel>
-            <AlertDialogAction onClick={() => setIsDisclaimerOpen(false)}>
+            <AlertDialogAction
+              onClick={() => {
+                setIsDisclaimerOpen(false);
+                localStorage.setItem(`disclaimer_confirmed_${jobId}`, "true");
+              }}
+            >
               {translations.disclaimerConfirm}
             </AlertDialogAction>
           </AlertDialogFooter>
