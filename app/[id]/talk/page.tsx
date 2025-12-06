@@ -135,12 +135,14 @@ function TalkToMeContent() {
         <AlertDialogContent className="max-w-xl">
           <AlertDialogHeader>
             <AlertDialogTitle>{translations.disclaimerTitle}</AlertDialogTitle>
-            <AlertDialogDescription className="space-y-4 pt-2 text-base">
-              <p>{translations.disclaimerText1}</p>
-              <p>{translations.disclaimerText2}</p>
-              <p className="rounded-md bg-stone-100 p-3 text-sm text-stone-600">
-                {translations.disclaimerPrivacy}
-              </p>
+            <AlertDialogDescription className="space-y-4 pt-2 text-base" asChild>
+              <div>
+                <p>{translations.disclaimerText1}</p>
+                <p>{translations.disclaimerText2}</p>
+                <p className="rounded-md bg-stone-100 p-3 text-sm text-stone-600">
+                  {translations.disclaimerPrivacy}
+                </p>
+              </div>
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter className="mt-4">
