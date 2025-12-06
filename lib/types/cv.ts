@@ -31,12 +31,14 @@ export interface CVWorkExperience {
   location: string;
   description?: string;
   achievements: string[];
+  printPaddingTop?: string;
 }
 
 export interface CVSkill {
   name: string;
   icon: string;
   skills: string;
+  printPaddingTop?: string;
 }
 
 export interface CVAward {
@@ -51,11 +53,13 @@ export interface CVEducation {
   location: string;
   degree: string;
   thesis?: string;
+  printPaddingTop?: string;
 }
 
 export interface CVLanguage {
   name: string;
   level: number;
+  printPaddingTop?: string;
 }
 
 export interface FrontPageKeyword {
@@ -86,6 +90,13 @@ export interface CoverLetterData {
   signature: string;
 }
 
+export interface CVSectionSpacing {
+  workExperience?: string;
+  skills?: string;
+  education?: string;
+  languages?: string;
+}
+
 export interface CVData {
   lang?: "english" | "german";
   theme: CVTheme;
@@ -100,5 +111,6 @@ export interface CVData {
   frontpage?: CVFrontPage;
   coverLetter?: CoverLetterData;
   showChatDisclaimer?: boolean;
+  printSpacing?: CVSectionSpacing;
 }
 

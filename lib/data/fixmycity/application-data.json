@@ -169,6 +169,12 @@
       "level": 2
     }
   ],
+  "printSpacing": {
+    "workExperience": "0px",
+    "skills": "0px",
+    "education": "0px",
+    "languages": "0px"
+  },
   "coverLetter": {
     "recipient": {
       "company": "FixMyCity GmbH",

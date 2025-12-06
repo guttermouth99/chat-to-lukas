@@ -57,6 +57,7 @@
         "Prompt Engineering & KI-Agents für intelligente Workflows und Automatisierung",
         "Agenten-getriebenes Prototyping zur Evaluierung neuer KI- & Web-Trends"
       ]
+      
     },
     {
       "period": "01/2016 – 2022",
@@ -78,7 +79,8 @@
       "achievements": [
         "Moderne Webapps mit React Native, Vue.js, HTML5, CSS-in-JS, Webpack",
         "SCRUM & Agile Development in Jira"
-      ]
+      ],
+      "printPaddingTop": "100px"
     },
     {
       "period": "07/2017 – 02/2018",
@@ -186,5 +188,11 @@
       "name": "Spanisch",
       "level": 2
     }
-  ]
+  ],
+  "printSpacing": {
+    "workExperience": "0px",
+    "skills": "0px",
+    "education": "100px",
+    "languages": "0px"
+  }
 }

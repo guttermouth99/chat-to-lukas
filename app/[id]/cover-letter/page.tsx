@@ -133,48 +133,24 @@ export default async function CoverLetterPage({
 
         {/* Letter Content */}
         <main className="flex-1 px-4 md:px-12 print:px-12 py-6 md:py-10 print:py-10">
-          {/* Recipient & Date */}
-          {/* <div className="flex flex-col md:flex-row print:flex-row md:justify-between print:justify-between items-start gap-4 md:gap-0 print:gap-0 mb-6 md:mb-10 print:mb-10">
-            <div className="space-y-0.5">
-              <p className="text-sm font-semibold text-slate-900">
-                {coverLetter.recipient.company}
-              </p>
-              {coverLetter.recipient.name && (
-                <p className="text-sm text-slate-600">
-                  {coverLetter.recipient.name}
-                </p>
-              )}
-              {coverLetter.recipient.title && (
-                <p className="text-sm text-slate-600">
-                  {coverLetter.recipient.title}
-                </p>
-              )}
-              {coverLetter.recipient.address && (
-                <p className="text-sm text-slate-600">
-                  {coverLetter.recipient.address}
-                </p>
-              )}
+          {/* Subject Line & Date */}
+          <div className="flex justify-between items-start gap-4 mb-6 md:mb-8 print:mb-8">
+            <div className="flex-1">
+              <h2 className="text-base md:text-lg print:text-lg font-bold text-slate-900">
+                {coverLetter.subject}
+              </h2>
+              <div
+                className="w-16 h-1 mt-2 rounded-full"
+                style={{ backgroundColor: accentColor }}
+              />
             </div>
-            <div className="md:text-right print:text-right">
-              <p className="text-sm text-slate-600">{personal.address}</p>
-              <p
-                className="text-sm font-medium mt-2"
-                style={{ color: accentColor }}
-              >
-                {coverLetter.date}
-              </p>
-            </div>
-          </div> */}
-
-          {/* Subject Line */}
-          <div className="mb-6 md:mb-8 print:mb-8">
-            <h2 className="text-base md:text-lg print:text-lg font-bold text-slate-900">
-              {coverLetter.subject}
-            </h2>
-            <div
-              className="w-16 h-1 mt-2 rounded-full"
-              style={{ backgroundColor: accentColor }}
-            />
+            {/* Date - Only visible in print */}
+            <p
+              className="text-sm font-medium hidden print:block shrink-0"
+              style={{ color: accentColor }}
+            >
+              {coverLetter.date}
+            </p>
           </div>
 
           {/* Greeting */}

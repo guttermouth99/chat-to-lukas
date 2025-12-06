@@ -114,7 +114,12 @@ interface ExperienceItemProps {
 
 function ExperienceItem({ experience, accentColor }: ExperienceItemProps) {
   return (
-    <div className="relative pl-6 pb-8 last:pb-0 group">
+    <div
+      className="relative pl-6 pb-8 last:pb-0 group print-padding-top"
+      style={{
+        '--print-padding-top': experience.printPaddingTop
+      } as React.CSSProperties}
+    >
       {/* Timeline line */}
       <div
         className="absolute left-0 top-2 bottom-0 w-px group-last:hidden"
@@ -228,7 +233,12 @@ interface EducationItemProps {
 
 function EducationItem({ education, accentColor }: EducationItemProps) {
   return (
-    <div className="space-y-1">
+    <div
+      className="space-y-1 print-padding-top"
+      style={{
+        '--print-padding-top': education.printPaddingTop
+      } as React.CSSProperties}
+    >
       <p
         className="text-[11px] font-medium tracking-wider uppercase"
         style={{ color: accentColor }}
@@ -253,6 +263,7 @@ interface LanguageBarProps {
   name: string;
   level: number;
   accentColor: string;
+  printPaddingTop?: string;
 }
 
 function getLevelLabel(level: number): string {
@@ -263,11 +274,16 @@ function getLevelLabel(level: number): string {
   return "Grundlagen";
 }
 
-function LanguageBar({ name, level, accentColor }: LanguageBarProps) {
+function LanguageBar({ name, level, accentColor, printPaddingTop }: LanguageBarProps) {
   const percentage = Math.min(100, Math.max(0, (level / 5) * 100));
 
   return (
-    <div className="space-y-1.5">
+    <div
+      className="space-y-1.5 print-padding-top"
+      style={{
+        '--print-padding-top': printPaddingTop
+      } as React.CSSProperties}
+    >
       <div className="flex items-center justify-between text-[11px]">
         <span className="font-medium text-slate-800">{name}</span>
         <span className="text-slate-500 text-[10px] uppercase tracking-wide opacity-80">{getLevelLabel(level)}</span>
@@ -302,7 +318,7 @@ export default async function CVPage({
   }
 
   const { data, hasCoverLetter } = result;
-  const { theme, personal, labels, profileSummary, workExperience, skills, awards, education, languages } = data;
+  const { theme, personal, labels, profileSummary, workExperience, skills, awards, education, languages, printSpacing } = data;
   const accentColor = theme.accentColor;
   const lang = (data.lang || "german") as Language;
   const translations = t(lang);
@@ -365,7 +381,12 @@ export default async function CVPage({
         {/* Main Content */}
         <main className="grid grid-cols-1 md:grid-cols-[1fr_240px] print:grid-cols-[1fr_240px] gap-0">
           {/* Left Column - Experience */}
-          <div className="px-4 md:px-8 print:px-8 py-4 md:py-6 print:py-6 md:border-r print:border-r border-slate-100">
+          <div
+            className="px-4 md:px-8 print:px-8 py-4 md:py-6 print:py-6 md:border-r print:border-r border-slate-100 print-padding-top"
+            style={{
+              '--print-padding-top': printSpacing?.workExperience
+            } as React.CSSProperties}
+          >
             <div className="flex items-center gap-2 mb-4">
               <Briefcase className="w-4 h-4" style={{ color: accentColor }} />
               <h2 className="text-[15px] font-bold text-slate-900 uppercase tracking-wider">
@@ -388,7 +409,12 @@ export default async function CVPage({
           <div className="bg-slate-50/50 px-4 md:px-5 print:px-5 py-4 md:py-6 print:py-6 flex flex-col">
             <div className="flex-1">
               {/* Skills Section */}
-              <div className="mb-6">
+              <div
+                className="mb-6 print-padding-top"
+                style={{
+                  '--print-padding-top': printSpacing?.skills
+                } as React.CSSProperties}
+              >
                 <div className="flex items-center gap-2 mb-4">
                   <Code className="w-4 h-4" style={{ color: accentColor }} />
                   <h2 className="text-[13px] font-bold text-slate-900 uppercase tracking-wider">
@@ -402,7 +428,13 @@ export default async function CVPage({
                     const skillAwards = awardsBySkillIndex[index] || [];
 
                     return (
-                      <div key={index}>
+                      <div
+                        key={index}
+                        className="print-padding-top"
+                        style={{
+                          '--print-padding-top': skill.printPaddingTop
+                        } as React.CSSProperties}
+                      >
                         <SkillCategory
                           icon={<IconComponent className="w-3 h-3" />}
                           title={skill.name}
@@ -421,7 +453,12 @@ export default async function CVPage({
               </div>
 
               {/* Education Section */}
-              <div className="mb-6">
+              <div
+                className="mb-6 print-padding-top"
+                style={{
+                  '--print-padding-top': printSpacing?.education
+                } as React.CSSProperties}
+              >
                 <div className="flex items-center gap-2 mb-4">
                   <GraduationCap
                     className="w-4 h-4"
@@ -444,7 +481,12 @@ export default async function CVPage({
               </div>
 
               {/* Languages Section */}
-              <div>
+              <div
+                className="print-padding-top"
+                style={{
+                  '--print-padding-top': printSpacing?.languages
+                } as React.CSSProperties}
+              >
                 <div className="flex items-center gap-2 mb-3">
                   <Languages className="w-4 h-4" style={{ color: accentColor }} />
                   <h2 className="text-[13px] font-bold text-slate-900 uppercase tracking-wider">
@@ -459,6 +501,7 @@ export default async function CVPage({
                       name={lang.name}
                       level={lang.level}
                       accentColor={accentColor}
+                      printPaddingTop={lang.printPaddingTop}
                     />
                   ))}
                 </div>
