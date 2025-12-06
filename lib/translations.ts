@@ -34,6 +34,14 @@ interface Translations {
   learnMoreAboutMotivation: string;
   chatToLearnMore: string;
 
+  // Disclaimer Dialog
+  disclaimerTitle: string;
+  disclaimerText1: string;
+  disclaimerText2: string;
+  disclaimerPrivacy: string;
+  disclaimerConfirm: string;
+  disclaimerCancel: string;
+
   // Default questions
   defaultQuestions: string[];
 
@@ -90,6 +98,14 @@ const german: Translations = {
   learnMoreAboutCV: "Erfahre mehr über meinen Lebenslauf",
   learnMoreAboutMotivation: "Erfahre mehr über meine Motivation",
   chatToLearnMore: "Chatte mit mir um mehr zu erfahren",
+
+  // Disclaimer Dialog
+  disclaimerTitle: "KI-Assistent für diese Bewerbung",
+  disclaimerText1: "Dieser Prototyp verwendet meine Bewerbungsunterlagen und ein Large Language Model (Gemini), um Fragen zu meinem Werdegang und meinen Fähigkeiten zu beantworten.",
+  disclaimerText2: "Bitte beachten Sie, dass die generierten Antworten zwar auf meinen Daten basieren, KI-Modelle jedoch gelegentlich Informationen ungenau wiedergeben können. Die Antworten sind informativ und rechtlich nicht bindend.",
+  disclaimerPrivacy: "Datenschutz-Hinweis: Es werden keine Chat-Daten in einer Datenbank gespeichert. Der Gesprächsverlauf wird lediglich im temporären Anwendungszustand gehalten und zur Verarbeitung an die Google Gemini API gesendet.",
+  disclaimerConfirm: "Chat starten",
+  disclaimerCancel: "Zurück zur Bewerbung",
 
   // Default questions
   defaultQuestions: [
@@ -150,6 +166,14 @@ const english: Translations = {
   learnMoreAboutCV: "Learn more about my resume",
   learnMoreAboutMotivation: "Learn more about my motivation",
   chatToLearnMore: "Chat to me to learn more",
+
+  // Disclaimer Dialog
+  disclaimerTitle: "AI Assistant for this Application",
+  disclaimerText1: "This prototype uses my application documents and a Large Language Model (Gemini) to answer questions about my background and skills.",
+  disclaimerText2: "Please note that while answers are based on my data, AI models can occasionally provide inaccurate information. The responses are informative and not legally binding.",
+  disclaimerPrivacy: "Privacy Note: No chat data is saved in a database. The conversation history is only kept in the temporary application state and sent to the Google Gemini API for processing.",
+  disclaimerConfirm: "Start Chat",
+  disclaimerCancel: "Back to Application",
 
   // Default questions
   defaultQuestions: [

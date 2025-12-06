@@ -11,6 +11,16 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { CommandMenu } from "@/components/command-menu";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 import profile from "@/lib/data/profile.json";
 import jobsToApply from "@/lib/data/jobs-to-apply.json";
 import type { ClientMessage } from "../actions";
@@ -31,6 +41,7 @@ function TalkToMeContent() {
   const bottomRef = useRef<HTMLDivElement>(null);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isDisclaimerOpen, setIsDisclaimerOpen] = useState(true);
 
   const [conversation, setConversation] = useUIState();
   const { continueConversation } = useActions();
@@ -120,6 +131,37 @@ function TalkToMeContent() {
 
   return (
     <div className="flex min-h-svh flex-col bg-stone-50">
+      <AlertDialog open={isDisclaimerOpen} onOpenChange={setIsDisclaimerOpen}>
+        <AlertDialogContent className="max-w-xl">
+          <AlertDialogHeader>
+            <AlertDialogTitle>{translations.disclaimerTitle}</AlertDialogTitle>
+            <AlertDialogDescription className="space-y-4 pt-2 text-base">
+              <p>{translations.disclaimerText1}</p>
+              <p>{translations.disclaimerText2}</p>
+              <p className="rounded-md bg-stone-100 p-3 text-sm text-stone-600">
+                {translations.disclaimerPrivacy}
+              </p>
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter className="mt-4">
+            <AlertDialogCancel
+              onClick={() => {
+                if (window.history.length > 1) {
+                  router.back();
+                } else {
+                  router.push(`/${jobId}/cv`);
+                }
+              }}
+            >
+              {translations.disclaimerCancel}
+            </AlertDialogCancel>
+            <AlertDialogAction onClick={() => setIsDisclaimerOpen(false)}>
+              {translations.disclaimerConfirm}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
       {/* Header */}
       <header className="relative border-b border-stone-200 bg-white px-4 py-3">
         {/* Back button - outer left on desktop */}
