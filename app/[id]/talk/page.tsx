@@ -264,8 +264,8 @@ function TalkToMeContent() {
                   </Avatar>
                   <div
                     className={`max-w-[80%] rounded-2xl px-4 py-2.5 ${message.role === "user"
-                        ? ""
-                        : "bg-white text-stone-900 shadow-sm ring-1 ring-stone-200"
+                      ? ""
+                      : "bg-white text-stone-900 shadow-sm ring-1 ring-stone-200"
                       }`}
                     style={
                       message.role === "user"
