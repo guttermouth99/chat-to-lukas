@@ -32,12 +32,13 @@
       "location": "Berlin",
       "description": "Impact-Jobboard & Job-Newsletter Automatisierungsplattform – getbaito.com & talentalert.io",
       "achievements": [
-        "Entwicklung KI-gestützter Klassifizierungssysteme mit LLMs für automatisierte Datenverarbeitung",
-        "Aufbau skalierbarer Datenpipelines: ~10.000 Karriereseiten/Monat crawlen & verarbeiten",
-        "Integration von Vektor-Datenbanken (Weaviate, Typesense) für semantische Suche & NLP",
+        "Produktentwicklung mit Next.js, MongoDB (Prisma), Typescript, Tailwind CSS, Shadcn/ui, Vercel AI SDK",
         "API-Architektur & Server-Infrastruktur mit TypeScript, Node.js, tRPC & Docker",
-        "Produktentwicklung mit React/Next.js, PostgreSQL (Prisma) & MongoDB",
-        "Prompt Engineering & KI-Agents für intelligente Workflows und Automatisierung"
+        "Aufbau skalierbarer Datenpipelines: ~10.000 Karriereseiten/Monat crawlen & verarbeiten",
+        "Entwicklung KI-gestützter Klassifizierungssysteme mit LLMs für automatisierte Datenverarbeitung",
+        "Integration von Vektor-Datenbanken (Weaviate, Typesense) für semantische Suche & NLP",
+        "Prompt Engineering & KI-Agents für intelligente Workflows und Automatisierung",
+        "Agenten-getriebenes Prototyping zur Evaluierung neuer KI- & Web-Trends"
       ]
     },
     {
@@ -47,7 +48,7 @@
       "location": "Berlin",
       "achievements": [
         "Eigenständige Konzeption & Entwicklung von ~25 digitalen Prototypen und Web-Tools",
-        "Full-Stack: React, Next.js, Node.js, REST-APIs, MongoDB, PostgreSQL",
+        "Full-Stack: React, Next.js, Typescript, Tailwind, Node.js, REST-APIs, MongoDB,",
         "Agile Projektarbeit mit iterativer Entwicklung und schnellem Prototyping"
       ]
     },
@@ -104,12 +105,12 @@
     {
       "name": "AI Tooling & Prototyping",
       "icon": "Sparkles",
-      "skills": "Cursor, V0, Claude, ChatGPT, Gemini, Figma, Stagehand, MCP"
+      "skills": "Cursor, V0, Claude, ChatGPT, Gemini, AI SDK, Stagehand, MCP"
     },
     {
       "name": "Web Entwicklung",
       "icon": "Globe",
-      "skills": "TypeScript, React, Next.js, Node.js, PostgreSQL, MongoDB, Prisma, tRPC, REST-APIs, BullMQ"
+      "skills": "TypeScript, React, Next.js, Node.js, MongoDB, Prisma, tRPC, REST-APIs, BullMQ"
     },
     {
       "name": "Infrastructure & DevOps",
@@ -119,12 +120,12 @@
     {
       "name": "Agile & Kommunikation",
       "icon": "Users",
-      "skills": "SCRUM, Agile Development, Jira, Workshop-Moderation, Stakeholder-Kommunikation"
+      "skills": "SCRUM, Agile Development, Webinare, Stakeholder-Kommunikation"
     },
     {
       "name": "Weitere Kompetenzen",
       "icon": "Briefcase",
-      "skills": "Open Source, Design Thinking, Prototyping, Team Leadership"
+      "skills": "Design Thinking, Prototyping, Team Leadership, Entrepreneurship"
     }
   ],
   "awards": [

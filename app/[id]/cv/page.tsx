@@ -41,7 +41,7 @@ async function hasCoverLetterContent(id: string, cvData: CVData): Promise<boolea
   if (cvData.coverLetter) {
     return true;
   }
-  
+
   // Check if motivational.md exists
   try {
     const filePath = path.join(process.cwd(), "lib", "data", id, "motivational.md");
@@ -313,7 +313,7 @@ export default async function CVPage({
       {/* A4 Paper Container */}
       <div className={`mx-auto w-full md:w-[210mm] print:w-[210mm] md:min-h-[297mm] print:min-h-[297mm] bg-white shadow-none md:shadow-2xl print:shadow-none overflow-hidden ${isPdf ? 'shadow-none w-[210mm] min-h-[297mm]' : ''}`}>
         {/* Header */}
-        <CVHeader personal={personal} accentColor={accentColor} lang={lang} />
+        <CVHeader personal={personal} accentColor={accentColor} lang={lang} isPrint={isPdf} />
 
         {/* Profile Summary Section */}
         <section
@@ -376,82 +376,82 @@ export default async function CVPage({
           {/* Right Column - Skills, Education, Languages */}
           <div className="bg-slate-50/50 px-4 md:px-5 print:px-5 py-4 md:py-6 print:py-6 flex flex-col">
             <div className="flex-1">
-            {/* Skills Section */}
-            <div className="mb-6">
-              <div className="flex items-center gap-2 mb-4">
-                <Code className="w-4 h-4" style={{ color: accentColor }} />
-                <h2 className="text-[13px] font-bold text-slate-900 uppercase tracking-wider">
-                  {labels.skills}
-                </h2>
+              {/* Skills Section */}
+              <div className="mb-6">
+                <div className="flex items-center gap-2 mb-4">
+                  <Code className="w-4 h-4" style={{ color: accentColor }} />
+                  <h2 className="text-[13px] font-bold text-slate-900 uppercase tracking-wider">
+                    {labels.skills}
+                  </h2>
+                </div>
+
+                <div className="space-y-3">
+                  {skills.map((skill, index) => {
+                    const IconComponent = iconMap[skill.icon] || Code;
+                    const skillAwards = awardsBySkillIndex[index] || [];
+
+                    return (
+                      <div key={index}>
+                        <SkillCategory
+                          icon={<IconComponent className="w-3 h-3" />}
+                          title={skill.name}
+                          skills={skill.skills}
+                          accentColor={accentColor}
+                        />
+                        {skillAwards.map((award, awardIndex) => (
+                          <div key={awardIndex} className="mt-2">
+                            <AwardBadge award={award} accentColor={accentColor} />
+                          </div>
+                        ))}
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
 
-              <div className="space-y-3">
-                {skills.map((skill, index) => {
-                  const IconComponent = iconMap[skill.icon] || Code;
-                  const skillAwards = awardsBySkillIndex[index] || [];
-
-                  return (
-                    <div key={index}>
-                      <SkillCategory
-                        icon={<IconComponent className="w-3 h-3" />}
-                        title={skill.name}
-                        skills={skill.skills}
-                        accentColor={accentColor}
-                      />
-                      {skillAwards.map((award, awardIndex) => (
-                        <div key={awardIndex} className="mt-2">
-                          <AwardBadge award={award} accentColor={accentColor} />
-                        </div>
-                      ))}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Education Section */}
-            <div className="mb-6">
-              <div className="flex items-center gap-2 mb-4">
-                <GraduationCap
-                  className="w-4 h-4"
-                  style={{ color: accentColor }}
-                />
-                <h2 className="text-[13px] font-bold text-slate-900 uppercase tracking-wider">
-                  {labels.education}
-                </h2>
-              </div>
-
-              <div className="space-y-4">
-                {education.map((edu, index) => (
-                  <EducationItem
-                    key={index}
-                    education={edu}
-                    accentColor={accentColor}
+              {/* Education Section */}
+              <div className="mb-6">
+                <div className="flex items-center gap-2 mb-4">
+                  <GraduationCap
+                    className="w-4 h-4"
+                    style={{ color: accentColor }}
                   />
-                ))}
-              </div>
-            </div>
+                  <h2 className="text-[13px] font-bold text-slate-900 uppercase tracking-wider">
+                    {labels.education}
+                  </h2>
+                </div>
 
-            {/* Languages Section */}
-            <div>
-              <div className="flex items-center gap-2 mb-3">
-                <Languages className="w-4 h-4" style={{ color: accentColor }} />
-                <h2 className="text-[13px] font-bold text-slate-900 uppercase tracking-wider">
-                  {labels.languages}
-                </h2>
+                <div className="space-y-4">
+                  {education.map((edu, index) => (
+                    <EducationItem
+                      key={index}
+                      education={edu}
+                      accentColor={accentColor}
+                    />
+                  ))}
+                </div>
               </div>
 
-              <div className="space-y-2">
-                {languages.map((lang, index) => (
-                  <LanguageBar
-                    key={index}
-                    name={lang.name}
-                    level={lang.level}
-                    accentColor={accentColor}
-                  />
-                ))}
+              {/* Languages Section */}
+              <div>
+                <div className="flex items-center gap-2 mb-3">
+                  <Languages className="w-4 h-4" style={{ color: accentColor }} />
+                  <h2 className="text-[13px] font-bold text-slate-900 uppercase tracking-wider">
+                    {labels.languages}
+                  </h2>
+                </div>
+
+                <div className="space-y-2">
+                  {languages.map((lang, index) => (
+                    <LanguageBar
+                      key={index}
+                      name={lang.name}
+                      level={lang.level}
+                      accentColor={accentColor}
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
             </div>
 
             {/* Talk to me button */}
@@ -480,7 +480,7 @@ export default async function CVPage({
           <Link
             href={`/${id}/cover-letter`}
             className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:scale-105"
-            style={{ 
+            style={{
               backgroundColor: `${accentColor}15`,
               color: accentColor,
             }}
