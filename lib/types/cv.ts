@@ -99,5 +99,6 @@ export interface CVData {
   languages: CVLanguage[];
   frontpage?: CVFrontPage;
   coverLetter?: CoverLetterData;
+  showChatDisclaimer?: boolean;
 }
 

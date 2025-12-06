@@ -28,6 +28,16 @@ import { t, type Language } from "@/lib/translations";
 
 export const maxDuration = 30;
 
+// Dynamic data loader
+async function getApplicationData(id: string) {
+  try {
+    const data = await import(`@/lib/data/${id}/application-data.json`);
+    return data.default;
+  } catch {
+    return null;
+  }
+}
+
 function TalkToMeContent() {
   const params = useParams();
   const router = useRouter();
@@ -41,7 +51,19 @@ function TalkToMeContent() {
   const bottomRef = useRef<HTMLDivElement>(null);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [isDisclaimerOpen, setIsDisclaimerOpen] = useState(true);
+  const [isDisclaimerOpen, setIsDisclaimerOpen] = useState(false);
+  const [showDisclaimer, setShowDisclaimer] = useState(false);
+
+  useEffect(() => {
+    async function loadData() {
+      const data = await getApplicationData(jobId);
+      if (data?.showChatDisclaimer) {
+        setIsDisclaimerOpen(true);
+        setShowDisclaimer(true);
+      }
+    }
+    loadData();
+  }, [jobId]);
 
   const [conversation, setConversation] = useUIState();
   const { continueConversation } = useActions();

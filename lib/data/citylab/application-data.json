@@ -1,5 +1,6 @@
 {
   "lang": "german",
+  "showChatDisclaimer": true,
   "theme": {
     "accentColor": "#F64C72"
   },
