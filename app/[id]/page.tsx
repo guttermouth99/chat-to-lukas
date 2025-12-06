@@ -293,7 +293,7 @@ export default async function JobPage({ params }: JobPageProps) {
               />
             </div>
 
-            <div className="relative z-10 flex flex-col items-center justify-between gap-4 md:flex-row">
+            <div className="relative z-10 pointer-events-none flex flex-col items-center justify-between gap-4 md:flex-row">
               <div className="flex items-center gap-4 pointer-events-none">
                 <div className="relative">
                   <div className="size-14 overflow-hidden rounded-full ring-4 ring-white/30">
@@ -322,7 +322,7 @@ export default async function JobPage({ params }: JobPageProps) {
                     <Link
                       key={q}
                       href={`/${id}/talk?q=${encodeURIComponent(q)}`}
-                      className="relative z-10 rounded-full bg-white/20 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/30"
+                      className="relative z-30 pointer-events-auto rounded-full bg-white/20 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/30"
                     >
                       {q}
                     </Link>
