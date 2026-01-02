@@ -133,13 +133,6 @@ export function CVHeader({ personal, accentColor, showTalkToMe = true, lang = "g
           {/* Contact Grid */}
           <div className="mt-4 md:mt-6 print:mt-6 grid grid-cols-1 md:grid-cols-2 print:grid-cols-2 gap-x-8 gap-y-2 text-sm">
             <div className="flex items-center justify-center md:justify-start print:justify-start gap-2 text-slate-300">
-              <MapPin
-                className="w-3.5 h-3.5 shrink-0"
-                style={{ color: accentColor }}
-              />
-              <span className="text-xs">{personal.address}</span>
-            </div>
-            <div className="flex items-center justify-center md:justify-start print:justify-start gap-2 text-slate-300">
               <Phone
                 className="w-3.5 h-3.5 shrink-0"
                 style={{ color: accentColor }}
@@ -152,13 +145,6 @@ export function CVHeader({ personal, accentColor, showTalkToMe = true, lang = "g
                 style={{ color: accentColor }}
               />
               <span className="text-xs">{personal.email}</span>
-            </div>
-            <div className="flex items-center justify-center md:justify-start print:justify-start gap-2 text-slate-300">
-              <Calendar
-                className="w-3.5 h-3.5 shrink-0"
-                style={{ color: accentColor }}
-              />
-              <span className="text-xs">{personal.birthday}</span>
             </div>
             <div className="flex items-center justify-center md:justify-start print:justify-start gap-2 text-slate-300 md:col-span-2 print:col-span-2">
               <Linkedin
