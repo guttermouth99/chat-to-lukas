@@ -1,6 +1,7 @@
 [
   {
     "id": "citylab",
+    "enabled": true,
     "lang": "german",
     "company": "CityLAB Berlin",
     "position": "Full-Stack KI-Entwickler*in",
@@ -21,6 +22,7 @@
   },
   {
     "id": "fixmycity",
+    "enabled": false,
     "lang": "german",
     "company": "FixMyCity GmbH",
     "position": "Full-Stack Entwickler:in",

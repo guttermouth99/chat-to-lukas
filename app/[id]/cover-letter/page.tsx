@@ -9,6 +9,7 @@ import { CVData, CoverLetterData } from "@/lib/types/cv";
 import { CVHeader } from "@/components/cv-header";
 import { PageNavigation } from "@/components/page-navigation";
 import { t, type Language } from "@/lib/translations";
+import jobsToApply from "@/lib/data/jobs-to-apply.json";
 
 // Load cover letter from markdown file
 async function getCoverLetterFromMarkdown(id: string): Promise<CoverLetterData | null> {
@@ -105,6 +106,12 @@ export default async function CoverLetterPage({
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   const { id } = await params;
+  const job = jobsToApply.find((j) => j.id === id);
+
+  if (!job || !job.enabled) {
+    notFound();
+  }
+
   const { pdf } = await searchParams;
   const isPdf = pdf === 'true';
   const data = await getCVData(id);

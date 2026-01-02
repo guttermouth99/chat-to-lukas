@@ -73,7 +73,7 @@ export default async function JobPage({ params }: JobPageProps) {
   const { id } = await params;
   const job = jobsToApply.find((j) => j.id === id);
 
-  if (!job) {
+  if (!job || !job.enabled) {
     notFound();
   }
 

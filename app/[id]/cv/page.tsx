@@ -23,6 +23,7 @@ import { CVData, CVWorkExperience, CVEducation, CVAward } from "@/lib/types/cv";
 import { CVHeader } from "@/components/cv-header";
 import { PageNavigation } from "@/components/page-navigation";
 import { t, type Language } from "@/lib/translations";
+import jobsToApply from "@/lib/data/jobs-to-apply.json";
 
 // Icon map to convert string names to Lucide components
 const iconMap: Record<string, LucideIcon> = {
@@ -309,6 +310,12 @@ export default async function CVPage({
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   const { id } = await params;
+  const job = jobsToApply.find((j) => j.id === id);
+
+  if (!job || !job.enabled) {
+    notFound();
+  }
+
   const { pdf } = await searchParams;
   const isPdf = pdf === 'true';
   const result = await getCVData(id);
