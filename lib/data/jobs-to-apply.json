@@ -1,5 +1,26 @@
 [
   {
+    "id": "ashby",
+    "enabled": true,
+    "lang": "english",
+    "company": "Ashby",
+    "position": "Senior Software Engineer, Product Engineering",
+    "hiringManager": "Abhik",
+    "companyLogo": "/ashbyhq_logo.jpeg",
+    "chatBubble": {
+      "background": "#5453E6",
+      "foreground": "#FFFFFF"
+    },
+    "hasCoverLetter": true,
+    "defaultQuestions": [
+      "Why Ashby?",
+      "Tell me about 'baito' and its architecture",
+      "How do you handle product ambiguity?",
+      "What is your experience with TypeScript?"
+    ],
+    "description": "Senior Software Engineer, Product Engineering, EU\n\nDetails zum Jobangebot\nHi 👋🏾 I’m Abhik, Ashby's Co-Founder and VP of Engineering. We’re looking for an ambitious full-stack engineer who is laser-focused on solving customer problems and making the right long-term investments to solve them not only today but in our future features and products.\n\nWhat Ashby gives you in return is the best of both early and growth-stage environments. The agency and no-nonsense of a seed startup: you write product specs, make product and design decisions, and build in an almost-no-meeting culture. While also the product-market fit and scale of a growth-stage startup: tens of thousands of daily users who depend on your software and eagerly await your next feature.\n\nWe have notable customers like Notion, Linear, Shopify, and Snowflake. Our growth and retention metrics are best-in-class among our peers: we have tens of millions in ARR, growing >100% year over year, very low churn, and many years of runway. We’ll share more details once we meet.\n\nAbout The Role And How We Work\n\nOur engineering culture strives to recreate the environments where we did our best work as ICs – where we had the ownership and agency to impact our users with creative and innovative software.\n\nI started my career building software for artists in the Visual Effects industry. It was a formative experience for me as a software engineer because success relied on my ability to be a product manager and designer. I talked to artists to understand their needs. I came up with ideas. I did industry research, designed interfaces, and prototyped ideas. I watched artists use what I built and decided what to tackle in the next iteration. No daily stand-ups, no t-shirt sizing, no planning meetings.\n\nAbout\n\nAt Ashby, we’re building an environment that is optimistic about what engineers can own and achieve. An environment that embraces innovative engineers, and, frankly, often stays out of their way. As a Product Engineer, you’ll take ownership over a large portion of one of our products and own projects end-to-end (wearing hats traditionally worn by product and design). You’ll research competitors, write product specs, make wireframes, and more.\n\nTechnology Stack\n\nTypeScript (frontend & backend), React, GraphQL API, Node.js, Postgres, Redis."
+  },
+  {
     "id": "citylab",
     "enabled": true,
     "lang": "german",

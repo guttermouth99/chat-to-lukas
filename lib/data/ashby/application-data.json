@@ -1,0 +1,130 @@
+{
+  "lang": "english",
+  "showChatDisclaimer": true,
+  "theme": {
+    "accentColor": "#5453E6"
+  },
+  "personal": {
+    "fullName": "Lukas Stockburger",
+    "workingTitle": "Product Engineer & Full-Stack Developer",
+    "avatar": "/lukas_avatar.jpeg",
+    "companyLogo": "/ashbyhq_logo.jpeg", 
+    "companyName": "Ashby",
+    "address": "Berlin, Germany",
+    "phone": "+49 163 160 3074",
+    "email": "lukas.stockburger@gmail.com",
+    "linkedin": "linkedin.com/in/lukas-s-186583a2",
+    "talkToMe": "talk"
+  },
+  "frontpage": {
+    "title": "Lukas Stockburger",
+    "subtitle": "Senior Software Engineer, Product Engineering",
+    "keywords": [
+      { "text": "8+ Years Experience", "icon": "Sparkles" },
+      { "text": "Founder Mindset" },
+      { "text": "Full-Stack TypeScript" }
+    ]
+  },
+  "labels": {
+    "profile": "Profile",
+    "workExperience": "Experience",
+    "skills": "Skills",
+    "education": "Education",
+    "languages": "Languages"
+  },
+  "profileSummary": "<strong>Senior Software Engineer & Product Builder</strong> with over 8 years of experience building scalable web applications and digital products. As a founder, I combine deep technical expertise in <strong>TypeScript, React, and Node.js</strong> with a strong product sense. I thrive in environments that value ownership and agency, having built complex platforms like <em>baito</em> (a recruiting tech platform) from the ground up. I don't just write code; I solve customer problems.",
+  "workExperience": [
+    {
+      "period": "01/2022 – Present",
+      "title": "Co-Founder & Full-Stack Engineer",
+      "company": "baito",
+      "location": "Berlin, Germany",
+      "description": "Impact Job Board & Automation Platform – getbaito.com, talentalert.io & jobscouts.io",
+      "achievements": [
+        "Architected and built the entire platform using Next.js, TypeScript, tRPC, Prisma, and MongoDB.",
+        "Designed and implemented a scalable scraping infrastructure processing ~10k career pages/month.",
+        "Solved complex domain problems similar to 'Calendar Tetris' in the recruiting space (matching, filtering, alerts).",
+        "Operated with extreme ownership: from product specs and UI design to database architecture and deployment.",
+        "Integrated AI/LLM workflows for automated job classification and data enrichment.",
+        "Built a generalized filtering architecture for job search and alerts.",
+         "Managed the full product lifecycle in a high-velocity environment."
+      ]
+    },
+    {
+      "period": "01/2016 – 2022",
+      "title": "Product-Builder & Full-Stack Developer",
+      "company": "Self-Employed",
+      "location": "Remote / Berlin",
+      "achievements": [
+        "Conceptualized and built ~25 web products from scratch, handling everything from design to deployment.",
+        "Full-Stack development with Next.js, React, Node.js, and GraphQL.",
+        "Thrived in ambiguity, turning vague ideas into shipping products.",
+        "Managed projects with 'linear' style efficiency – minimal meetings, maximum output."
+      ]
+    },
+    {
+      "period": "02/2018 – 09/2020",
+      "title": "Frontend Developer",
+      "company": "Bærnholdt",
+      "location": "Copenhagen, Denmark",
+      "description": "Digital Agency",
+      "achievements": [
+        "Built modern web applications using React Native, Vue.js, and REST APIs.",
+        "Collaborated closely with designers to implement pixel-perfect UIs."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Core Stack",
+      "icon": "Code",
+      "skills": "TypeScript, React, Next.js, Node.js, GraphQL, PostgreSQL, Prisma, Tailwind CSS"
+    },
+    {
+      "name": "Product Engineering",
+      "icon": "Briefcase",
+      "skills": "System Architecture, UI/UX Design, Prototyping, Product Strategy, 'No-Nonsense' Execution"
+    },
+    {
+      "name": "Infrastructure & Data",
+      "icon": "Server",
+      "skills": "Docker, Redis, BullMQ, Vercel, MongoDB, Vector Databases, Web Scraping"
+    },
+    {
+      "name": "AI & Automation",
+      "icon": "Brain",
+      "skills": "LLMs, AI SDK, Prompt Engineering, Automated Workflows"
+    }
+  ],
+  "awards": [
+    {
+      "skillIndex": 3,
+      "title": "OpenAI Award 2025",
+      "description": "Awarded for processing >10B tokens via API"
+    }
+  ],
+  "education": [
+    {
+      "period": "02/2018 – 04/2020",
+      "institution": "Copenhagen Business School",
+      "location": "Copenhagen, Denmark",
+      "degree": "M.Sc. in E-Business",
+      "thesis": "Master Thesis: Blockchain-based Identity Management"
+    },
+    {
+      "period": "09/2011 – 09/2014",
+      "institution": "Maastricht University",
+      "location": "Maastricht, Netherlands",
+      "degree": "B.Sc. International Business"
+    }
+  ],
+  "languages": [
+    { "name": "German", "level": 5 },
+    { "name": "English", "level": 5 },
+    { "name": "Spanish", "level": 2 }
+  ],
+  "printSpacing": {
+      "education": "50px"
+  }
+}
+
