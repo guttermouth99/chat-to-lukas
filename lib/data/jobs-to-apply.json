@@ -1,5 +1,26 @@
 [
   {
+    "id": "perplexity",
+    "enabled": true,
+    "lang": "english",
+    "company": "Perplexity",
+    "position": "Full Stack Engineer",
+    "hiringManager": "Hiring Team",
+    "companyLogo": "/perplexity_logo.svg",
+    "chatBubble": {
+      "background": "#1FB8CD",
+      "foreground": "#FFFFFF"
+    },
+    "hasCoverLetter": true,
+    "defaultQuestions": [
+      "Why Perplexity?",
+      "Tell me about your AI/LLM experience",
+      "How did you build baito's classification system?",
+      "What's your approach to rapid prototyping?"
+    ],
+    "description": "Full Stack Engineer\n\nPerplexity is looking for an experienced Full Stack Engineer to build and ship AI-powered product features end to end across both the frontend and backend.\n\nStack: NextJS | TypeScript | React | Python | Kubernetes | AWS | Docker\n\nResponsibilities:\n- Partner closely with Search, AI, Design, and Product teams to ship experiments and rapidly iterate on insights.\n- Drive the launch of new features, experiments, and campaigns in a fast-paced, evolving environment.\n- Architect and implement systems that integrate new tools with existing pipelines and LLM - or agent-based evaluation frameworks.\n- Build, refine, and maintain the core components that power Perplexity's frontend experience.\n\nQualifications:\n- Strong programming skills and the ability to work effectively across the full stack\n- Solid coding fundamentals and experience contributing to both frontend and backend systems\n- Self-driven mindset with strong ownership and follow-through\n- Passion for building high-quality products, rapid prototyping, experimentation, and creating accessible user experiences\n- 4+ years of industry experience"
+  },
+  {
     "id": "ashby",
     "enabled": true,
     "lang": "english",
@@ -61,5 +82,26 @@
       "Zeig mir deine Open-Source Projekte"
     ],
     "description": "FixMyCity entwickelt digitale Werkzeuge für die nachhaltige Mobilitätsplanung. Wir unterstützen Städte und Kommunen auf dem Weg zur nachhaltigen Mobilität mit Tools wie TILDA und Trassenscout.\n\nZur Verstärkung unseres Dev-Teams suchen wir eine:n Entwickler:in für 32 Stunden/Woche.\n\nWas du mitbringst:\n- Du hast Lust auf die Themen Verkehrswende, Geodaten und digitale Beteiligungsformate.\n- Du hast Erfahrung und Spaß an Webentwicklung mit TypeScript und Next.js.\n- Du verwendest Next.js als Fullstack-Framework (Server Components) und findest dich auf dem Server-Terminal sowie mit Docker zurecht.\n- Du hast bereits Erfahrung mit der Verarbeitung von Geodaten, idealerweise OpenStreetMap, oder Interesse an diesem Themenbereich.\n- Du kennst die Chancen und Limitationen von Copilot und Co. und hast diese Werkzeuge in deinen Programmier-Alltag integriert.\n- Dir liegt es, dich in Nutzer:innen von Software einzufühlen und Lösungsansätze aus deren Perspektive zu entwickeln.\n- Du organisierst deine Arbeit eigenverantwortlich, strukturiert und hast Freude an hochwertigem Code.\n- Du beteiligst dich an einer offenen und wertschätzenden Teamkultur.\n- Du arbeitest sicher und fließend auf Deutsch in Wort und Schrift.\n- Idealerweise wohnst du in Berlin.\n\nDeine Aufgaben:\n- Du bist Teil unseres agilen Teams und entwickelst mit uns unsere beiden Open-Source-Produkte Trassenscout und TILDA Geo weiter.\n\nWas dich erwartet:\n- Du wirkst an Open-Source- und Open-Data-Projekten mit gesellschaftlichem Impact mit.\n- Ein kleines, dynamisches Team mit modernem Software Stack.\n- Du arbeitest in engem Austausch mit erfahrenen Projektleiter:innen, Entwickler:innen sowie UX-Designer:innen.\n- Du triffst auf agile, selbstverantwortliche Arbeitsprozesse.\n- Software-Stack: TypeScript, React und Next.js, Astro, Tailwind CSS, MapLibre, React Map GL, Vercel AI SDK, Prisma, PostgreSQL, PostGIS, IONOS, Docker, GitHub.\n\nInfos / Konditionen:\n- Beginn ab März 2026, unbefristet\n- Gehalt angelehnt an TV-L E13, Stufe je nach Erfahrung\n- Arbeitszeit: 32 Stunden / Woche\n- Arbeitsort: thinkfarm in Tempelhof und Home Office nach Vereinbarung\n- Bewerbung bis zum 7.12.2025"
+  },
+  {
+    "id": "climatiq",
+    "enabled": true,
+    "lang": "english",
+    "company": "Climatiq",
+    "position": "Frontend Engineer",
+    "hiringManager": "Hiring Team",
+    "companyLogo": "/climatiq_logo.png",
+    "chatBubble": {
+      "background": "#2d2eac",
+      "foreground": "#FFFFFF"
+    },
+    "hasCoverLetter": true,
+    "defaultQuestions": [
+      "Why Climatiq?",
+      "Tell me about your experience with data-intensive applications",
+      "How does baito connect to climate tech?",
+      "What is your TypeScript and Next.js experience?"
+    ],
+    "description": "Frontend Engineer\n\nClimatiq is a fast-growing startup embedding carbon intelligence into business decisions worldwide. Our platform—combining the world's leading emissions database with sophisticated AI and calculation tools—helps thousands of sustainability teams work faster and reduce emissions across corporate and product carbon footprints.\n\nIn this role, you will:\n- Design, build, and maintain modern frontend features across our core web applications and interfaces\n- Collaborate closely with product, design, and backend engineering to deliver intuitive, performant user experiences\n- Take ownership of key frontend components and contribute to architectural decisions\n- Develop and iterate on full-stack features, using TypeScript across the stack and Next.js on the frontend\n- Shape the look, feel, and functionality of data-intensive tools that empower users to understand and reduce their emissions\n\nRole Requirements:\n- 5+ years of experience building frontend and full-stack applications, ideally in SaaS environments\n- 3+ years of production experience with TypeScript and Next.js, building and maintaining full-featured web applications\n- Proficiency in RESTful API integration, state management, and component-based UI architecture\n- Strong working knowledge of PostgreSQL or similar databases\n- Familiarity with Rust and/or AWS infrastructure is a plus\n- Structured, outcome-oriented mindset with strong problem-solving and communication skills\n- Self-driven and comfortable working autonomously in a distributed team setting\n\nTech Stack: TypeScript (React frontend, NextJS backend), Rust for Core API, PostgreSQL, Vercel and AWS, GitHub, Auth0, Datadog\n\nLocation: Berlin or Remote within +/- 2 hours of CET"
   }
 ]

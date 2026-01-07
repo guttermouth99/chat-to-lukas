@@ -1,0 +1,145 @@
+{
+  "lang": "english",
+  "showChatDisclaimer": true,
+  "theme": {
+    "accentColor": "#1FB8CD"
+  },
+  "personal": {
+    "fullName": "Lukas Stockburger",
+    "workingTitle": "Full-Stack Engineer & AI Product Builder",
+    "avatar": "/lukas_avatar.jpeg",
+    "companyLogo": "/perplexity_logo.svg",
+    "companyName": "Perplexity",
+    "address": "Berlin, Germany",
+    "phone": "+49 163 160 3074",
+    "email": "lukas.stockburger@gmail.com",
+    "linkedin": "linkedin.com/in/lukas-s-186583a2",
+    "talkToMe": "talk",
+    "birthday": "07.02.1990"
+  },
+  "frontpage": {
+    "title": "Lukas Stockburger",
+    "subtitle": "Full Stack Engineer",
+    "keywords": [
+      { "text": "8+ Years Experience", "icon": "Sparkles" },
+      { "text": "AI-Native Builder" },
+      { "text": "Full-Stack TypeScript" }
+    ]
+  },
+  "labels": {
+    "profile": "Profile",
+    "workExperience": "Experience",
+    "skills": "Skills",
+    "education": "Education",
+    "languages": "Languages"
+  },
+  "profileSummary": "<strong>Full-Stack Engineer & AI Product Builder</strong> with over 8 years of experience shipping end-to-end web applications and AI-powered products. As a founder, I've built scalable platforms that process millions of events and integrate deeply with LLMs and agent-based systems. My expertise spans <strong>Next.js, TypeScript, React, and Node.js</strong>, with hands-on experience architecting <strong>LLM pipelines, semantic search, and automated classification systems</strong>. I thrive in fast-paced environments where rapid prototyping and experimentation drive product innovation.",
+  "workExperience": [
+    {
+      "period": "01/2022 – 10/2025",
+      "title": "Co-Founder & Full-Stack Engineer",
+      "company": "baito",
+      "location": "Berlin, Germany",
+      "description": "AI-Powered Job Platform – getbaito.com, jobscouts.io & talentalert.io",
+      "achievements": [
+        "Architected and built the entire platform using Next.js, TypeScript, tRPC, Prisma, and MongoDB.",
+        "Designed LLM-based classification pipelines processing 10B+ tokens via OpenAI API (awarded by OpenAI).",
+        "Built agent-based evaluation workflows for automated job categorization and data enrichment.",
+        "Implemented semantic search and ranking using vector databases (Weaviate, Typesense).",
+        "Scaled Docker-based infrastructure to crawl ~10k career pages/month and handle 7M+ user events.",
+        "Shipped features end-to-end: from product specs and UI design to backend architecture and deployment.",
+        "Integrated real-time data pipelines with BullMQ for background jobs and async workflows."
+      ]
+    },
+    {
+      "period": "01/2016 – 2022",
+      "title": "Product-Builder & Full-Stack Developer",
+      "company": "Self-Employed",
+      "location": "Remote / Berlin",
+      "achievements": [
+        "Built ~25 web products from scratch, rapidly prototyping and iterating based on user feedback.",
+        "Full-Stack development with Next.js, React, Node.js, GraphQL, and REST APIs.",
+        "Developed data scraping pipelines and automated extraction systems.",
+        "Managed complete product lifecycle from concept to deployment."
+      ]
+    },
+    {
+      "period": "02/2018 – 09/2020",
+      "title": "Frontend Developer",
+      "company": "Bærnholdt",
+      "location": "Copenhagen, Denmark",
+      "description": "Digital Agency",
+      "achievements": [
+        "Built modern web applications using React Native, Vue.js, and microservices architecture.",
+        "Collaborated across teams (design, backend) in agile SCRUM environment.",
+        "Delivered projects from wireframes and prototypes to production code."
+      ],
+      "printPaddingTop": "50px"
+    },
+    {
+      "period": "07/2017 – 02/2018",
+      "title": "Frontend Developer",
+      "company": "Airy GmbH",
+      "location": "Berlin, Germany",
+      "description": "B2C Messenger Platform",
+      "achievements": [
+        "Integrated real-time messaging with WebSockets.",
+        "Test-driven development with Mocha.js.",
+        "Created design mockups and user stories for product iterations."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Core Stack",
+      "icon": "Code",
+      "skills": "TypeScript, React, Next.js, Node.js, tRPC, GraphQL, REST APIs, Tailwind CSS"
+    },
+    {
+      "name": "AI & LLMs",
+      "icon": "Brain",
+      "skills": "AI SDK, OpenAI API, LLM Pipelines, Prompt Engineering, Agent Workflows, Structured Outputs"
+    },
+    {
+      "name": "Data & Search",
+      "icon": "Database",
+      "skills": "MongoDB, PostgreSQL, Prisma, Typesense, Weaviate, Vector Databases, Semantic Search"
+    },
+    {
+      "name": "Infrastructure",
+      "icon": "Server",
+      "skills": "Docker, BullMQ, CI/CD, Web Scraping, Real-time Systems, Scalable Architectures"
+    }
+  ],
+  "awards": [
+    {
+      "skillIndex": 1,
+      "title": "OpenAI Award 2024",
+      "description": "Awarded for processing >10B tokens via API for automated job classification"
+    }
+  ],
+  "education": [
+    {
+      "period": "02/2018 – 04/2020",
+      "institution": "Copenhagen Business School",
+      "location": "Copenhagen, Denmark",
+      "degree": "M.Sc. in E-Business",
+      "thesis": "Master Thesis: Blockchain-based Identity Management"
+    },
+    {
+      "period": "09/2011 – 09/2014",
+      "institution": "Maastricht University",
+      "location": "Maastricht, Netherlands",
+      "degree": "B.Sc. International Business"
+    }
+  ],
+  "languages": [
+    { "name": "German", "level": 5 },
+    { "name": "English", "level": 5 },
+    { "name": "Spanish", "level": 2 }
+  ],
+  "printSpacing": {
+    "languages": "50px"
+  }
+}
+

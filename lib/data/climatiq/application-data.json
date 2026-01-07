@@ -1,0 +1,145 @@
+{
+  "lang": "english",
+  "showChatDisclaimer": true,
+  "theme": {
+    "accentColor": "#2d2eac"
+  },
+  "personal": {
+    "fullName": "Lukas Stockburger",
+    "workingTitle": "Full-Stack Engineer & Sustainability Tech Builder",
+    "avatar": "/lukas_avatar.jpeg",
+    "companyLogo": "/climatiq_logo.png",
+    "companyName": "Climatiq",
+    "address": "Berlin, Germany",
+    "phone": "+49 163 160 3074",
+    "email": "lukas.stockburger@gmail.com",
+    "linkedin": "linkedin.com/in/lukas-s-186583a2",
+    "talkToMe": "talk",
+    "birthday": "07.02.1990"
+  },
+  "frontpage": {
+    "title": "Lukas Stockburger",
+    "subtitle": "Frontend Engineer",
+    "keywords": [
+      { "text": "8+ Years Experience", "icon": "Sparkles" },
+      { "text": "Sustainability Sector" },
+      { "text": "Full-Stack TypeScript" }
+    ]
+  },
+  "labels": {
+    "profile": "Profile",
+    "workExperience": "Experience",
+    "skills": "Skills",
+    "education": "Education",
+    "languages": "Languages"
+  },
+  "profileSummary": "<strong>Full-Stack Engineer</strong> with over 8 years of experience building scalable web applications and data-intensive platforms. As Co-Founder of baito, Germany's leading impact job board for sustainable and social employment, I have direct experience in the sustainability sector. My technical expertise spans <strong>TypeScript, React, Next.js, and PostgreSQL</strong>, with a focus on building performant user interfaces and robust backend systems. I take ownership of key components and contribute to architectural decisions, delivering outcome-oriented solutions from concept to deployment.",
+  "workExperience": [
+    {
+      "period": "01/2022 – 10/2025",
+      "title": "Co-Founder & Full-Stack Engineer",
+      "company": "baito",
+      "location": "Berlin, Germany",
+      "description": "Impact Job Board for Sustainable Employment – getbaito.com, jobscouts.io & talentalert.io",
+      "achievements": [
+        "Architected and built the entire platform using Next.js, TypeScript, tRPC, Prisma, PostgreSQL, and MongoDB.",
+        "Designed data-intensive tools processing 7M+ user events monthly and crawling 10k career pages.",
+        "Built performant frontend components with React, Tailwind CSS, and component-based UI architecture.",
+        "Implemented RESTful APIs and integrated external data sources for job aggregation.",
+        "Developed state management patterns and optimized application performance for scale.",
+        "Shipped features end-to-end with full ownership: from product specs to production deployment.",
+        "Built background job processing with BullMQ for async workflows and data pipelines."
+      ]
+    },
+    {
+      "period": "01/2016 – 2022",
+      "title": "Product-Builder & Full-Stack Developer",
+      "company": "Self-Employed",
+      "location": "Remote / Berlin",
+      "achievements": [
+        "Built approximately 25 web products from scratch, handling full-stack development autonomously.",
+        "Developed frontend systems with Next.js, React, TypeScript, and Tailwind CSS.",
+        "Created backend systems with Node.js, Express.js, REST APIs, GraphQL, and Prisma.",
+        "Managed complete product lifecycle from concept through deployment and iteration."
+      ]
+    },
+    {
+      "period": "02/2018 – 09/2020",
+      "title": "Frontend Developer",
+      "company": "Bærnholdt",
+      "location": "Copenhagen, Denmark",
+      "description": "Digital Agency",
+      "achievements": [
+        "Built modern web applications using React Native, Vue.js, and microservices architecture.",
+        "Integrated RESTful APIs and collaborated closely with backend engineering teams.",
+        "Delivered projects from wireframes and prototypes to production in agile SCRUM environment."
+      ],
+      "printPaddingTop": "50px"
+    },
+    {
+      "period": "07/2017 – 02/2018",
+      "title": "Frontend Developer",
+      "company": "Airy GmbH",
+      "location": "Berlin, Germany",
+      "description": "B2C Messenger Platform",
+      "achievements": [
+        "Integrated real-time messaging features with WebSockets.",
+        "Applied test-driven development practices with Mocha.js.",
+        "Created design mockups and collaborated on product iterations."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frontend",
+      "icon": "Code",
+      "skills": "TypeScript, React, Next.js, Tailwind CSS, Component-based UI, State Management, Responsive Design"
+    },
+    {
+      "name": "Backend & APIs",
+      "icon": "Server",
+      "skills": "Node.js, tRPC, REST APIs, GraphQL, BullMQ, Real-time Systems"
+    },
+    {
+      "name": "Databases",
+      "icon": "Database",
+      "skills": "PostgreSQL, MongoDB, Prisma, Typesense, Vector Databases"
+    },
+    {
+      "name": "Infrastructure",
+      "icon": "Cloud",
+      "skills": "Docker, Vercel, CI/CD, GitHub, Automated Deployments"
+    }
+  ],
+  "awards": [
+    {
+      "skillIndex": 2,
+      "title": "OpenAI Award 2024",
+      "description": "Awarded for processing >10B tokens via API for automated classification systems"
+    }
+  ],
+  "education": [
+    {
+      "period": "02/2018 – 04/2020",
+      "institution": "Copenhagen Business School",
+      "location": "Copenhagen, Denmark",
+      "degree": "M.Sc. in E-Business",
+      "thesis": "Master Thesis: Blockchain-based Identity Management"
+    },
+    {
+      "period": "09/2011 – 09/2014",
+      "institution": "Maastricht University",
+      "location": "Maastricht, Netherlands",
+      "degree": "B.Sc. International Business"
+    }
+  ],
+  "languages": [
+    { "name": "German", "level": 5 },
+    { "name": "English", "level": 5 },
+    { "name": "Spanish", "level": 2 }
+  ],
+  "printSpacing": {
+    "languages": "50px"
+  }
+}
+
