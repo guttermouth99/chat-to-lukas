@@ -173,20 +173,27 @@ export default async function CoverLetterPage({
               const visibilityClass = isPromoParagraph && !isPdf ? 'hidden print:block' : '';
 
               return (
-                <p
-                  key={index}
-                  className={`text-sm text-slate-700 leading-relaxed ${visibilityClass}`}
-                  dangerouslySetInnerHTML={{
-                    __html: paragraph
-                      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                      .replace(/\[(.*?)\]\((.*?)\)/g, `<a href="$2" class="underline hover:opacity-80 text-[${accentColor}]" style="color: ${accentColor}">$1</a>`)
-                      .replace(
-                        /<strong>/g,
-                        `<span class="font-semibold" style="color: ${accentColor}">`
-                      )
-                      .replace(/<\/strong>/g, 'span'),
-                  }}
-                />
+                <div key={index} className={visibilityClass}>
+                  {paragraph.startsWith('###') ? (
+                    <h3 className="mt-6 mb-2 text-base font-semibold text-slate-900" style={{ color: accentColor }}>
+                      {paragraph.replace(/^###\s+/, '')}
+                    </h3>
+                  ) : (
+                    <p
+                      className="text-sm text-slate-700 leading-relaxed"
+                      dangerouslySetInnerHTML={{
+                        __html: paragraph
+                          .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                          .replace(/\[(.*?)\]\((.*?)\)/g, `<a href="$2" class="underline hover:opacity-80 text-[${accentColor}]" style="color: ${accentColor}">$1</a>`)
+                          .replace(
+                            /<strong>/g,
+                            `<span class="font-semibold" style="color: ${accentColor}">`
+                          )
+                          .replace(/<\/strong>/g, '</span>'),
+                      }}
+                    />
+                  )}
+                </div>
               );
             })}
           </div>

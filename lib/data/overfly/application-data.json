@@ -1,0 +1,183 @@
+{
+  "lang": "english",
+  "showChatDisclaimer": true,
+  "theme": {
+    "accentColor": "#7435FF"
+  },
+  "personal": {
+    "fullName": "Lukas Stockburger",
+    "workingTitle": "Senior Full Stack & AI Engineer (Entrepreneurial Mindset)",
+    "avatar": "/lukas_avatar.jpeg",
+    "companyLogo": "/overfly_logo.svg",
+    "companyName": "Overfly",
+    "address": "Silbersteinstraße 124, 12051 Berlin",
+    "phone": "+49 163 160 3074",
+    "email": "lukas.stockburger@gmail.com",
+    "birthday": "07.02.1990",
+    "linkedin": "linkedin.com/in/lukas-s-186583a2",
+    "talkToMe": "talk"
+  },
+  "frontpage": {
+    "title": "Lukas Stockburger",
+    "subtitle": "Senior Full Stack & AI Engineer (Entrepreneurial Mindset)",
+    "keywords": [
+      {
+        "text": "8+ Years Experience",
+        "icon": "Sparkles"
+      },
+      { 
+        "text": "Product Engineer"
+      },
+      {
+        "text": "AI & Analytics Expert"
+      }
+    ]
+  },
+  "labels": {
+    "profile": "Profile",
+    "workExperience": "Work Experience",
+    "skills": "Skills",
+    "education": "Education",
+    "languages": "Languages"
+  },
+  "profileSummary": "Experienced <strong>Full-Stack Product Engineer</strong> with a strong entrepreneurial mindset. I don't just write code; I build systems that generate revenue. Specialized in <strong>TypeScript, Next.js, and AI pipelines</strong>, I've taken products from zero to 7M+ user events/month. I combine deep technical expertise (Node.js, BullMQ, Vector DBs) with product analytics (PostHog, Mixpanel) to ship production-grade AI solutions that solve real business problems.",
+  "workExperience": [
+    {
+      "period": "01/2022 – Present",
+      "title": "Co-Founder & Lead Engineer",
+      "company": "baito UG",
+      "location": "Berlin",
+      "description": "Impact Jobboard & Automation Platform (getbaito.com, jobscouts.io & talentalert.io)",
+      "achievements": [
+        "Architected and built the entire platform using Next.js, TypeScript, tRPC, and Prisma",
+        "Scaled backend infrastructure to handle ~10,000 monthly career page crawls and 7M+ user events",
+        "Implemented production-grade AI pipelines using Vercel AI SDK and OpenAI for automated job classification",
+        "Designed asynchronous workflows with BullMQ for reliable high-volume data processing",
+        "Integrated Vector Databases (Weaviate, Typesense) for semantic search and matching",
+        "Set up comprehensive product analytics using PostHog to drive data-informed product decisions",
+        "Managed the full product lifecycle from concept to revenue, validating features with real users"
+      ]
+    },
+    {
+      "period": "01/2016 – 2022",
+      "title": "Product Builder & Full-Stack Developer",
+      "company": "Freelance",
+      "location": "Berlin",
+      "achievements": [
+        "Developed and launched ~25 web projects and prototypes for various clients",
+        "Full-Stack development with React, Next.js, Node.js, and MongoDB",
+        "Focused on rapid prototyping and iterative development to validate business hypotheses quickly"
+      ]
+    },
+    {
+      "period": "02/2018 – 09/2020",
+      "title": "Frontend Developer",
+      "company": "Bærnholdt",
+      "location": "Copenhagen, Denmark",
+      "description": "Digital Agency",
+      "achievements": [
+        "Built modern web applications using React Native, Vue.js, and Headless CMS architectures",
+        "Collaborated in agile SCRUM teams to deliver high-quality client solutions"
+      ],
+      "printPaddingTop": "100px"
+    },
+    {
+      "period": "07/2017 – 02/2018",
+      "title": "Frontend Developer",
+      "company": "Airy GmbH",
+      "location": "Berlin",
+      "description": "B2C Messenger",
+      "achievements": [
+        "Integrated real-time messaging using Websockets",
+        "Implemented test-driven development practices with Mocha.js"
+      ]
+    },
+    {
+      "period": "11/2015 – 01/2017",
+      "title": "Co-Founder",
+      "company": "Sweeker UG",
+      "location": "Berlin",
+      "description": "Sneaker Mobile Shopping App",
+      "achievements": [
+        "Developed business concept and monetization strategy",
+        "Managed partnerships and aligned technical development with business goals"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "AI & Engineering",
+      "icon": "Brain",
+      "skills": "LLMs, Vercel AI SDK, RAG, Vector DBs (Weaviate, Typesense), Prompt Engineering, Automated Classification, Python Basics"
+    },
+    {
+      "name": "Full Stack Web",
+      "icon": "Globe",
+      "skills": "TypeScript, React, Next.js (App Router), Node.js, Tailwind CSS, Shadcn/ui, tRPC, Prisma, PostgreSQL, MongoDB"
+    },
+    {
+      "name": "Infrastructure & Ops",
+      "icon": "Server",
+      "skills": "Docker, BullMQ, Redis, Vercel, AWS, CI/CD, Scraping Architectures"
+    },
+    {
+      "name": "Product & Analytics",
+      "icon": "Chart",
+      "skills": "PostHog, Mixpanel, Linear, Rapid Prototyping, User Testing, SEO, Conversion Optimization"
+    },
+    {
+      "name": "Entrepreneurship",
+      "icon": "Briefcase",
+      "skills": "Product Strategy, Business Modeling, Stakeholder Management, Agile/Scrum, Team Leadership"
+    }
+  ],
+  "awards": [
+    {
+      "skillIndex": 0,
+      "title": "OpenAI Award 2025",
+      "description": "Processed 10B+ tokens via API for baito's classification system"
+    }
+  ],
+  "education": [
+    {
+      "period": "02/2018 – 04/2020",
+      "institution": "Copenhagen Business School",
+      "location": "Copenhagen, Denmark",
+      "degree": "Master in E-Business",
+      "thesis": "Blockchain-based Identity Management"
+    },
+    {
+      "period": "01/2014 – 06/2014",
+      "institution": "Universidad de los Andes",
+      "location": "Bogotá, Colombia",
+      "degree": "Exchange Semester"
+    },
+    {
+      "period": "09/2011 – 09/2014",
+      "institution": "Maastricht University",
+      "location": "Maastricht, Netherlands",
+      "degree": "B.Sc. International Business"
+    }
+  ],
+  "languages": [
+    {
+      "name": "German",
+      "level": 5
+    },
+    {
+      "name": "English",
+      "level": 5
+    },
+    {
+      "name": "Spanish",
+      "level": 2
+    }
+  ],
+  "printSpacing": {
+    "workExperience": null,
+    "skills": null,
+    "education": "100px",
+    "languages": null
+  }
+}
+
