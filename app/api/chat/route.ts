@@ -50,6 +50,16 @@ ${exp.highlights.map((h) => `- ${h}`).join("\n")}
   )
   .join("\n")}
 
+### Projekte
+${profile.projects
+  .map(
+    (proj) => `
+**${proj.name}** - ${proj.url}
+${proj.description}
+`
+  )
+  .join("\n")}
+
 ## Über die Stelle
 
 Unternehmen: ${job.company}

@@ -40,6 +40,12 @@
       "description": "Job-Newsletter Automatisierungsplattform. Verarbeitet über 7 Mio. User-Events monatlich und ermöglicht personalisierte Job-Alerts basierend auf individuellen Präferenzen."
     },
     {
+      "name": "JobScouts",
+      "logo": "/globe.svg",
+      "url": "https://jobscouts.io",
+      "description": "Automatisiertes Job-Monitoring für Karriereseiten. Nutzer können ihre Wunscharbeitgeber abonnieren und erhalten sofortige Benachrichtigungen, wenn neue Stellen veröffentlicht werden – oft schneller als auf herkömmlichen Jobbörsen."
+    },
+    {
       "name": "gebrauchtebuecher",
       "logo": "/projects/gebrauchtebuecher.svg",
       "url": "https://gebrauchtebuecher.com",
