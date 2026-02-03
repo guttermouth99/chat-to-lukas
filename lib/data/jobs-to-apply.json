@@ -1,7 +1,7 @@
 [
   {
     "id": "overfly",
-    "enabled": true,
+    "enabled": false,
     "lang": "english",
     "company": "Overfly",
     "position": "Senior Full Stack & AI Engineer",
@@ -22,7 +22,7 @@
   },
   {
     "id": "perplexity",
-    "enabled": true,
+    "enabled": false,
     "lang": "english",
     "company": "Perplexity",
     "position": "Full Stack Engineer",
@@ -43,7 +43,7 @@
   },
   {
     "id": "ashby",
-    "enabled": true,
+    "enabled": false,
     "lang": "english",
     "company": "Ashby",
     "position": "Senior Software Engineer, Product Engineering",
@@ -85,7 +85,7 @@
   },
   {
     "id": "fixmycity",
-    "enabled": false,
+    "enabled": true,
     "lang": "german",
     "company": "FixMyCity GmbH",
     "position": "Full-Stack Entwickler:in",
@@ -106,7 +106,7 @@
   },
   {
     "id": "climatiq",
-    "enabled": true,
+    "enabled": false,
     "lang": "english",
     "company": "Climatiq",
     "position": "Frontend Engineer",
