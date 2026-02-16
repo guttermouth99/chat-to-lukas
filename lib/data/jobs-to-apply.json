@@ -85,7 +85,7 @@
   },
   {
     "id": "fixmycity",
-    "enabled": true,
+    "enabled": false,
     "lang": "german",
     "company": "FixMyCity GmbH",
     "position": "Full-Stack Entwickler:in",
